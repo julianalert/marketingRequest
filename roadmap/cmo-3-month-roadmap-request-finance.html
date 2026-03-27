@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3-Month CMO Roadmap — Request Finance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rf-blue: #2b6ff4;
+  --rf-sky: #60d5ff;
+  --rf-light: #dbeafe;
+  --ink: #0d1117;
+  --ink-2: #1e2733;
+  --ink-3: #2e3a47;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --border-2: #cbd5e1;
+  --surface: #f8faff;
+  --surface-2: #f1f5f9;
+  --white: #ffffff;
+  --accent-glow: rgba(43,111,244,.12);
+  --red: #ef4444;
+  --green: #22c55e;
+  --amber: #f59e0b;
+  --purple: #8b5cf6;
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--white);color:var(--ink);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+/* SIDEBAR */
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:240px;background:var(--ink);padding:28px 0;display:flex;flex-direction:column;z-index:100;overflow-y:auto;}
+.sidebar-logo{padding:0 22px 24px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:16px;}
+.sidebar-logo-name{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--white);letter-spacing:.04em;text-transform:uppercase;}
+.sidebar-logo-sub{font-size:10.5px;color:rgba(255,255,255,.35);margin-top:3px;font-family:var(--font-mono);}
+.nav-section{padding:0 16px 4px;font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:2px;margin-top:14px;}
+.nav-link{display:flex;align-items:center;gap:8px;padding:6px 16px;text-decoration:none;font-size:12px;color:rgba(255,255,255,.45);transition:all .15s;border-left:2px solid transparent;}
+.nav-link:hover{color:var(--white);background:rgba(255,255,255,.04);}
+.nav-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+.dot-red{background:#ef4444;}
+.dot-amber{background:#f59e0b;}
+.dot-blue{background:#2b6ff4;}
+.dot-green{background:#22c55e;}
+.dot-purple{background:#8b5cf6;}
+
+/* MAIN */
+.main{margin-left:240px;min-height:100vh;}
+
+/* HERO */
+.hero{background:var(--ink);padding:64px 60px 52px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-100px;right:-60px;width:480px;height:480px;background:radial-gradient(circle,rgba(43,111,244,.22) 0%,transparent 70%);pointer-events:none;}
+.hero-label{display:inline-flex;align-items:center;gap:8px;background:rgba(43,111,244,.18);border:1px solid rgba(43,111,244,.35);color:var(--rf-sky);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:22px;font-family:var(--font-mono);}
+.hero h1{font-family:var(--font-head);font-size:44px;font-weight:800;color:var(--white);line-height:1.1;letter-spacing:-.02em;max-width:680px;margin-bottom:16px;}
+.hero h1 span{color:var(--rf-sky);}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.48);max-width:580px;line-height:1.65;margin-bottom:36px;}
+
+/* NORTH STAR */
+.north-star{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0;border-top:1px solid rgba(255,255,255,.08);padding-top:28px;}
+.ns-item{padding-right:32px;}
+.ns-item:not(:last-child){border-right:1px solid rgba(255,255,255,.06);}
+.ns-item:not(:first-child){padding-left:32px;}
+.ns-val{font-family:var(--font-head);font-size:30px;font-weight:700;color:var(--white);line-height:1;}
+.ns-lbl{font-size:11px;color:rgba(255,255,255,.35);margin-top:5px;}
+.ns-sub{font-size:10px;color:rgba(96,213,255,.6);font-family:var(--font-mono);margin-top:2px;}
+
+/* SECTIONS */
+.section{padding:52px 60px;border-bottom:1px solid var(--border);}
+.section:last-child{border-bottom:none;}
+.section-alt{background:var(--surface);}
+.section-label{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:10.5px;font-weight:500;color:var(--rf-blue);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;}
+.section-label::before{content:'';display:inline-block;width:16px;height:2px;background:var(--rf-blue);border-radius:2px;}
+h2{font-family:var(--font-head);font-size:30px;font-weight:700;letter-spacing:-.02em;color:var(--ink);margin-bottom:8px;line-height:1.15;}
+.section-intro{font-size:14px;color:var(--muted);max-width:620px;margin-bottom:32px;line-height:1.7;}
+h3{font-family:var(--font-head);font-size:17px;font-weight:600;color:var(--ink);margin-bottom:10px;}
+h4{font-family:var(--font-head);font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:7px;}
+p{margin-bottom:12px;color:var(--ink-3);line-height:1.72;font-size:14px;}
+p:last-child{margin-bottom:0;}
+ul,ol{padding-left:18px;margin-bottom:12px;}
+li{color:var(--ink-3);line-height:1.72;margin-bottom:3px;font-size:13.5px;}
+strong{font-weight:600;color:var(--ink);}
+
+/* CARDS */
+.card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:22px;}
+.card-surface{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;}
+.card-dark{background:var(--ink-2);border-radius:12px;padding:22px;}
+.card-dark h4,.card-dark h3{color:var(--white);}
+.card-dark p,.card-dark li{color:rgba(255,255,255,.55);}
+
+/* GRIDS */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+
+/* BADGES & CHIPS */
+.badge{display:inline-flex;font-size:9.5px;font-weight:600;padding:2px 7px;border-radius:4px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.04em;}
+.badge-red{background:#fee2e2;color:#991b1b;}
+.badge-amber{background:#fff7ed;color:#c2410c;}
+.badge-blue{background:var(--rf-light);color:#1d4ed8;}
+.badge-green{background:#dcfce7;color:#15803d;}
+.badge-purple{background:#ede9fe;color:#6d28d9;}
+.badge-sky{background:rgba(96,213,255,.15);color:#0369a1;}
+
+.chip{display:inline-flex;align-items:center;font-size:10.5px;font-weight:500;padding:3px 9px;border-radius:20px;margin:2px;font-family:var(--font-mono);}
+.chip-blue{background:var(--rf-light);color:#1d4ed8;}
+.chip-green{background:#dcfce7;color:#15803d;}
+.chip-amber{background:#fef9c3;color:#92400e;}
+.chip-red{background:#fee2e2;color:#991b1b;}
+
+/* HIGHLIGHT */
+.highlight-box{background:linear-gradient(135deg,rgba(43,111,244,.06),rgba(96,213,255,.06));border-left:3px solid var(--rf-blue);border-radius:0 10px 10px 0;padding:16px 18px;margin:18px 0;font-size:13.5px;color:var(--ink-2);line-height:1.7;}
+.callout{display:flex;gap:12px;align-items:flex-start;background:var(--rf-light);border-radius:10px;padding:14px 16px;margin:14px 0;}
+.callout-icon{font-size:17px;flex-shrink:0;margin-top:1px;}
+.callout-text{font-size:12.5px;color:#1d4ed8;line-height:1.6;}
+.callout-text strong{color:#1e3a8a;}
+
+/* TABLES */
+table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:18px;}
+thead th{text-align:left;padding:9px 12px;background:var(--ink);color:rgba(255,255,255,.65);font-family:var(--font-mono);font-size:9.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;}
+thead th:first-child{border-radius:8px 0 0 0;}
+thead th:last-child{border-radius:0 8px 0 0;}
+tbody tr{border-bottom:1px solid var(--border);}
+tbody tr:hover{background:var(--surface);}
+tbody td{padding:9px 12px;color:var(--ink-3);vertical-align:top;font-size:13px;}
+.td-kw{font-weight:500;color:var(--ink);}
+
+/* WEEK BLOCK */
+.week-block{border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:16px;background:var(--white);}
+.week-header{padding:16px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);}
+.week-num{font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--ink);}
+.week-theme{font-size:12px;color:var(--muted);font-family:var(--font-mono);}
+.week-body{padding:18px 20px;}
+.week-tasks{list-style:none;padding:0;}
+.week-tasks li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px solid rgba(226,232,240,.5);font-size:13px;color:var(--ink-3);}
+.week-tasks li:last-child{border-bottom:none;}
+.task-check{width:18px;height:18px;border-radius:5px;border:2px solid var(--border-2);flex-shrink:0;margin-top:2px;}
+.task-content{flex:1;}
+.task-time{font-family:var(--font-mono);font-size:10px;color:var(--muted);white-space:nowrap;margin-top:2px;}
+.task-impact{font-family:var(--font-mono);font-size:10px;padding:1px 6px;border-radius:3px;white-space:nowrap;margin-top:2px;}
+.impact-high{background:#fee2e2;color:#991b1b;}
+.impact-med{background:#fef9c3;color:#92400e;}
+.impact-low{background:var(--rf-light);color:#1d4ed8;}
+
+/* MONTH TAB */
+.month-tab{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:10px 10px 0 0;font-family:var(--font-head);font-size:14px;font-weight:700;color:var(--white);position:relative;top:1px;}
+.month-tab.m1{background:#ef4444;}
+.month-tab.m2{background:#f59e0b;}
+.month-tab.m3{background:#22c55e;}
+
+/* LEVER CARD */
+.lever{display:flex;gap:16px;padding:18px;border:1px solid var(--border);border-radius:12px;margin-bottom:12px;background:var(--white);transition:border-color .2s;}
+.lever:hover{border-color:var(--rf-blue);}
+.lever-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.lever-content{flex:1;}
+.lever-title{font-family:var(--font-head);font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px;}
+.lever-desc{font-size:12.5px;color:var(--muted);line-height:1.6;}
+.lever-metric{font-family:var(--font-mono);font-size:11px;color:var(--rf-blue);margin-top:4px;}
+
+/* DIVIDER */
+.divider{border:none;border-top:1px solid var(--border);margin:28px 0;}
+
+/* PRINT */
+@media print{.sidebar{display:none;}.main{margin-left:0;}}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--border-2);border-radius:10px;}
+</style>
+</head>
+<body>
+
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <div class="sidebar-logo-name">Request Finance</div>
+    <div class="sidebar-logo-sub">3-Month CMO Roadmap</div>
+  </div>
+  <div class="nav-section">Foundation</div>
+  <a href="#model" class="nav-link"><span class="nav-dot dot-blue"></span>Growth model</a>
+  <a href="#levers" class="nav-link"><span class="nav-dot dot-blue"></span>7 growth levers</a>
+  <a href="#principles" class="nav-link"><span class="nav-dot dot-blue"></span>Solo marketer rules</a>
+  <div class="nav-section">Month 1 — Foundation</div>
+  <a href="#m1w1" class="nav-link"><span class="nav-dot dot-red"></span>Week 1: Pages that sell</a>
+  <a href="#m1w2" class="nav-link"><span class="nav-dot dot-red"></span>Week 2: Conversion machine</a>
+  <a href="#m1w3" class="nav-link"><span class="nav-dot dot-red"></span>Week 3: Activate the base</a>
+  <a href="#m1w4" class="nav-link"><span class="nav-dot dot-red"></span>Week 4: Content engine on</a>
+  <div class="nav-section">Month 2 — Acquisition</div>
+  <a href="#m2w1" class="nav-link"><span class="nav-dot dot-amber"></span>Week 5: Referral launch</a>
+  <a href="#m2w2" class="nav-link"><span class="nav-dot dot-amber"></span>Week 6: Outbound + SEO</a>
+  <a href="#m2w3" class="nav-link"><span class="nav-dot dot-amber"></span>Week 7: Paid experiments</a>
+  <a href="#m2w4" class="nav-link"><span class="nav-dot dot-amber"></span>Week 8: Double down</a>
+  <div class="nav-section">Month 3 — Scale</div>
+  <a href="#m3w1" class="nav-link"><span class="nav-dot dot-green"></span>Week 9: Geographic push</a>
+  <a href="#m3w2" class="nav-link"><span class="nav-dot dot-green"></span>Week 10: Authority play</a>
+  <a href="#m3w3" class="nav-link"><span class="nav-dot dot-green"></span>Week 11: Optimize & close</a>
+  <a href="#m3w4" class="nav-link"><span class="nav-dot dot-green"></span>Week 12: Compound</a>
+  <div class="nav-section">Tracking</div>
+  <a href="#kpis" class="nav-link"><span class="nav-dot dot-purple"></span>Weekly scorecard</a>
+  <a href="#stack" class="nav-link"><span class="nav-dot dot-purple"></span>Tool stack</a>
+</nav>
+
+<main class="main">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Operational plan · April – June 2026</div>
+  <h1>3-Month Roadmap<br>to <span>Double Paid Users</span></h1>
+  <p class="hero-sub">A week-by-week execution plan for one person. No fluff, no "strategy decks" — just the exact tasks, in order, with time estimates, that will take Request Finance from X to 2X paid customers in 90 days.</p>
+  <div class="north-star">
+    <div class="ns-item">
+      <div class="ns-val">2×</div>
+      <div class="ns-lbl">Paid users target</div>
+      <div class="ns-sub">End of month 3</div>
+    </div>
+    <div class="ns-item">
+      <div class="ns-val">12</div>
+      <div class="ns-lbl">Weeks of execution</div>
+      <div class="ns-sub">No week wasted</div>
+    </div>
+    <div class="ns-item">
+      <div class="ns-val">7</div>
+      <div class="ns-lbl">Growth levers</div>
+      <div class="ns-sub">Activated in sequence</div>
+    </div>
+    <div class="ns-item">
+      <div class="ns-val">1</div>
+      <div class="ns-lbl">Person doing it all</div>
+      <div class="ns-sub">You, the CMO</div>
+    </div>
+  </div>
+</div>
+
+<!-- GROWTH MODEL -->
+<section class="section" id="model">
+  <div class="section-label">The math</div>
+  <h2>How doubling actually works</h2>
+  <p class="section-intro">Before the to-do list — the math. Doubling paid users in 3 months requires attacking both new acquisition and existing conversion simultaneously.</p>
+
+  <div class="grid-2" style="margin-bottom:24px;">
+    <div class="card" style="border-top:3px solid var(--rf-blue);">
+      <h4>Lever A — Convert existing free users</h4>
+      <p style="font-size:13px;">From sales data: Kiln, Houdini Swap, Novora, and dozens of others use Request for free (invoicing, AR). They've never had a demo or been shown the paid features. A targeted activation campaign can convert 10–15% of free users to paid within 30 days. <strong>This is the fastest path to revenue — no new traffic needed.</strong></p>
+      <div style="background:var(--surface);border-radius:8px;padding:12px;margin-top:12px;">
+        <div style="font-family:var(--font-mono);font-size:11px;color:var(--rf-blue);">TARGET: 25–30% of your 2× goal from this lever alone</div>
+      </div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--green);">
+      <h4>Lever B — New user acquisition</h4>
+      <p style="font-size:13px;">The remaining 70–75% comes from new signups converting to paid. Your current funnel: Traffic → Signup → Trial → Paid. The plan attacks all three stages: more traffic (SEO, referrals, paid), better signup conversion (new landing pages), and faster trial-to-paid (onboarding email + CSM handoff).</p>
+      <div style="background:var(--surface);border-radius:8px;padding:12px;margin-top:12px;">
+        <div style="font-family:var(--font-mono);font-size:11px;color:var(--green);">TARGET: 70–75% of your 2× goal from this lever</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>The solo-marketer constraint:</strong> You can't do everything. This plan is sequenced so that Month 1 fixes the conversion funnel (so every visitor is more likely to pay), Month 2 turns on acquisition channels (so more visitors arrive into a working funnel), and Month 3 scales what worked. Never run ads into a broken funnel.
+  </div>
+</section>
+
+<!-- 7 GROWTH LEVERS -->
+<section class="section section-alt" id="levers">
+  <div class="section-label">Growth levers</div>
+  <h2>7 levers, activated in order</h2>
+  <p class="section-intro">Each lever is a distinct growth mechanism. They're ordered by speed-to-impact for a one-person team.</p>
+
+  <div class="lever">
+    <div class="lever-icon" style="background:#fee2e2;">🔴</div>
+    <div class="lever-content">
+      <div class="lever-title">1. Free → Paid conversion (Month 1)</div>
+      <div class="lever-desc">Email existing free users with product demo videos, feature highlights (GUSD, C2F, approvals), and a time-limited discount. Kiln-type users who never got a demo are low-hanging fruit.</div>
+      <div class="lever-metric">Expected contribution: 25–30% of 2× goal</div>
+    </div>
+  </div>
+  <div class="lever">
+    <div class="lever-icon" style="background:#dbeafe;">🔵</div>
+    <div class="lever-content">
+      <div class="lever-title">2. Landing page conversion lift (Month 1)</div>
+      <div class="lever-desc">Ship GUSD page, Cards waitlist page, cross-border page. Fix pricing page. Add product video. Every 1% conversion rate increase on the website doubles the value of all future traffic.</div>
+      <div class="lever-metric">Expected contribution: 10–15% (compounds with all other levers)</div>
+    </div>
+  </div>
+  <div class="lever">
+    <div class="lever-icon" style="background:#fef9c3;">🟡</div>
+    <div class="lever-content">
+      <div class="lever-title">3. Referral program (Month 2)</div>
+      <div class="lever-desc">6+ leads in the last 4 months asked for this. Launch a simple partner/referral program. Each referrer sends 2–3 clients. CPA firms, fractional CFOs, and ecosystem partners are multipliers.</div>
+      <div class="lever-metric">Expected contribution: 15–20% of 2× goal</div>
+    </div>
+  </div>
+  <div class="lever">
+    <div class="lever-icon" style="background:#dcfce7;">🟢</div>
+    <div class="lever-content">
+      <div class="lever-title">4. SEO content (Months 1–3, compounds)</div>
+      <div class="lever-desc">Publish 2 high-quality posts per week targeting low-difficulty keywords from the SEO strategy. Web3 finance niche terms, comparison pages, and how-to guides. Compounding asset.</div>
+      <div class="lever-metric">Expected contribution: 10% in 3 months, 30%+ in 6 months</div>
+    </div>
+  </div>
+  <div class="lever">
+    <div class="lever-icon" style="background:#ede9fe;">🟣</div>
+    <div class="lever-content">
+      <div class="lever-title">5. Paid ads — LinkedIn + Google (Month 2–3)</div>
+      <div class="lever-desc">Only turned on after the funnel is fixed. Retargeting site visitors + LinkedIn ads to finance roles at crypto companies in Dubai, Singapore, and EU. Small budget, high intent.</div>
+      <div class="lever-metric">Expected contribution: 10–15% of 2× goal</div>
+    </div>
+  </div>
+  <div class="lever">
+    <div class="lever-icon" style="background:rgba(96,213,255,.15);">💎</div>
+    <div class="lever-content">
+      <div class="lever-title">6. Ecosystem / co-marketing (Month 2–3)</div>
+      <div class="lever-desc">Anchor Labs, Cryptoworth, Avalanche, Borderless, Ledger Multisig — all want to co-market. One joint webinar or integration announcement drives qualified leads from their audience to yours.</div>
+      <div class="lever-metric">Expected contribution: 5–10% of 2× goal</div>
+    </div>
+  </div>
+  <div class="lever">
+    <div class="lever-icon" style="background:#fff7ed;">🧲</div>
+    <div class="lever-content">
+      <div class="lever-title">7. Web3 Finance Club as GTM channel (Month 1–3)</div>
+      <div class="lever-desc">Already producing 12–15 leads per quarter. Increase cadence: weekly content in the club, monthly demo sessions, member referral bonuses. This is your warmest channel — extract more from it.</div>
+      <div class="lever-metric">Expected contribution: 10–15% of 2× goal</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="section" id="principles">
+  <div class="section-label">Operating rules</div>
+  <h2>Solo marketer principles</h2>
+  <p class="section-intro">When you're one person, what you don't do matters more than what you do. These rules keep you focused.</p>
+
+  <div class="grid-3">
+    <div class="card-dark">
+      <h4>Rule 1: Fix the funnel first</h4>
+      <p>No ads, no outreach, no content until the core landing pages and conversion paths are fixed. Traffic into a broken funnel is wasted money. Month 1 = funnel. Month 2 = traffic. Month 3 = scale.</p>
+    </div>
+    <div class="card-dark">
+      <h4>Rule 2: Ship ugly, iterate later</h4>
+      <p>A GUSD landing page that goes live today with imperfect copy beats a perfect page shipped in 3 weeks. Use templates, AI-generated first drafts, and existing brand assets. Perfectionism is the enemy.</p>
+    </div>
+    <div class="card-dark">
+      <h4>Rule 3: Measure weekly, not daily</h4>
+      <p>Track 5 metrics every Monday: new signups, trial-to-paid conversions, organic traffic, demo bookings, and MRR. Everything else is noise. Put it in a single spreadsheet. Takes 15 minutes.</p>
+    </div>
+    <div class="card-dark">
+      <h4>Rule 4: Leverage AI ruthlessly</h4>
+      <p>Use Claude/ChatGPT for first drafts of every blog post, email, landing page, and social post. Your job is editing, strategy, and distribution — not writing from scratch. This 3× your output.</p>
+    </div>
+    <div class="card-dark">
+      <h4>Rule 5: Say no to everything else</h4>
+      <p>No conference sponsorships, no podcast tours, no brand redesign, no social media calendar with 5 posts/day. Those are Month 6+ activities. For 90 days, the only question is: does this directly lead to a paid user?</p>
+    </div>
+    <div class="card-dark">
+      <h4>Rule 6: Sales team = distribution</h4>
+      <p>Every asset you create must be instantly shareable by the sales team. A comparison page Thomas can drop into a chat. A video David can share in a TG group. Build for sales leverage, not marketing vanity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- MONTH 1 -->
+<!-- ═══════════════════════════════════════ -->
+
+<section class="section" style="background:#fef2f2;border-bottom:none;padding-bottom:12px;" id="m1">
+  <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px;">
+    <div class="month-tab m1">Month 1</div>
+    <div>
+      <div style="font-family:var(--font-head);font-size:26px;font-weight:700;color:var(--ink);">Fix the Machine</div>
+      <div style="font-size:13px;color:var(--muted);">Conversion infrastructure · Free user activation · Core pages</div>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--muted);max-width:600px;">Every action in Month 1 exists to ensure that when traffic increases in Months 2–3, those visitors convert. You are building the conversion machine.</p>
+</section>
+
+<section class="section" style="padding-top:24px;" id="m1w1">
+  <div class="week-block">
+    <div class="week-header" style="background:rgba(239,68,68,.04);">
+      <div class="week-num">Week 1 <span style="font-weight:400;color:var(--muted);font-size:13px;">— Pages that sell</span></div>
+      <div class="week-theme">Conversion infrastructure</div>
+    </div>
+    <div class="week-body">
+      <ul class="week-tasks">
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Ship Global USD Account landing page</strong> — Hero with value prop ("One account. Fund with wire. Pay in crypto. Off-ramp to any bank."), flow diagram, supported currencies, FAQ, CTA to book demo. Use existing site template. AI-draft the copy, you edit.</div>
+          <div><div class="task-time">~6h</div><div class="task-impact impact-high">Critical</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Ship Corporate Cards waitlist page</strong> — Pre-launch page with feature bullets, "Join the waitlist" email capture, expected launch timeline, 3 use cases (travel, SaaS subscriptions, contractor expenses). Embed the survey link for early access.</div>
+          <div><div class="task-time">~4h</div><div class="task-impact impact-high">Critical</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Update homepage hero</strong> — Replace or augment the current hero with: "Corporate payments. Crypto cards. Global USD account. One platform." Add GUSD and Cards to the navigation. This is a copy + layout change, not a redesign.</div>
+          <div><div class="task-time">~3h</div><div class="task-impact impact-high">Critical</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Record a 2-minute product walkthrough video</strong> — Screen recording with voiceover. Show: create invoice → approval → pay with Safe → C2F flow → GUSD top-up. Use Loom or similar. Embed on homepage and product pages.</div>
+          <div><div class="task-time">~3h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Add trust signals to homepage</strong> — Client logos (BonkDAO, Matter Labs, T34C, SUI, LiFinance), integration logos (Safe, Fireblocks, QuickBooks, Xero), and security credentials. Even a "Trusted by 500+ companies" line matters.</div>
+          <div><div class="task-time">~2h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+      </ul>
+      <div style="background:rgba(239,68,68,.06);border-radius:8px;padding:12px 14px;margin-top:14px;font-size:12px;color:#991b1b;">
+        <strong>Week 1 outcome:</strong> A visitor landing on the homepage can now discover GUSD, Cards, and the full platform story within 10 seconds. Sales team has 3 new URLs to share in prospect conversations.
+      </div>
+    </div>
+  </div>
+
+  <div class="week-block" id="m1w2">
+    <div class="week-header" style="background:rgba(239,68,68,.04);">
+      <div class="week-num">Week 2 <span style="font-weight:400;color:var(--muted);font-size:13px;">— Conversion machine</span></div>
+      <div class="week-theme">Pricing + comparison + onboarding</div>
+    </div>
+    <div class="week-body">
+      <ul class="week-tasks">
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Redesign the pricing page</strong> — Lead with plan features (approvals, multi-entity, batch payments), not with C2F fee percentages. Add a calculator: "Estimate your monthly cost." Add social proof per tier. Add FAQ answering "Why not use a free alternative?"</div>
+          <div><div class="task-time">~5h</div><div class="task-impact impact-high">Critical</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Publish 3 comparison pages</strong> — /vs/ramp, /vs/dakota, /vs/bitwage. Structure: feature table, pricing comparison (honest), "who each is best for," why teams switch, CTA. AI-draft, you edit and add real data from sales calls.</div>
+          <div><div class="task-time">~8h</div><div class="task-impact impact-high">Critical</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Set up trial-to-paid email sequence</strong> — 5 emails over 14 days. Email 1: Welcome + product video. Email 2: "Set up your first approval policy" (feature highlight). Email 3: GUSD Account intro. Email 4: Case study or testimonial. Email 5: "Trial ending" + offer. Use your email tool's automation.</div>
+          <div><div class="task-time">~5h</div><div class="task-impact impact-high">Critical</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Remove/reduce accounting branding</strong> — Update nav labels, landing page references, and any in-app prompts that still promote RA as a primary feature. This stops confusing leads like Ubyx who come expecting a different product.</div>
+          <div><div class="task-time">~2h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Create an integrations page</strong> — /integrations. Grid of logos: QuickBooks ✅, Xero ✅, Safe ✅, Fireblocks ✅, MetaMask ✅, NetSuite (coming), Cryptio, Tres Finance. Status badges. Short description per integration. Massive sales enablement page.</div>
+          <div><div class="task-time">~4h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+      </ul>
+      <div style="background:rgba(239,68,68,.06);border-radius:8px;padding:12px 14px;margin-top:14px;font-size:12px;color:#991b1b;">
+        <strong>Week 2 outcome:</strong> Pricing page no longer causes sticker shock. Comparison pages capture mid-funnel evaluators. New trial users receive automated onboarding nudges.
+      </div>
+    </div>
+  </div>
+
+  <div class="week-block" id="m1w3">
+    <div class="week-header" style="background:rgba(239,68,68,.04);">
+      <div class="week-num">Week 3 <span style="font-weight:400;color:var(--muted);font-size:13px;">— Activate the base</span></div>
+      <div class="week-theme">Free user conversion + existing customer expansion</div>
+    </div>
+    <div class="week-body">
+      <ul class="week-tasks">
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Launch free-to-paid activation campaign</strong> — Email all free users (who use Request for AR/invoicing only). Subject: "You're using 10% of Request. Here's the other 90%." Include product video, GUSD teaser, cards waitlist, and a 20% first-year discount with a 14-day deadline. This is the single highest-ROI action in the entire plan.</div>
+          <div><div class="task-time">~4h</div><div class="task-impact impact-high">Critical</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Build a "full product demo" video (5 min)</strong> — More detailed than the 2-min walkthrough. Show: AP workflow, AR with InvoiceMe, batch payments, approval policies, C2F, GUSD top-up. This is the "Kiln fix" — for every lead who never understood the full product.</div>
+          <div><div class="task-time">~4h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Ask 5 best customers for testimonials</strong> — T34C ("game changer"), SG Forge ("game changer" for C2F), LiFinance, BonkDAO, Matter Labs. Send a short email: "Can we use a one-line quote on our website?" Even 2 responses = gold for landing pages.</div>
+          <div><div class="task-time">~1h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Launch Web3 Finance Club demo sessions</strong> — Monthly 30-min live demo in the Club. Theme: "How to run your company's finances on-chain with Request." Simran drives attendance. You run the demo. Convert Club members → trials → paid.</div>
+          <div><div class="task-time">~3h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Publish 2 blog posts</strong> — Post 1: "How to pay employees in crypto (2026 compliance guide)." Post 2: "Stablecoin vs SWIFT for B2B payments." Both target low-difficulty keywords from the SEO strategy. AI-draft, expert-edit. This starts the SEO clock.</div>
+          <div><div class="task-time">~5h</div><div class="task-impact impact-low">Compound</div></div>
+        </li>
+      </ul>
+      <div style="background:rgba(239,68,68,.06);border-radius:8px;padding:12px 14px;margin-top:14px;font-size:12px;color:#991b1b;">
+        <strong>Week 3 outcome:</strong> Free user activation email sent. Expect 5–10 demo bookings from the base within 7 days. First SEO content published. Club demo scheduled.
+      </div>
+    </div>
+  </div>
+
+  <div class="week-block" id="m1w4">
+    <div class="week-header" style="background:rgba(239,68,68,.04);">
+      <div class="week-num">Week 4 <span style="font-weight:400;color:var(--muted);font-size:13px;">— Content engine on</span></div>
+      <div class="week-theme">SEO + sales enablement + analytics</div>
+    </div>
+    <div class="week-body">
+      <ul class="week-tasks">
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Publish 2 more blog posts</strong> — Post 3: "Web3 expense management: the complete guide." Post 4: "How gaming companies manage crypto payroll." Both map to uncontested keyword clusters identified in sales meetings and SEO strategy.</div>
+          <div><div class="task-time">~5h</div><div class="task-impact impact-low">Compound</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Create 2 use-case pages</strong> — /use-case/gaming and /use-case/agencies. Template: pain point, how Request solves it, relevant features, CTA. Reuse copy from sales meeting notes (TrustDice, Yeet, Hype Partners). 80% template, 20% custom.</div>
+          <div><div class="task-time">~4h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Set up GA4 conversion tracking properly</strong> — Ensure "demo booked," "trial started," "plan purchased" are all tracked as conversion events. Set up a weekly scorecard in Google Sheets pulling from GA4 + your CRM. If you can't measure it, you can't double it.</div>
+          <div><div class="task-time">~3h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Send second free-user activation email</strong> — Follow-up to Week 3 campaign. Subject: "Your 20% discount expires in 5 days." Include a customer testimonial and the 5-min demo video. This is the conversion push for the activated base.</div>
+          <div><div class="task-time">~1h</div><div class="task-impact impact-high">Critical</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Month 1 review: measure and adjust</strong> — How many free users converted? What's the comparison page traffic? How many cards waitlist signups? Identify the top-performing action and double down in Month 2. Kill anything that didn't move the needle.</div>
+          <div><div class="task-time">~2h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+      </ul>
+      <div style="background:rgba(239,68,68,.06);border-radius:8px;padding:12px 14px;margin-top:14px;font-size:12px;color:#991b1b;">
+        <strong>Month 1 outcome:</strong> Conversion funnel rebuilt. Free-to-paid campaign generated first wave of new paying customers. 4 blog posts published. 5+ new landing pages live. Trial email sequence running automatically. You are ready to add traffic.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- MONTH 2 -->
+<!-- ═══════════════════════════════════════ -->
+
+<section class="section" style="background:#fffbeb;border-bottom:none;padding-bottom:12px;" id="m2">
+  <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px;">
+    <div class="month-tab m2">Month 2</div>
+    <div>
+      <div style="font-family:var(--font-head);font-size:26px;font-weight:700;color:var(--ink);">Turn On the Tap</div>
+      <div style="font-size:13px;color:var(--muted);">Referral program · Paid ads · Partner co-marketing · SEO velocity</div>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--muted);max-width:600px;">The funnel works. Now you send more people into it. Month 2 activates every acquisition channel that can produce results within 30 days.</p>
+</section>
+
+<section class="section" style="padding-top:24px;" id="m2w1">
+  <div class="week-block">
+    <div class="week-header" style="background:rgba(245,158,11,.04);">
+      <div class="week-num">Week 5 <span style="font-weight:400;color:var(--muted);font-size:13px;">— Referral engine launch</span></div>
+      <div class="week-theme">Partner program + outreach</div>
+    </div>
+    <div class="week-body">
+      <ul class="week-tasks">
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Launch /partners referral page</strong> — Simple page: "Earn 15–20% recurring commission for every paid customer you refer." Application form. Benefits: revenue share, co-marketing, early feature access. Use a tracking link system (PartnerStack, FirstPromoter, or even UTM + manual tracking to start).</div>
+          <div><div class="task-time">~5h</div><div class="task-impact impact-high">Critical</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Personally email the 8 referral-ready leads</strong> — Regen Financial, Penrose Partners, Anchor Labs, Withum, Sonder Solutions, Aarna.ai, Propeller Industries, Karl-Martin at Areta. Send: "We launched our partner program. Here's your referral link. First referral earns a bonus."</div>
+          <div><div class="task-time">~2h</div><div class="task-impact impact-high">Critical</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Announce in Web3 Finance Club</strong> — Post in the Club: "Request Finance Partner Program is live. CPAs, fractional CFOs, and advisors can now earn recurring revenue for referrals." Simran amplifies. This audience has the highest referral propensity.</div>
+          <div><div class="task-time">~1h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Publish 2 blog posts</strong> — Post 5: "USDC payments for business: the complete setup guide." Post 6: "How to manage multi-currency spend in a Web3 company." Maintain 2/week cadence. The SEO compound effect starts showing around Week 8–12.</div>
+          <div><div class="task-time">~5h</div><div class="task-impact impact-low">Compound</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Reach out to 3 ecosystem partners for co-marketing</strong> — Cryptoworth (joint webinar on "crypto accounting + payment operations"), Avalanche (blog post on "paying on Avalanche with Request"), Anchor Labs (co-announce Porto Wallet integration). One email each with a clear proposal.</div>
+          <div><div class="task-time">~2h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="week-block" id="m2w2">
+    <div class="week-header" style="background:rgba(245,158,11,.04);">
+      <div class="week-num">Week 6 <span style="font-weight:400;color:var(--muted);font-size:13px;">— Outbound + SEO ramp</span></div>
+      <div class="week-theme">Targeted outreach + content velocity</div>
+    </div>
+    <div class="week-body">
+      <ul class="week-tasks">
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Build a targeted Lemlist campaign for gaming/iGaming</strong> — 50–80 contacts at crypto gaming, gambling, and prediction market companies. Message: "We help companies like TrustDice and Yeet manage crypto payroll for 50–100 contractors. Here's a 2-min demo." Use the use-case page as the landing page.</div>
+          <div><div class="task-time">~4h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Build a targeted Lemlist campaign for Web3 agencies</strong> — 50–80 contacts at crypto marketing, PR, and dev agencies. Message: "Managing invoices from 30+ freelancers in spreadsheets? Here's how Hype Partners and Green Quill Studios moved to Request."</div>
+          <div><div class="task-time">~4h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Publish 2 blog posts</strong> — Post 7: "Best crypto payroll software for Web3 companies (2026)." Post 8: "Crypto accounts payable: how to automate it." The "best" roundup is a high-value comparison piece — include Request prominently alongside 3–4 alternatives.</div>
+          <div><div class="task-time">~5h</div><div class="task-impact impact-low">Compound</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Claim and optimize G2, Capterra, Trustpilot profiles</strong> — Claim all three. Upload logo, description, screenshots. Email 10 happiest customers asking for a review. Even 5 reviews on G2 dramatically improves how you show up in "best software" searches.</div>
+          <div><div class="task-time">~3h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Publish SG Forge case study</strong> — If Jonathan approved the testimonial: write a 500-word case study. "How a Société Générale subsidiary uses Request Finance for stablecoin payments." Biggest trust signal you can have. Feature on homepage, comparison pages, and outbound emails.</div>
+          <div><div class="task-time">~3h</div><div class="task-impact impact-high">Critical</div></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="week-block" id="m2w3">
+    <div class="week-header" style="background:rgba(245,158,11,.04);">
+      <div class="week-num">Week 7 <span style="font-weight:400;color:var(--muted);font-size:13px;">— Paid experiments</span></div>
+      <div class="week-theme">Small-budget paid ads + retargeting</div>
+    </div>
+    <div class="week-body">
+      <ul class="week-tasks">
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Launch Google Ads on comparison keywords</strong> — "Ramp alternative crypto," "Dakota alternative," "crypto payroll software." Small budget: $50–75/day. Send traffic to your comparison pages. These keywords have high intent and conversion rate.</div>
+          <div><div class="task-time">~4h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Launch LinkedIn retargeting ads</strong> — Pixel on the website → retarget visitors who viewed pricing, GUSD, or comparison pages but didn't sign up. Ad: product video + "Start your free trial." Budget: $30–50/day. Cheapest way to recapture warm leads.</div>
+          <div><div class="task-time">~3h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Launch LinkedIn prospecting ads (Dubai + Singapore)</strong> — Target: Head of Finance, CFO, Treasury Manager at companies with 20–500 employees in crypto/blockchain industry. Dubai and Singapore only (highest concentration of leads from sales data). Budget: $40–60/day.</div>
+          <div><div class="task-time">~3h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Publish 2 blog posts</strong> — Post 9: "How DAOs manage their finances and payroll." Post 10: "DeFi treasury management for finance teams." Continue targeting the uncontested Web3 finance niche.</div>
+          <div><div class="task-time">~5h</div><div class="task-impact impact-low">Compound</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Run the first co-marketing webinar</strong> — With Cryptoworth or another confirmed partner. Topic: "Crypto payments + accounting: the complete 2026 stack." 30 min, 50–100 registrants target. Promote via both audiences. Convert registrants → trials.</div>
+          <div><div class="task-time">~5h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="week-block" id="m2w4">
+    <div class="week-header" style="background:rgba(245,158,11,.04);">
+      <div class="week-num">Week 8 <span style="font-weight:400;color:var(--muted);font-size:13px;">— Double down</span></div>
+      <div class="week-theme">Optimize winners + kill losers</div>
+    </div>
+    <div class="week-body">
+      <ul class="week-tasks">
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Month 2 review: analyze all channels</strong> — Which channel produced the most trials? Which produced the most paid conversions? What's the cost per paid user from ads vs. referrals vs. organic? Kill the bottom performer. Double the budget on the top performer.</div>
+          <div><div class="task-time">~3h</div><div class="task-impact impact-high">Critical</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Optimize comparison pages based on data</strong> — Check Google Search Console. Which comparison pages rank? Which get clicks? Add FAQ schema to the top performer. Expand the copy on any page ranking 4–10 (the "striking distance" zone where small improvements yield big rank jumps).</div>
+          <div><div class="task-time">~3h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Publish 2 blog posts</strong> — Post 11: "Request Finance vs Ramp: which is right for your company?" Post 12: "Corporate expense policy template for crypto companies." The template post serves as a lead magnet — offer a downloadable PDF in exchange for email.</div>
+          <div><div class="task-time">~5h</div><div class="task-impact impact-low">Compound</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Send referral program update to partners</strong> — Email all active referral partners with: how many clicks, how many signups, their commission status. Recognition drives action. Add a leaderboard if there are 5+ active partners.</div>
+          <div><div class="task-time">~1h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Publish a cross-border payments landing page</strong> — /cross-border-payments. For the Sua Música / US Media / Freelance LATAM segment. No "crypto" in the hero. Messaging: "Send money anywhere. 10× cheaper than your bank. Settle in hours, not days." CTA: Book a demo.</div>
+          <div><div class="task-time">~4h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+      </ul>
+      <div style="background:rgba(245,158,11,.06);border-radius:8px;padding:12px 14px;margin-top:14px;font-size:12px;color:#92400e;">
+        <strong>Month 2 outcome:</strong> Referral program live with 5–8 active partners. Paid ads running profitably (or killed and reallocated). 12 blog posts published. Outbound campaigns reaching 100–160 targeted prospects. Webinar drove 20–40 trial signups. Second wave of free-user conversions.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- MONTH 3 -->
+<!-- ═══════════════════════════════════════ -->
+
+<section class="section" style="background:#f0fdf4;border-bottom:none;padding-bottom:12px;" id="m3">
+  <div style="display:flex;align-items:center;gap:16px;margin-bottom:8px;">
+    <div class="month-tab m3">Month 3</div>
+    <div>
+      <div style="font-family:var(--font-head);font-size:26px;font-weight:700;color:var(--ink);">Scale What Works</div>
+      <div style="font-size:13px;color:var(--muted);">Geographic expansion · Authority content · Conversion optimization · Close the gap</div>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--muted);max-width:600px;">Month 3 is about compounding. The SEO content from Month 1 starts ranking. Referral partners are producing. Ads are optimized. Now you push harder on what's working and close the gap to 2×.</p>
+</section>
+
+<section class="section" style="padding-top:24px;" id="m3w1">
+  <div class="week-block">
+    <div class="week-header" style="background:rgba(34,197,94,.04);">
+      <div class="week-num">Week 9 <span style="font-weight:400;color:var(--muted);font-size:13px;">— Geographic push</span></div>
+      <div class="week-theme">LATAM + Dubai targeting</div>
+    </div>
+    <div class="week-body">
+      <ul class="week-tasks">
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Ship a Portuguese landing page</strong> — /pt or /br. Translate the cross-border payments page + GUSD page. Core message: "Envie pagamentos internacionais por uma fração do custo bancário." Targets Brazil (9% PayPal fees), Venezuela, Colombia. AI-translate, native speaker reviews.</div>
+          <div><div class="task-time">~5h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Launch a Dubai/UAE LinkedIn campaign</strong> — Dedicated ad set targeting CFOs and finance managers in Dubai. Feature the GUSD account + Cards (if live). Budget: increase Dubai allocation based on Month 2 data. This is the highest-concentration market from sales data.</div>
+          <div><div class="task-time">~3h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Publish 2 blog posts</strong> — Post 13: "How to reduce cross-border payment costs from Brazil by 90%." Post 14: "Why Dubai businesses are switching to stablecoin payments." Both speak directly to the geographic segments showing up in sales calls.</div>
+          <div><div class="task-time">~5h</div><div class="task-impact impact-low">Compound</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Send outbound campaign to LATAM clearing houses and agencies</strong> — 30–50 contacts at companies similar to US Media and Freelance LATAM. Message: cross-border pain → GUSD solution. Use Portuguese for Brazilian targets.</div>
+          <div><div class="task-time">~3h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="week-block" id="m3w2">
+    <div class="week-header" style="background:rgba(34,197,94,.04);">
+      <div class="week-num">Week 10 <span style="font-weight:400;color:var(--muted);font-size:13px;">— Authority play</span></div>
+      <div class="week-theme">Original data + PR + thought leadership</div>
+    </div>
+    <div class="week-body">
+      <ul class="week-tasks">
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Publish a "State of Crypto Payments" mini-report</strong> — 4–6 pages. Use anonymized platform data: average payment size, top currencies, top corridors, stablecoin adoption trends, % of payments that are C2F vs C2C. Original data earns backlinks, press mentions, and authority. This is the SEO strategy's "original research" bet, executed lean.</div>
+          <div><div class="task-time">~8h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Pitch the report to 5 crypto publications</strong> — The Block, Decrypt, Fintech Futures, Bankless, Sifted. Email: "We have original data on B2B stablecoin payment adoption. Here are the 3 key findings. Want exclusive access?" One placement = 10+ backlinks over time.</div>
+          <div><div class="task-time">~2h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Publish 2 blog posts</strong> — Post 15: "The modern CFO's guide to crypto financial operations." Post 16: "How to present a spend management business case to the board." These target the CFO/finance leader persona — decision makers who close deals.</div>
+          <div><div class="task-time">~5h</div><div class="task-impact impact-low">Compound</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Run second co-marketing event</strong> — With Avalanche, Ledger Multisig, or Borderless. Topic based on which partner confirmed. Target 50–100 registrants. Convert to trials. This is your second webinar — the first one taught you what works.</div>
+          <div><div class="task-time">~5h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="week-block" id="m3w3">
+    <div class="week-header" style="background:rgba(34,197,94,.04);">
+      <div class="week-num">Week 11 <span style="font-weight:400;color:var(--muted);font-size:13px;">— Optimize & close</span></div>
+      <div class="week-theme">Conversion optimization + pipeline acceleration</div>
+    </div>
+    <div class="week-body">
+      <ul class="week-tasks">
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Optimize the 5 highest-traffic pages</strong> — Check GA4. Find the pages with the most traffic but lowest conversion rate. A/B test headlines, CTAs, and social proof. Even a 0.5% conversion rate improvement on a high-traffic page = multiple new paid users.</div>
+          <div><div class="task-time">~4h</div><div class="task-impact impact-high">Critical</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Re-engage all stalled trials</strong> — Pull a list of everyone who started a trial in the last 60 days but didn't convert. Send a personalized email: "We noticed you tried [feature]. Here's what most teams do next." Include a 15% discount with a 7-day expiration. This is the final push.</div>
+          <div><div class="task-time">~3h</div><div class="task-impact impact-high">Critical</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Publish 2 blog posts</strong> — Post 17: "Accounting for stablecoin transactions: tax and compliance." Post 18: "5 signs your company has outgrown your current AP process." Both support the bottom-funnel content pillars.</div>
+          <div><div class="task-time">~5h</div><div class="task-impact impact-low">Compound</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Create a "Why teams switch to Request" page</strong> — Aggregate all the switching reasons from sales calls: "manual spreadsheets," "no approval workflows," "fees too high on current tool," "need crypto + fiat in one place." Social proof from testimonials. Powerful bottom-funnel asset.</div>
+          <div><div class="task-time">~4h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="week-block" id="m3w4">
+    <div class="week-header" style="background:rgba(34,197,94,.04);">
+      <div class="week-num">Week 12 <span style="font-weight:400;color:var(--muted);font-size:13px;">— Compound & plan</span></div>
+      <div class="week-theme">Final push + Q3 planning</div>
+    </div>
+    <div class="week-body">
+      <ul class="week-tasks">
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Final conversion push</strong> — Email all active trials, all cards waitlist subscribers, all webinar registrants, all Club members who haven't converted. "Last chance: 20% off annual plans this quarter." Single-send, high-urgency. This is your close-the-quarter moment.</div>
+          <div><div class="task-time">~3h</div><div class="task-impact impact-high">Critical</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Publish final 2 blog posts for the quarter</strong> — Post 19: "Request Finance vs Slash: detailed comparison." Post 20: "How to build a finance tech stack for your scale-up." 20 posts in 12 weeks = a real content library.</div>
+          <div><div class="task-time">~5h</div><div class="task-impact impact-low">Compound</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Full quarter review</strong> — What worked, what didn't, what to 2× next quarter. Document: cost per paid user by channel, conversion rates by page, referral partner performance, SEO keyword rankings, total paid users vs. target. This becomes the board/team report.</div>
+          <div><div class="task-time">~4h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+        <li>
+          <div class="task-check"></div>
+          <div class="task-content"><strong>Plan Q3: hire or automate</strong> — Based on what worked, decide: should you hire a content writer? A paid ads specialist? An SDR? Or can you automate more (better email sequences, AI-generated content pipeline)? Make the case with data from this quarter.</div>
+          <div><div class="task-time">~3h</div><div class="task-impact impact-med">High</div></div>
+        </li>
+      </ul>
+      <div style="background:rgba(34,197,94,.06);border-radius:8px;padding:12px 14px;margin-top:14px;font-size:12px;color:#15803d;">
+        <strong>Month 3 outcome:</strong> 20 blog posts published. 10+ landing pages live. Referral program producing steady leads. Paid ads optimized. Geographic expansion started. Portuguese page capturing LATAM demand. Original research earning backlinks. The compound machine is running.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KPIs -->
+<section class="section section-alt" id="kpis">
+  <div class="section-label">Weekly scorecard</div>
+  <h2>5 metrics every Monday</h2>
+  <p class="section-intro">Track these in a single Google Sheet. 15 minutes every Monday morning. Everything else is noise.</p>
+
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>Where to find it</th><th>Month 1 target</th><th>Month 2 target</th><th>Month 3 target</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-kw">New trial signups / week</td>
+        <td style="font-size:12px;">CRM or internal dashboard</td>
+        <td><span class="badge badge-red">+20% vs baseline</span></td>
+        <td><span class="badge badge-amber">+50% vs baseline</span></td>
+        <td><span class="badge badge-green">+100% vs baseline</span></td>
+      </tr>
+      <tr>
+        <td class="td-kw">Trial → Paid conversion rate</td>
+        <td style="font-size:12px;">CRM: trials started vs. plans purchased</td>
+        <td><span class="badge badge-red">+3–5 pp</span></td>
+        <td><span class="badge badge-amber">+5–8 pp</span></td>
+        <td><span class="badge badge-green">+8–12 pp</span></td>
+      </tr>
+      <tr>
+        <td class="td-kw">Organic sessions / week</td>
+        <td style="font-size:12px;">GA4 acquisition report</td>
+        <td><span class="badge badge-red">Baseline</span></td>
+        <td><span class="badge badge-amber">+30%</span></td>
+        <td><span class="badge badge-green">+60%</span></td>
+      </tr>
+      <tr>
+        <td class="td-kw">Demo bookings / week</td>
+        <td style="font-size:12px;">Calendly or booking tool</td>
+        <td><span class="badge badge-red">+25%</span></td>
+        <td><span class="badge badge-amber">+50%</span></td>
+        <td><span class="badge badge-green">+100%</span></td>
+      </tr>
+      <tr>
+        <td class="td-kw">Total paid users (cumulative)</td>
+        <td style="font-size:12px;">Billing system</td>
+        <td><span class="badge badge-red">+15–20%</span></td>
+        <td><span class="badge badge-amber">+50–60%</span></td>
+        <td><span class="badge badge-green">+100% (2×)</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-icon">📊</div>
+    <div class="callout-text"><strong>The compounding math:</strong> If Month 1 adds 15–20% via free-user activation and better conversion, Month 2 adds 30–40% via referrals + ads + content, and Month 3 adds another 30–40% via geographic expansion + optimization + the SEO content now ranking — the cumulative effect crosses 2×. It's not one magic bullet. It's seven levers all pulling at once.</div>
+  </div>
+</section>
+
+<!-- TOOL STACK -->
+<section class="section" id="stack">
+  <div class="section-label">Tool stack</div>
+  <h2>Your marketing stack (minimal)</h2>
+  <p class="section-intro">Only tools you need for this plan. Nothing else. If a tool doesn't directly help you execute one of the 12 weeks, don't buy it.</p>
+
+  <div class="grid-4">
+    <div class="card-surface" style="text-align:center;padding:18px 14px;">
+      <div style="font-size:22px;margin-bottom:8px;">✍️</div>
+      <div style="font-weight:600;font-size:13px;">Claude / ChatGPT</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;">First drafts of all content, emails, landing pages, social posts</div>
+    </div>
+    <div class="card-surface" style="text-align:center;padding:18px 14px;">
+      <div style="font-size:22px;margin-bottom:8px;">📧</div>
+      <div style="font-weight:600;font-size:13px;">Customer.io / Loops</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;">Trial emails, activation campaigns, nurture sequences</div>
+    </div>
+    <div class="card-surface" style="text-align:center;padding:18px 14px;">
+      <div style="font-size:22px;margin-bottom:8px;">📊</div>
+      <div style="font-weight:600;font-size:13px;">GA4 + Search Console</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;">Traffic, conversion tracking, SEO ranking data</div>
+    </div>
+    <div class="card-surface" style="text-align:center;padding:18px 14px;">
+      <div style="font-size:22px;margin-bottom:8px;">🎯</div>
+      <div style="font-weight:600;font-size:13px;">LinkedIn Ads + Google Ads</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;">Retargeting + comparison keyword ads + geo targeting</div>
+    </div>
+    <div class="card-surface" style="text-align:center;padding:18px 14px;">
+      <div style="font-size:22px;margin-bottom:8px;">📹</div>
+      <div style="font-weight:600;font-size:13px;">Loom</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;">Product walkthroughs, demo videos, async sales enablement</div>
+    </div>
+    <div class="card-surface" style="text-align:center;padding:18px 14px;">
+      <div style="font-size:22px;margin-bottom:8px;">🔍</div>
+      <div style="font-weight:600;font-size:13px;">Ahrefs (lite)</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;">Keyword tracking, competitor monitoring, backlink alerts</div>
+    </div>
+    <div class="card-surface" style="text-align:center;padding:18px 14px;">
+      <div style="font-size:22px;margin-bottom:8px;">🤝</div>
+      <div style="font-weight:600;font-size:13px;">FirstPromoter</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;">Referral tracking, partner commissions, link management</div>
+    </div>
+    <div class="card-surface" style="text-align:center;padding:18px 14px;">
+      <div style="font-size:22px;margin-bottom:8px;">📨</div>
+      <div style="font-weight:600;font-size:13px;">Lemlist</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;">Outbound campaigns for gaming, agency, and LATAM segments</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <h3>Weekly time allocation</h3>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">How to split ~45 hours/week across the key activities. Adjust as you learn what works.</p>
+  <div style="max-width:600px;">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:130px;text-align:right;font-size:13px;font-weight:500;">Content creation</div><div style="flex:1;height:22px;background:var(--surface-2);border-radius:6px;overflow:hidden;"><div style="width:33%;height:100%;background:var(--rf-blue);border-radius:6px;display:flex;align-items:center;padding-left:8px;font-size:10px;color:white;font-weight:600;">~15h</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:130px;text-align:right;font-size:13px;font-weight:500;">Landing pages</div><div style="flex:1;height:22px;background:var(--surface-2);border-radius:6px;overflow:hidden;"><div style="width:22%;height:100%;background:#0891b2;border-radius:6px;display:flex;align-items:center;padding-left:8px;font-size:10px;color:white;font-weight:600;">~10h</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:130px;text-align:right;font-size:13px;font-weight:500;">Email / automation</div><div style="flex:1;height:22px;background:var(--surface-2);border-radius:6px;overflow:hidden;"><div style="width:16%;height:100%;background:var(--amber);border-radius:6px;display:flex;align-items:center;padding-left:8px;font-size:10px;color:white;font-weight:600;">~7h</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:130px;text-align:right;font-size:13px;font-weight:500;">Ads management</div><div style="flex:1;height:22px;background:var(--surface-2);border-radius:6px;overflow:hidden;"><div style="width:11%;height:100%;background:var(--purple);border-radius:6px;display:flex;align-items:center;padding-left:8px;font-size:10px;color:white;font-weight:600;">~5h</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:130px;text-align:right;font-size:13px;font-weight:500;">Outreach / partners</div><div style="flex:1;height:22px;background:var(--surface-2);border-radius:6px;overflow:hidden;"><div style="width:9%;height:100%;background:var(--green);border-radius:6px;display:flex;align-items:center;padding-left:8px;font-size:10px;color:white;font-weight:600;">~4h</div></div></div>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;"><div style="width:130px;text-align:right;font-size:13px;font-weight:500;">Analytics / review</div><div style="flex:1;height:22px;background:var(--surface-2);border-radius:6px;overflow:hidden;"><div style="width:9%;height:100%;background:var(--muted);border-radius:6px;display:flex;align-items:center;padding-left:8px;font-size:10px;color:white;font-weight:600;">~4h</div></div></div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="highlight-box" style="margin-top:24px;">
+    <strong>The bottom line:</strong> This plan produces 20 blog posts, 10+ landing pages, 3 comparison pages, a referral program, 2 co-marketing webinars, 2 outbound campaigns, paid ads on 2 platforms, a Portuguese page, a mini-research report, 2 email automation sequences, and a full free-user activation campaign — all in 12 weeks, by one person. It's aggressive but achievable if you use AI for first drafts, ship fast, and never waste a week on something that doesn't directly produce a paid user. Start Monday.
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--ink);padding:36px 60px;color:rgba(255,255,255,.35);font-size:11.5px;font-family:var(--font-mono);">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <div style="color:var(--white);font-weight:600;margin-bottom:3px;">Request Finance — 3-Month CMO Roadmap</div>
+      <div>Confidential. April–June 2026. Solo marketer execution plan.</div>
+    </div>
+    <div style="text-align:right;">
+      <div>requestfinance.com</div>
+      <div style="margin-top:2px;">12 weeks · 7 levers · 1 person · 2× target</div>
+    </div>
+  </div>
+</footer>
+
+</main>
+</body>
+</html>

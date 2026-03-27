@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Referral Growth Masterplan v2 — Request Finance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue: #2b6ff4;
+  --sky: #60d5ff;
+  --light: #dbeafe;
+  --cream: #fff1be;
+  --muted-blue: #60a5fa;
+  --ink: #0a0f1e;
+  --ink-2: #131929;
+  --ink-3: #1e2a40;
+  --body: #2e3d55;
+  --muted: #64748b;
+  --muted-2: #94a3b8;
+  --border: #e2e8f0;
+  --border-2: #cbd5e1;
+  --surface: #f6f9ff;
+  --surface-2: #eef2fb;
+  --white: #ffffff;
+  --green: #10b981;
+  --green-light: #d1fae5;
+  --amber: #f59e0b;
+  --amber-light: #fef3c7;
+  --red: #ef4444;
+  --red-light: #fee2e2;
+  --purple: #8b5cf6;
+  --purple-light: #ede9fe;
+  --teal: #0d9488;
+  --teal-light: #ccfbf1;
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --sidebar: 248px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--white);color:var(--body);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+/* SIDEBAR */
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:var(--sidebar);background:var(--ink);display:flex;flex-direction:column;z-index:100;overflow-y:auto;padding-bottom:40px;}
+.sidebar::-webkit-scrollbar{width:3px;}
+.sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:4px;}
+.sidebar-brand{padding:28px 24px 22px;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:14px;}
+.sidebar-brand-name{font-family:var(--font-head);font-size:12px;font-weight:700;color:var(--white);letter-spacing:.06em;text-transform:uppercase;}
+.sidebar-brand-ver{font-family:var(--font-mono);font-size:10px;color:var(--sky);margin-top:2px;opacity:.7;}
+.sidebar-brand-doc{font-family:var(--font-mono);font-size:10px;color:rgba(255,255,255,.3);margin-top:2px;}
+.nav-group{padding:0 16px 4px;font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:3px;margin-top:14px;}
+.nav-link{display:flex;align-items:center;gap:9px;padding:6px 16px;text-decoration:none;font-size:12.5px;color:rgba(255,255,255,.48);transition:all .15s;border-left:2px solid transparent;font-family:var(--font-body);line-height:1.4;}
+.nav-link:hover{color:rgba(255,255,255,.9);background:rgba(255,255,255,.04);}
+.nav-link.active{color:var(--sky);border-left-color:var(--sky);background:rgba(96,213,255,.05);}
+.nav-link.new-section{color:rgba(255,200,60,.7);}
+.nav-link.new-section.active{color:#fcd34d;border-left-color:#fcd34d;background:rgba(252,211,77,.05);}
+.nav-dot{width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.5;flex-shrink:0;}
+.nav-new{font-size:9px;font-weight:700;background:rgba(252,211,77,.2);color:#fcd34d;padding:1px 5px;border-radius:3px;font-family:var(--font-mono);letter-spacing:.04em;margin-left:auto;}
+
+/* MAIN */
+.main{margin-left:var(--sidebar);}
+
+/* HERO */
+.hero{background:var(--ink);padding:80px 72px 72px;position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06);}
+.hero-glow-1{position:absolute;top:-100px;right:-60px;width:500px;height:500px;background:radial-gradient(circle,rgba(43,111,244,.2) 0%,transparent 70%);pointer-events:none;}
+.hero-glow-2{position:absolute;bottom:-80px;left:240px;width:400px;height:400px;background:radial-gradient(circle,rgba(96,213,255,.1) 0%,transparent 70%);pointer-events:none;}
+.hero-glow-3{position:absolute;top:40px;left:60px;width:300px;height:300px;background:radial-gradient(circle,rgba(252,211,77,.04) 0%,transparent 70%);pointer-events:none;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(43,111,244,.18);border:1px solid rgba(43,111,244,.35);color:var(--sky);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:10px;font-family:var(--font-mono);}
+.hero-tag-new{display:inline-flex;align-items:center;gap:8px;background:rgba(252,211,77,.12);border:1px solid rgba(252,211,77,.3);color:#fcd34d;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:28px;font-family:var(--font-mono);margin-left:10px;}
+.hero h1{font-family:var(--font-head);font-size:54px;font-weight:800;color:var(--white);line-height:1.05;letter-spacing:-.025em;max-width:700px;margin-bottom:22px;}
+.hero h1 em{color:var(--sky);font-style:normal;}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.5);max-width:580px;line-height:1.7;margin-bottom:48px;}
+.hero-stats{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.07);padding-top:36px;}
+.hero-stat{flex:1;padding-right:32px;border-right:1px solid rgba(255,255,255,.07);margin-right:32px;}
+.hero-stat:last-child{border-right:none;margin-right:0;}
+.hero-stat-val{font-family:var(--font-head);font-size:30px;font-weight:700;color:var(--white);line-height:1;}
+.hero-stat-val.accent{color:var(--sky);}
+.hero-stat-val.gold{color:#fcd34d;}
+.hero-stat-lbl{font-size:11px;color:rgba(255,255,255,.35);margin-top:4px;font-family:var(--font-mono);}
+
+/* SECTIONS */
+.section{padding:72px 72px;border-bottom:1px solid var(--border);}
+.section-alt{background:var(--surface);}
+.section-discovery{background:linear-gradient(180deg,#fffbeb 0%,#fefce8 100%);border-bottom:1px solid #fde68a;}
+.section-label{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:11px;color:var(--blue);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;font-weight:500;}
+.section-label::before{content:'';display:inline-block;width:14px;height:2px;background:var(--blue);border-radius:2px;}
+.section-label.gold-label{color:#b45309;}
+.section-label.gold-label::before{background:#b45309;}
+h2{font-family:var(--font-head);font-size:36px;font-weight:700;letter-spacing:-.02em;color:var(--ink);margin-bottom:8px;line-height:1.12;}
+h2.gold{color:#78350f;}
+.section-intro{font-size:15px;color:var(--muted);max-width:640px;margin-bottom:44px;line-height:1.75;}
+.section-intro.gold-text{color:#92400e;}
+h3{font-family:var(--font-head);font-size:20px;font-weight:600;color:var(--ink);margin-bottom:14px;letter-spacing:-.01em;}
+h4{font-family:var(--font-head);font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px;}
+p{margin-bottom:14px;color:var(--body);line-height:1.8;}
+p:last-child{margin-bottom:0;}
+ul,ol{padding-left:20px;margin-bottom:14px;}
+li{color:var(--body);line-height:1.85;margin-bottom:3px;}
+strong{font-weight:600;color:var(--ink);}
+
+/* GRIDS */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+
+/* CARDS */
+.card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:26px;}
+.card-surface{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;}
+.card-amber{background:#fffbeb;border:1px solid #fde68a;border-radius:14px;padding:26px;}
+.card-blue{background:#eff6ff;border:1px solid #bfdbfe;border-radius:14px;padding:26px;}
+.card-teal{background:#f0fdfa;border:1px solid #99f6e4;border-radius:14px;padding:26px;}
+.card-dark{background:var(--ink-3);border-radius:14px;padding:26px;}
+
+/* BADGES */
+.badge{display:inline-flex;align-items:center;font-size:10px;font-weight:600;padding:3px 9px;border-radius:5px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.04em;gap:4px;}
+.badge-blue{background:var(--light);color:#1d4ed8;}
+.badge-sky{background:rgba(96,213,255,.15);color:#0369a1;}
+.badge-green{background:var(--green-light);color:#065f46;}
+.badge-amber{background:var(--amber-light);color:#92400e;}
+.badge-red{background:var(--red-light);color:#991b1b;}
+.badge-purple{background:var(--purple-light);color:#5b21b6;}
+.badge-teal{background:var(--teal-light);color:#0f766e;}
+.badge-gold{background:#fef3c7;color:#78350f;}
+.badge-dark{background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);}
+
+/* PARTNER TYPE CARDS */
+.partner-card{border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--white);transition:transform .2s,box-shadow .2s;}
+.partner-card:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(43,111,244,.08);}
+.partner-card-header{padding:22px 24px 18px;border-bottom:1px solid var(--border);}
+.partner-card-body{padding:22px 24px;}
+.partner-card-num{font-family:var(--font-mono);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.5;margin-bottom:6px;}
+
+/* BLOCKQUOTE */
+.blockquote{border-left:3px solid var(--blue);padding:14px 18px;background:var(--surface);border-radius:0 10px 10px 0;margin:16px 0;font-size:13.5px;font-style:italic;color:var(--body);line-height:1.7;}
+.blockquote-source{font-style:normal;font-size:11px;color:var(--muted);margin-top:6px;font-family:var(--font-mono);}
+
+/* TIMELINE */
+.roadmap{position:relative;padding-left:40px;}
+.roadmap::before{content:'';position:absolute;left:15px;top:16px;bottom:16px;width:1px;background:var(--border-2);}
+.roadmap-item{position:relative;margin-bottom:36px;}
+.roadmap-item:last-child{margin-bottom:0;}
+.roadmap-dot{position:absolute;left:-40px;top:16px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-family:var(--font-mono);z-index:1;}
+.roadmap-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:26px;transition:border-color .2s,box-shadow .2s;}
+.roadmap-card:hover{border-color:var(--blue);box-shadow:0 0 0 3px rgba(43,111,244,.08);}
+.roadmap-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:18px;gap:12px;}
+.roadmap-period{font-family:var(--font-mono);font-size:11px;font-weight:500;color:var(--blue);background:var(--light);padding:3px 10px;border-radius:20px;white-space:nowrap;}
+.roadmap-metric{background:var(--surface);border-radius:8px;padding:12px 16px;margin-top:14px;font-size:13px;}
+
+/* TABLE */
+.tier-table{width:100%;border-collapse:collapse;font-size:13px;}
+.tier-table thead th{text-align:left;padding:10px 14px;background:var(--ink);color:rgba(255,255,255,.65);font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;}
+.tier-table thead th:first-child{border-radius:8px 0 0 0;}
+.tier-table thead th:last-child{border-radius:0 8px 0 0;}
+.tier-table tbody tr{border-bottom:1px solid var(--border);}
+.tier-table tbody tr:hover{background:var(--surface);}
+.tier-table tbody td{padding:12px 14px;vertical-align:middle;}
+.tier-table .td-name{font-weight:600;color:var(--ink);}
+.tier-table .td-rate{font-weight:700;color:var(--blue);font-family:var(--font-mono);font-size:14px;}
+
+/* KPI */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;}
+.kpi-card{background:var(--surface);border-radius:12px;padding:18px 20px;border-left:3px solid var(--blue);}
+.kpi-val{font-family:var(--font-head);font-size:26px;font-weight:700;color:var(--ink);line-height:1;}
+.kpi-lbl{font-size:11px;color:var(--muted);margin-top:4px;font-family:var(--font-mono);}
+
+/* CHECKLIST */
+.checklist{list-style:none;padding:0;}
+.checklist li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.checklist li:last-child{border-bottom:none;}
+.check-icon{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0;margin-top:1px;}
+
+/* HIGHLIGHT */
+.highlight{background:linear-gradient(135deg,rgba(43,111,244,.06),rgba(96,213,255,.06));border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:18px 22px;margin:20px 0;font-size:14px;color:var(--ink-3);font-style:italic;line-height:1.75;}
+.highlight-gold{background:linear-gradient(135deg,rgba(245,158,11,.08),rgba(252,211,77,.06));border-left:3px solid #f59e0b;border-radius:0 10px 10px 0;padding:18px 22px;margin:20px 0;font-size:14px;color:#78350f;font-style:italic;line-height:1.75;}
+.callout{display:flex;gap:14px;align-items:flex-start;background:var(--light);border-radius:12px;padding:16px 18px;margin:16px 0;}
+.callout-gold{display:flex;gap:14px;align-items:flex-start;background:#fef3c7;border-radius:12px;padding:16px 18px;margin:16px 0;}
+.callout-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.callout-text{font-size:13px;color:#1d4ed8;line-height:1.65;}
+.callout-text-gold{font-size:13px;color:#92400e;line-height:1.65;}
+
+/* PIPELINE MATH */
+.math-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);font-size:14px;}
+.math-row:last-child{border-bottom:none;}
+.math-label{flex:1;color:var(--body);}
+.math-val{font-family:var(--font-mono);font-weight:600;font-size:15px;color:var(--ink);min-width:80px;text-align:right;}
+.math-op{color:var(--muted-2);font-family:var(--font-mono);font-size:18px;min-width:20px;text-align:center;}
+.math-total{background:var(--blue);border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;margin-top:10px;}
+
+/* WEEK GRID */
+.week-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.week-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.week-num{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;}
+.week-title{font-weight:600;font-size:13px;color:var(--ink);margin-bottom:6px;}
+.week-items{font-size:12px;color:var(--body);line-height:1.7;}
+
+/* DISCOVERY SPECIFIC */
+.hunt-card{background:var(--white);border:1px solid #fde68a;border-radius:14px;padding:24px;transition:transform .2s,box-shadow .2s;}
+.hunt-card:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(245,158,11,.12);}
+.hunt-card-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.hunt-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.hunt-card h4{margin-bottom:2px;font-size:15px;}
+.hunt-card .sub{font-size:12px;color:var(--muted);font-family:var(--font-mono);}
+
+.prospect-row{display:grid;grid-template-columns:2fr 1.5fr 1fr 1fr;gap:12px;align-items:start;padding:14px 0;border-bottom:1px solid var(--border);}
+.prospect-row:last-child{border-bottom:none;}
+.prospect-row-header{display:grid;grid-template-columns:2fr 1.5fr 1fr 1fr;gap:12px;padding:8px 0 10px;border-bottom:2px solid var(--border-2);}
+.prospect-row-header div{font-family:var(--font-mono);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);}
+
+.signal-bar{height:6px;background:var(--border);border-radius:3px;margin-top:4px;}
+.signal-fill{height:6px;border-radius:3px;}
+
+.outreach-card{background:var(--white);border:1px solid #fde68a;border-radius:12px;padding:20px 22px;margin-bottom:12px;}
+.outreach-card-title{font-weight:600;font-size:14px;color:#78350f;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+
+/* DIVIDER */
+.divider{border:none;border-top:1px solid var(--border);margin:32px 0;}
+.divider-gold{border:none;border-top:1px solid #fde68a;margin:32px 0;}
+
+/* SCORING */
+.score-badge{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;font-weight:700;font-size:13px;font-family:var(--font-mono);flex-shrink:0;}
+
+/* FOOTER */
+.footer{background:var(--ink);padding:40px 72px;color:rgba(255,255,255,.35);font-size:11px;font-family:var(--font-mono);display:flex;justify-content:space-between;align-items:center;}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="sidebar-brand">
+    <div class="sidebar-brand-name">Request Finance</div>
+    <div class="sidebar-brand-ver">v2 — Updated</div>
+    <div class="sidebar-brand-doc">Referral Growth Masterplan</div>
+  </div>
+
+  <div class="nav-group">Context</div>
+  <a href="#opportunity" class="nav-link active"><span class="nav-dot"></span>The opportunity</a>
+  <a href="#data" class="nav-link"><span class="nav-dot"></span>Data from the field</a>
+  <a href="#archetypes" class="nav-link"><span class="nav-dot"></span>Partner archetypes</a>
+
+  <div class="nav-group">Strategy</div>
+  <a href="#program" class="nav-link"><span class="nav-dot"></span>Program architecture</a>
+  <a href="#commissions" class="nav-link"><span class="nav-dot"></span>Commission structure</a>
+  <a href="#enablement" class="nav-link"><span class="nav-dot"></span>Enablement kit</a>
+  <a href="#messaging" class="nav-link"><span class="nav-dot"></span>Partner messaging</a>
+
+  <div class="nav-group">New — Partner Discovery</div>
+  <a href="#discovery-why" class="nav-link new-section"><span class="nav-dot"></span>Why prospect new partners <span class="nav-new">NEW</span></a>
+  <a href="#discovery-where" class="nav-link new-section"><span class="nav-dot"></span>Where to find them <span class="nav-new">NEW</span></a>
+  <a href="#discovery-profiles" class="nav-link new-section"><span class="nav-dot"></span>Ideal partner profiles <span class="nav-new">NEW</span></a>
+  <a href="#discovery-100" class="nav-link new-section"><span class="nav-dot"></span>The 100 partners list <span class="nav-new">NEW</span></a>
+  <a href="#discovery-outreach" class="nav-link new-section"><span class="nav-dot"></span>Cold outreach playbook <span class="nav-new">NEW</span></a>
+  <a href="#discovery-qualify" class="nav-link new-section"><span class="nav-dot"></span>Qualify & score <span class="nav-new">NEW</span></a>
+
+  <div class="nav-group">Execution</div>
+  <a href="#roadmap" class="nav-link"><span class="nav-dot"></span>12-week roadmap</a>
+  <a href="#priority" class="nav-link"><span class="nav-dot"></span>Priority partner list</a>
+  <a href="#pipeline" class="nav-link"><span class="nav-dot"></span>Path to 400 customers</a>
+  <a href="#kpis" class="nav-link"><span class="nav-dot"></span>KPIs & measurement</a>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-glow-1"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-glow-3"></div>
+  <div style="display:flex;align-items:center;flex-wrap:wrap;gap:0;">
+    <div class="hero-tag">Confidential · CMO Master File · March 2026</div>
+    <div class="hero-tag-new">v2 — Now includes cold partner discovery</div>
+  </div>
+  <h1>Referral-Led Growth<br><em>Masterplan</em></h1>
+  <p class="hero-sub">The complete strategy to build, launch, and scale a partner referral program — from activating the 15 warm partners already in your pipeline, to prospecting and closing 100 brand new partner relationships from scratch.</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-val accent">15</div>
+      <div class="hero-stat-lbl">Warm partners in pipeline</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val gold">100+</div>
+      <div class="hero-stat-lbl">New partners to prospect cold</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val accent">3</div>
+      <div class="hero-stat-lbl">Partner archetypes</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val accent">400</div>
+      <div class="hero-stat-lbl">Target paid customers (from 200)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ① OPPORTUNITY -->
+<section class="section" id="opportunity">
+  <div class="section-label">01 — The opportunity</div>
+  <h2>You're already getting referrals.<br>You're just not capturing them.</h2>
+  <p class="section-intro">The most important finding from four months of sales data is that a referral channel exists and is functioning — completely without a program, incentives, or infrastructure. Building one won't create new behaviour. It will 10× behaviour that's already happening.</p>
+  <div class="grid-2" style="margin-bottom:32px;">
+    <div class="card">
+      <h4>What's happening right now</h4>
+      <p style="font-size:13px;">Regen Financial has already sent SquidRouter and is actively trying to onboard Bankless — with zero formal agreement. Withum told clients about RF after a single demo. Propeller Industries, with 40 clients including Solana and Gitcoin, discussed a referral agreement and left without one. Anchor Labs asked for a referral program and got a conversation instead of a contract. Every week this gap exists, you leave warm introductions on the table.</p>
+    </div>
+    <div class="card">
+      <h4>Why this channel will outperform all others</h4>
+      <p style="font-size:13px;">A fractional CFO firm that advises 20 web3 companies is not a lead — it is a distribution channel. When they recommend a tool, their clients adopt it without a sales cycle. The trust is pre-built. Referral-sourced deals close faster, churn less, and require zero paid media. For a B2B fintech in a trust-sensitive niche, this is the most efficient acquisition channel available.</p>
+    </div>
+  </div>
+  <div class="highlight">"The fastest path to 400 paid customers is not a bigger ad budget — it is formalising the referral network that is already warming up to you, and simultaneously building a systematic machine to find and sign 100 new partners that don't know you exist yet."</div>
+  <div class="grid-3" style="margin-top:32px;">
+    <div class="card-surface">
+      <div class="badge badge-green" style="margin-bottom:10px;">Already referring</div>
+      <h4>Regen Financial</h4>
+      <p style="font-size:13px;">Sent SquidRouter. Has Bankless ready. No agreement signed. Every week without a program is another week Bankless doesn't convert.</p>
+    </div>
+    <div class="card-surface">
+      <div class="badge badge-amber" style="margin-bottom:10px;">Agreement discussed</div>
+      <h4>Propeller Industries</h4>
+      <p style="font-size:13px;">40 clients including Solana, a16z, Gitcoin. Discussed referral agreement in Dec 2025. No contract sent. One signed agreement here could produce 5–10 new clients in Q2.</p>
+    </div>
+    <div class="card-surface">
+      <div class="badge badge-blue" style="margin-bottom:10px;">DocuSign pending</div>
+      <h4>Aarna.ai</h4>
+      <p style="font-size:13px;">Treasury management SaaS, dozens of crypto company clients. Proposed 15% revenue share. DocuSign being prepared as of March 2026. Use this as the template for all others.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ② DATA FROM FIELD -->
+<section class="section section-alt" id="data">
+  <div class="section-label">02 — Data from the field</div>
+  <h2>Every referral signal from<br>4 months of meetings</h2>
+  <p class="section-intro">These are the exact quotes and meeting notes that evidence the partner opportunity. This is your proof of concept — not a hypothesis.</p>
+  <div class="grid-2" style="gap:16px;">
+    <div class="card">
+      <div style="margin-bottom:14px;"><span class="badge badge-green">Already referring · no agreement</span></div>
+      <h4 style="margin-bottom:4px;">Regen Financial</h4>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:10px;">Outsourced CFO-as-a-service · Nov 19, 2025</p>
+      <div class="blockquote">"Already recommended us to several projects like SquidRouter — has a client which is Bankless and would like to onboard."<div class="blockquote-source">Rep: Thomas</div></div>
+      <p style="font-size:13px;"><strong>Status: trial account created, no partner agreement.</strong></p>
+    </div>
+    <div class="card">
+      <div style="margin-bottom:14px;"><span class="badge badge-amber">Agreement discussed · not signed</span></div>
+      <h4 style="margin-bottom:4px;">Propeller Industries</h4>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:10px;">Fractional CPA / accounting · Dec 4, 2025</p>
+      <div class="blockquote">"They got 40 clients like Solana, a16z, or Gitcoin. Discussed a referral agreement with fees."<div class="blockquote-source">Rep: Thomas</div></div>
+      <p style="font-size:13px;"><strong>Status: materials sent, verbal discussion only.</strong></p>
+    </div>
+    <div class="card">
+      <div style="margin-bottom:14px;"><span class="badge badge-purple">DocuSign in progress</span></div>
+      <h4 style="margin-bottom:4px;">Aarna.ai</h4>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:10px;">Treasury management SaaS · Mar 5, 2026</p>
+      <div class="blockquote">"15% revenue share commission. Send the DocuSign once Prateem confirms approval."<div class="blockquote-source">Rep: Hudi</div></div>
+      <p style="font-size:13px;"><strong>Status: closest to signed. Use as template.</strong></p>
+    </div>
+    <div class="card">
+      <div style="margin-bottom:14px;"><span class="badge badge-amber">Explicitly asked · no program</span></div>
+      <h4 style="margin-bottom:4px;">Penrose Partners</h4>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:10px;">Digital asset advisory · Nov 27, 2025</p>
+      <div class="blockquote">"Would be interested in our referral program. Discussion with their partners about intros."<div class="blockquote-source">Rep: Thomas</div></div>
+      <p style="font-size:13px;"><strong>Status: asked, told there isn't one.</strong></p>
+    </div>
+    <div class="card">
+      <div style="margin-bottom:14px;"><span class="badge badge-blue">Template sent · near close</span></div>
+      <h4 style="margin-bottom:4px;">Sonder Solutions</h4>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:10px;">Fractional CFO / back office · Jan 13, 2026</p>
+      <div class="blockquote">"Interested in the mutual referral agreement. Sent materials + template for referral agreement with fees."<div class="blockquote-source">Rep: Thomas</div></div>
+      <p style="font-size:13px;"><strong>Status: template sent, not signed.</strong></p>
+    </div>
+    <div class="card">
+      <div style="margin-bottom:14px;"><span class="badge badge-green">Ready to refer · waiting on kit</span></div>
+      <h4 style="margin-bottom:4px;">Withum</h4>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:10px;">Audit & consulting · Dec 2, 2025</p>
+      <div class="blockquote">"Would be happy to refer us. Sent materials and asked for a first referral."<div class="blockquote-source">Rep: Thomas</div></div>
+      <p style="font-size:13px;"><strong>Status: willing, waiting for formal program.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ③ ARCHETYPES -->
+<section class="section" id="archetypes">
+  <div class="section-label">03 — Partner archetypes</div>
+  <h2>3 types of partners.<br>3 different programs.</h2>
+  <p class="section-intro">Not all partners want the same thing. The key is understanding what each type needs — and giving them exactly that. This applies equally to the warm pipeline and to cold-prospected partners.</p>
+  <div class="grid-3" style="margin-bottom:32px;">
+    <div class="partner-card">
+      <div class="partner-card-header" style="border-top:3px solid var(--blue);">
+        <div class="partner-card-num" style="color:var(--blue);">Type A</div>
+        <h3 style="margin-bottom:6px;font-size:18px;">Fractional CFO &amp;<br>accounting firms</h3>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:10px;">They advise the buyers. One firm = 10–40 direct client introductions.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;"><span class="badge badge-green">Highest value</span><span class="badge badge-blue">Commission-driven</span></div>
+      </div>
+      <div class="partner-card-body">
+        <h4>What they want</h4>
+        <ul style="font-size:13px;margin-bottom:14px;">
+          <li>A formal agreement with a clear commission rate</li>
+          <li>A unique referral link or code to track conversions</li>
+          <li>Materials they can forward — not sales pitches</li>
+          <li>A dedicated partner contact at RF</li>
+          <li>Quarterly payout, simple structure</li>
+        </ul>
+        <div><strong style="font-size:12px;">Priority partners:</strong></div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px;">Regen Financial · Propeller Industries · Withum · Sonder Solutions · Aarna.ai</div>
+      </div>
+    </div>
+    <div class="partner-card">
+      <div class="partner-card-header" style="border-top:3px solid #8b5cf6;">
+        <div class="partner-card-num" style="color:#8b5cf6;">Type B</div>
+        <h3 style="margin-bottom:6px;font-size:18px;">Web3 infrastructure &amp;<br>wallet providers</h3>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:10px;">Overlapping audiences. Value is mutual and co-marketing led.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;"><span class="badge badge-purple">Co-marketing</span><span class="badge badge-blue">Integration-led</span></div>
+      </div>
+      <div class="partner-card-body">
+        <h4>What they want</h4>
+        <ul style="font-size:13px;margin-bottom:14px;">
+          <li>A two-way deal: their users → RF, RF users → their product</li>
+          <li>A co-branded landing page</li>
+          <li>Joint content: posts, webinars, integrations</li>
+          <li>Event co-sponsorship opportunities</li>
+          <li>API integration priority</li>
+        </ul>
+        <div><strong style="font-size:12px;">Priority partners:</strong></div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px;">Anchor Labs · Avalanche · Ledger · Borderless.xyz · Cryptoworth</div>
+      </div>
+    </div>
+    <div class="partner-card">
+      <div class="partner-card-header" style="border-top:3px solid var(--amber);">
+        <div class="partner-card-num" style="color:var(--amber);">Type C</div>
+        <h3 style="margin-bottom:6px;font-size:18px;">Advisory firms &amp;<br>warm recommenders</h3>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:10px;">Recommend confidently when given the right materials. Zero friction entry.</p>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;"><span class="badge badge-amber">Enablement-driven</span><span class="badge badge-green">Quick to activate</span></div>
+      </div>
+      <div class="partner-card-body">
+        <h4>What they want</h4>
+        <ul style="font-size:13px;margin-bottom:14px;">
+          <li>A clear, non-salesy one-pager to forward</li>
+          <li>A named contact at RF who follows up well</li>
+          <li>A simple referral mechanism (email intro is fine)</li>
+          <li>To be recognised — a "partner" badge is enough</li>
+          <li>Optional: access to events</li>
+        </ul>
+        <div><strong style="font-size:12px;">Priority partners:</strong></div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px;">Penrose Partners · Withum · Gowling WLG · Growthway Ventures</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ PROGRAM ARCHITECTURE -->
+<section class="section section-alt" id="program">
+  <div class="section-label">04 — Program architecture</div>
+  <h2>The RF Partner Program:<br>three tiers, one entry point</h2>
+  <p class="section-intro">One signup page. Three tiers determined by partner type and volume. Simple enough for Withum, comprehensive enough for Propeller Industries.</p>
+  <div class="grid-3" style="margin-bottom:40px;">
+    <div class="card" style="border-top:3px solid #10b981;">
+      <div class="badge badge-green" style="margin-bottom:12px;">Tier 1 — Affiliate</div>
+      <h4 style="font-size:18px;margin-bottom:8px;">Recommender</h4>
+      <p style="font-size:13px;margin-bottom:14px;">For Type C partners who want to recommend RF informally. Zero friction, commission if a referral converts.</p>
+      <ul style="font-size:13px;margin-bottom:14px;">
+        <li>Unique referral link</li>
+        <li>One-pager PDF to share with clients</li>
+        <li>Simple email intro mechanism</li>
+        <li>Quarterly commission payout</li>
+        <li>Listed on RF partner page</li>
+      </ul>
+      <div style="background:var(--green-light);border-radius:8px;padding:10px 14px;font-size:13px;color:#065f46;font-family:var(--font-mono);font-weight:600;">15% of year 1 subscription</div>
+    </div>
+    <div class="card" style="border-top:3px solid var(--blue);">
+      <div class="badge badge-blue" style="margin-bottom:12px;">Tier 2 — Reseller</div>
+      <h4 style="font-size:18px;margin-bottom:8px;">Advisor</h4>
+      <p style="font-size:13px;margin-bottom:14px;">For Type A partners who actively manage client stacks and bring volume. They qualify leads before introducing them.</p>
+      <ul style="font-size:13px;margin-bottom:14px;">
+        <li>Everything in Tier 1</li>
+        <li>Partner dashboard with conversion tracking</li>
+        <li>Co-branded client materials</li>
+        <li>Named partner manager at RF</li>
+        <li>Priority client onboarding (fast KYB)</li>
+        <li>Quarterly business review call</li>
+      </ul>
+      <div style="background:var(--light);border-radius:8px;padding:10px 14px;font-size:13px;color:#1d4ed8;font-family:var(--font-mono);font-weight:600;">20% Y1 + 10% Y2 subscription</div>
+    </div>
+    <div class="card" style="border-top:3px solid #8b5cf6;">
+      <div class="badge badge-purple" style="margin-bottom:12px;">Tier 3 — Strategic</div>
+      <h4 style="font-size:18px;margin-bottom:8px;">Ecosystem Partner</h4>
+      <p style="font-size:13px;margin-bottom:14px;">For Type B partners — wallet providers, chains, infrastructure. Fully negotiated, co-marketing led.</p>
+      <ul style="font-size:13px;margin-bottom:14px;">
+        <li>Everything in Tier 2</li>
+        <li>Co-branded landing page</li>
+        <li>Joint content &amp; webinar programme</li>
+        <li>Product integration priority</li>
+        <li>Event co-sponsorship</li>
+        <li>Revenue share on joint customers</li>
+      </ul>
+      <div style="background:var(--purple-light);border-radius:8px;padding:10px 14px;font-size:13px;color:#5b21b6;font-family:var(--font-mono);font-weight:600;">Negotiated case by case</div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ COMMISSIONS -->
+<section class="section" id="commissions">
+  <div class="section-label">05 — Commission structure</div>
+  <h2>What to pay partners —<br>and why</h2>
+  <p class="section-intro">Generous enough to make partners feel valued. Simple enough they don't need a spreadsheet. Sustainable enough at scale.</p>
+  <div class="grid-2" style="margin-bottom:32px;">
+    <div>
+      <table class="tier-table">
+        <thead><tr><th>Partner tier</th><th>Commission Y1</th><th>Commission Y2</th><th>Payout</th></tr></thead>
+        <tbody>
+          <tr><td class="td-name">Tier 1 — Recommender</td><td class="td-rate">15%</td><td style="font-size:13px;color:var(--muted);">—</td><td style="font-size:13px;">Quarterly</td></tr>
+          <tr><td class="td-name">Tier 2 — Advisor</td><td class="td-rate">20%</td><td class="td-rate" style="font-size:13px;">10%</td><td style="font-size:13px;">Monthly</td></tr>
+          <tr><td class="td-name">Tier 3 — Strategic</td><td colspan="2" style="font-size:13px;color:var(--muted);">Negotiated — typically 15–25% Y1</td><td style="font-size:13px;">Monthly</td></tr>
+          <tr><td class="td-name">Fast-close bonus</td><td colspan="2" style="font-size:13px;color:var(--muted);">+5% if intro converts within 30 days</td><td style="font-size:13px;">One-time</td></tr>
+        </tbody>
+      </table>
+      <div class="callout" style="margin-top:20px;">
+        <div class="callout-icon">💡</div>
+        <div class="callout-text"><strong>Why 15–20% and not 10%:</strong> Aarna.ai proposed 15% without prompting. Starting at 15% signals generosity and closes partners faster. The LTV of a referred client more than justifies it — lower churn, higher ACV, shorter sales cycle.</div>
+      </div>
+    </div>
+    <div>
+      <h4>What a single Tier 2 partner is worth</h4>
+      <div class="card-surface">
+        <div class="math-row"><div class="math-label">Propeller Industries client portfolio</div><div class="math-val">40 clients</div></div>
+        <div class="math-row"><div class="math-label">Realistic conversion rate (warm intro)</div><div class="math-op">×</div><div class="math-val">20%</div></div>
+        <div class="math-row"><div class="math-label">Converted to RF paid customers</div><div class="math-val">8 clients</div></div>
+        <div class="math-row"><div class="math-label">Average annual contract value</div><div class="math-op">×</div><div class="math-val">$7,500</div></div>
+        <div class="math-total"><div class="math-label" style="color:rgba(255,255,255,.8);">RF net ARR after 20% commission</div><div class="math-val" style="color:white;font-size:20px;">$48,000</div></div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:10px;">One signed Tier 2 partner = $48K net ARR with zero paid media spend. With 5 such partners: $240K ARR that didn't exist before the program launched.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ ENABLEMENT KIT -->
+<section class="section section-alt" id="enablement">
+  <div class="section-label">06 — Partner enablement kit</div>
+  <h2>What every partner receives<br>on day one</h2>
+  <p class="section-intro">Partners recommend confidently when they have the right tools. This is the complete kit — it applies equally to warm pipeline partners and to cold-prospected ones.</p>
+  <div class="grid-2" style="margin-bottom:32px;">
+    <div class="card">
+      <h4>The "forward to a client" one-pager</h4>
+      <p style="font-size:13px;margin-bottom:12px;">A clean two-page PDF a CFO firm can forward with a one-line note. Written as a neutral explainer, not RF marketing.</p>
+      <ul style="font-size:13px;">
+        <li>What RF does in plain language</li>
+        <li>Who it's built for</li>
+        <li>3 key problems it solves</li>
+        <li>Pricing overview</li>
+        <li>How to get started (with partner's referral link embedded)</li>
+        <li>One customer quote</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>The "pitch to my client" email template</h4>
+      <p style="font-size:13px;margin-bottom:12px;">A ready-to-send email template. Partner only changes the client name and one personalisation line.</p>
+      <div class="blockquote" style="font-size:12.5px;">Subject: A tool worth looking at for your crypto payments<br><br>Hi [Name], given how you've been managing your contractor payments, I wanted to introduce you to Request Finance — the platform I've been recommending to clients who deal with crypto-to-fiat and multi-entity payment flows.<br><br>They've set aside time for a demo: [referral link]<br><br>[Partner name]</div>
+    </div>
+    <div class="card">
+      <h4>The "share with CFO" 5-slide deck</h4>
+      <ol style="font-size:13px;">
+        <li>The problem: what your current process is costing you</li>
+        <li>The platform: one dashboard screenshot</li>
+        <li>The numbers: honest pricing comparison</li>
+        <li>Security and compliance: who RF works with</li>
+        <li>Next step: how to start a free trial today</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h4>3-email welcome sequence (auto-triggered on signing)</h4>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div style="background:var(--surface);border-radius:8px;padding:10px 14px;"><div class="badge badge-blue" style="margin-bottom:4px;">Day 0</div><div style="font-size:13px;"><strong>Welcome + your partner kit.</strong> Referral link, kit PDF, partner contact at RF.</div></div>
+        <div style="background:var(--surface);border-radius:8px;padding:10px 14px;"><div class="badge badge-blue" style="margin-bottom:4px;">Day 3</div><div style="font-size:13px;"><strong>3 types of clients who get the most from RF.</strong> Helps partner identify who in their network fits.</div></div>
+        <div style="background:var(--surface);border-radius:8px;padding:10px 14px;"><div class="badge badge-blue" style="margin-bottom:4px;">Day 10</div><div style="font-size:13px;"><strong>Your first intro.</strong> Gentle nudge. Includes email template.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑦ MESSAGING -->
+<section class="section" id="messaging">
+  <div class="section-label">07 — Partner messaging (warm pipeline)</div>
+  <h2>How to re-engage the<br>15 partners you already have</h2>
+  <p class="section-intro">These are the exact outreach angles for the partners already in the pipeline. The cold prospecting outreach templates appear in section 11.</p>
+  <div style="display:flex;flex-direction:column;gap:20px;">
+    <div class="card">
+      <div class="badge badge-blue" style="margin-bottom:14px;">For Regen Financial, Propeller, Withum, Sonder — Type A</div>
+      <h4>Angle: "Let's make it official"</h4>
+      <div class="blockquote">Subject: Let's make our partnership official<br><br>Hi [Name], we've had several clients come in through your network over the past few months. We've just launched a formal partner program for accounting and CFO advisory firms — Tier 2, which includes a 20% commission on year-one subscriptions, a dedicated onboarding track for your clients, and a quarterly call with our product team.<br><br>I'd like to get a one-page agreement to you this week. Takes 10 minutes to sign and you can start earning on intros you're already making. Can we schedule a 20-minute call?</div>
+    </div>
+    <div class="card">
+      <div class="badge badge-purple" style="margin-bottom:14px;">For Anchor Labs, Avalanche, Ledger, Borderless — Type B</div>
+      <h4>Angle: "Our users are your users"</h4>
+      <div class="blockquote">Subject: RF + [Partner] — a natural overlap<br><br>Hi [Name], we've been looking at the companies using RF alongside [Partner], and the overlap is striking. We think there's a structured way to make this work for both sides — a co-branded page, a joint intro template, and a revenue share arrangement.<br><br>We're setting up our Tier 3 strategic partner program this quarter and you're one of the first names on our list. Would you have 30 minutes?</div>
+    </div>
+    <div class="card">
+      <div class="badge badge-amber" style="margin-bottom:14px;">For Penrose, Withum, Gowling WLG — Type C</div>
+      <h4>Angle: "We just made it easy to recommend us"</h4>
+      <div class="blockquote">Subject: The RF partner kit — for when a client asks<br><br>Hi [Name], we've just launched our partner program and created a simple kit for advisory firms who want to recommend RF to clients. Nothing to sign until you want to make it formal. Grab the kit here: [link]</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- NEW SECTIONS — COLD PARTNER DISCOVERY       -->
+<!-- ════════════════════════════════════════════ -->
+
+<section class="section-discovery section" id="discovery-why">
+  <div class="section-label gold-label">08 — New: Cold partner discovery</div>
+  <h2 class="gold">Why the warm pipeline<br>is not enough</h2>
+  <p class="section-intro gold-text">The 15 warm partners in your pipeline are your fastest wins — but they represent a fraction of the addressable partner universe. To go from 200 to 400 customers on the referral channel alone, you need a systematic machine to find, qualify, and sign partners who have never heard of Request Finance.</p>
+
+  <div class="grid-2" style="margin-bottom:32px;">
+    <div class="card-amber">
+      <h4>The math forces your hand</h4>
+      <p style="font-size:13px;">Even in the target model, your warm pipeline delivers ~139 new customers. To hit 400 reliably — accounting for churn, slow conversions, and partners who sign but never activate — you need a cold pipeline producing an additional 60–80 new customers in parallel. That requires signing 20–30 net-new partners who don't know you today.</p>
+    </div>
+    <div class="card-amber">
+      <h4>Cold partners often outperform warm ones</h4>
+      <p style="font-size:13px;">Warm partners know RF casually. A cold partner who is specifically recruited because their entire client base matches your ICP — for example, a web3 accounting firm in Singapore with 25 DeFi protocol clients — will have a higher conversion rate than a general advisor who mentions RF occasionally. Precision targeting beats warmth.</p>
+    </div>
+  </div>
+
+  <div class="highlight-gold">"Think of cold partner prospecting the way you think of cold sales prospecting — but with a 10× multiplier. One signed partner replaces 20–40 individual sales calls. The effort per customer acquired is a fraction of any other channel."</div>
+
+  <div class="grid-3" style="margin-top:32px;">
+    <div class="card-amber">
+      <div class="badge badge-gold" style="margin-bottom:10px;">Market size</div>
+      <h4>How many potential partners exist?</h4>
+      <p style="font-size:13px;">Globally: 800+ web3-focused accounting and CFO firms. 200+ digital asset law firms. 500+ blockchain infrastructure companies. 300+ DAO tooling and treasury platforms. 150+ crypto media and education properties. The addressable partner universe is in the thousands.</p>
+    </div>
+    <div class="card-amber">
+      <div class="badge badge-gold" style="margin-bottom:10px;">Realistic target</div>
+      <h4>What you need to sign</h4>
+      <p style="font-size:13px;">To produce 60–80 new customers: 15–20 new Tier 1/2 partners (at 5 intros/year each, 35% conversion). Or 3–4 new Tier 3 ecosystem partners (at 30 intros/year each, 25% conversion). Both together is the most reliable path.</p>
+    </div>
+    <div class="card-amber">
+      <div class="badge badge-gold" style="margin-bottom:10px;">Time investment</div>
+      <h4>What cold prospecting costs</h4>
+      <p style="font-size:13px;">At 40 outreach attempts per week (4 hours/week), with a 15% response rate and 30% close rate from responses, you sign 1–2 new partners per week. In 12 weeks: 12–24 net-new partners. This is achievable with one dedicated resource — a partner development manager or a dedicated 20% of a BDR's time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHERE TO FIND THEM -->
+<section class="section" id="discovery-where">
+  <div class="section-label gold-label">09 — Where to find new partners</div>
+  <h2 class="gold">6 hunting grounds for<br>net-new partner leads</h2>
+  <p class="section-intro gold-text">Each source produces a different type of partner at a different cost and conversion rate. Run all six in parallel — they compound.</p>
+
+  <div class="grid-2" style="margin-bottom:32px;gap:16px;">
+
+    <div class="hunt-card">
+      <div class="hunt-card-header">
+        <div class="hunt-icon" style="background:#fef3c7;">🔍</div>
+        <div>
+          <h4>G2 and Capterra reviewer lists</h4>
+          <div class="sub">Source type: Intent-based · Cost: Free · Time: High volume</div>
+        </div>
+      </div>
+      <p style="font-size:13px;margin-bottom:12px;">Every accounting firm, CFO tool, and fintech software listed on G2 and Capterra has a reviewer list. Companies that write reviews for tools like Deel, Ramp, Cryptio, Tres Finance, and Bitwave are using those tools — and advising clients on them. They are your ideal Type A partners.</p>
+      <h4>How to use it</h4>
+      <ul style="font-size:13px;margin-bottom:12px;">
+        <li>Go to G2 profiles for: Ramp, Deel, Cryptio, Tres Finance, Bitwave, Coinbase Commerce, Airbase</li>
+        <li>Read reviewer profiles — many list their firm name and LinkedIn</li>
+        <li>Filter for reviewers who are at accounting firms, advisory firms, or CFO-as-a-service businesses</li>
+        <li>Add to LinkedIn outreach list</li>
+      </ul>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <span class="badge badge-amber">~30 leads/week</span>
+        <span class="badge badge-green">High intent signal</span>
+        <span class="badge badge-blue">Type A partners</span>
+      </div>
+    </div>
+
+    <div class="hunt-card">
+      <div class="hunt-card-header">
+        <div class="hunt-icon" style="background:#fef3c7;">💼</div>
+        <div>
+          <h4>LinkedIn Sales Navigator</h4>
+          <div class="sub">Source type: Directory · Cost: $80/mo · Time: Medium</div>
+        </div>
+      </div>
+      <p style="font-size:13px;margin-bottom:12px;">The most scalable source for Type A cold partners. Filter by job title (CFO, Controller, Crypto Accountant, Web3 Finance Advisor), company size (2–20 employees — the sweet spot for fractional CFO firms), and keywords in bio (web3, DeFi, crypto, stablecoin).</p>
+      <h4>Search filters to use</h4>
+      <ul style="font-size:13px;margin-bottom:12px;">
+        <li><strong>Job titles:</strong> "CFO" + "fractional" OR "web3" OR "crypto" — returns 2,000+ results globally</li>
+        <li><strong>Company keywords:</strong> "web3 accounting," "crypto bookkeeping," "DeFi finance," "blockchain advisory"</li>
+        <li><strong>Company size:</strong> 1–20 employees (fractional firms)</li>
+        <li><strong>Geography:</strong> Start with US, UK, Singapore, UAE — where your clients are concentrated</li>
+      </ul>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <span class="badge badge-amber">~50 leads/week</span>
+        <span class="badge badge-blue">Type A + C partners</span>
+        <span class="badge badge-amber">$80/month</span>
+      </div>
+    </div>
+
+    <div class="hunt-card">
+      <div class="hunt-card-header">
+        <div class="hunt-icon" style="background:#fef3c7;">🌐</div>
+        <div>
+          <h4>Web3 and crypto event speaker lists</h4>
+          <div class="sub">Source type: Curated · Cost: Free · Time: Low volume, high quality</div>
+        </div>
+      </div>
+      <p style="font-size:13px;margin-bottom:12px;">Every major web3 conference (ETHDenver, Permissionless, Token2049, Consensus, Paris Blockchain Week, Singapore FinTech Festival) publishes speaker lists. CFOs, finance advisors, and accounting firm partners who speak at these events are publicly available, credible, and exactly the right profile for Type A and C partners.</p>
+      <h4>Events to mine</h4>
+      <ul style="font-size:13px;margin-bottom:12px;">
+        <li><strong>ETHDenver 2026:</strong> Finance and legal track speakers</li>
+        <li><strong>Token2049 Singapore:</strong> CFO and treasury panels</li>
+        <li><strong>Permissionless III:</strong> Any "finance operations" or "treasury" track</li>
+        <li><strong>Paris Blockchain Week:</strong> European fintech and CFO community</li>
+        <li><strong>Singapore FinTech Festival:</strong> APAC accounting and compliance speakers</li>
+      </ul>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <span class="badge badge-amber">~20 leads/event</span>
+        <span class="badge badge-green">Very high quality</span>
+        <span class="badge badge-blue">All partner types</span>
+      </div>
+    </div>
+
+    <div class="hunt-card">
+      <div class="hunt-card-header">
+        <div class="hunt-icon" style="background:#fef3c7;">📰</div>
+        <div>
+          <h4>Web3 media contributors and newsletter authors</h4>
+          <div class="sub">Source type: Content creators · Cost: Free · Time: Medium</div>
+        </div>
+      </div>
+      <p style="font-size:13px;margin-bottom:12px;">People who write about web3 finance, DAO treasury management, crypto accounting, and DeFi operations are trusted voices in exactly your target audience. A newsletter author with 5,000 web3 CFO readers who mentions RF in one issue is worth 50 cold emails. They are Type C partners with outsized reach.</p>
+      <h4>Where to find them</h4>
+      <ul style="font-size:13px;margin-bottom:12px;">
+        <li><strong>Substack:</strong> Search "crypto finance," "web3 treasury," "DAO accounting," "DeFi operations"</li>
+        <li><strong>Mirror.xyz:</strong> Finance-focused DAO contributors</li>
+        <li><strong>The Block, Decrypt, Bankless:</strong> Freelance contributors who write on finance topics</li>
+        <li><strong>LinkedIn newsletters:</strong> Search "crypto CFO," "web3 finance" as newsletter topics</li>
+        <li><strong>Podcast hosts:</strong> Any web3 finance or "building in DeFi" podcasts with 5K+ listeners</li>
+      </ul>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <span class="badge badge-amber">~15 leads/week</span>
+        <span class="badge badge-purple">Type C + B partners</span>
+        <span class="badge badge-green">High reach per partner</span>
+      </div>
+    </div>
+
+    <div class="hunt-card">
+      <div class="hunt-card-header">
+        <div class="hunt-icon" style="background:#fef3c7;">🏢</div>
+        <div>
+          <h4>Web3 accounting firm directories</h4>
+          <div class="sub">Source type: Curated lists · Cost: Free · Time: Low — do this first</div>
+        </div>
+      </div>
+      <p style="font-size:13px;margin-bottom:12px;">Several directories and aggregator sites already list web3-specialised accounting and advisory firms. These are pre-curated lists of exactly your Type A partner profile. Start here before doing anything else.</p>
+      <h4>Directories to mine immediately</h4>
+      <ul style="font-size:13px;margin-bottom:12px;">
+        <li><strong>CryptoTax.tools:</strong> Comprehensive directory of crypto tax and accounting firms globally</li>
+        <li><strong>TokenTax partner network:</strong> Accounting firms they refer clients to</li>
+        <li><strong>Koinly partner program:</strong> Existing partner firms (they're a competitor for accounting — their partners advise your ideal clients)</li>
+        <li><strong>Coinbase Institutional partner list:</strong> Accounting and advisory firms listed as partners</li>
+        <li><strong>AICPA's blockchain task force members:</strong> US accounting firms with declared crypto specialisation</li>
+        <li><strong>Crypto Council for Innovation member list:</strong> Advisory firms and law firms working in crypto</li>
+      </ul>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <span class="badge badge-green">100+ leads in 1 day</span>
+        <span class="badge badge-blue">Type A partners</span>
+        <span class="badge badge-amber">Start here</span>
+      </div>
+    </div>
+
+    <div class="hunt-card">
+      <div class="hunt-card-header">
+        <div class="hunt-icon" style="background:#fef3c7;">🤝</div>
+        <div>
+          <h4>Your existing customers' advisors</h4>
+          <div class="sub">Source type: Network expansion · Cost: Free · Time: Very low</div>
+        </div>
+      </div>
+      <p style="font-size:13px;margin-bottom:12px;">Every paying RF customer uses an accountant, a fractional CFO, or an advisory firm. That advisor is a warm introduction away from becoming a partner. Ask every customer: "Who manages your financial ops or accounting?" Then reach out to that firm directly.</p>
+      <h4>How to systematise this</h4>
+      <ul style="font-size:13px;margin-bottom:12px;">
+        <li>Add a question to the onboarding flow: "Do you work with an external accountant or CFO firm? We'd love to partner with them."</li>
+        <li>CSMs ask the same question during QBRs and renewal calls</li>
+        <li>When a customer mentions their accountant in a support ticket or meeting note, flag it immediately</li>
+        <li>The meeting notes already surface this: enya.ai, Cryptoworth, Tres Finance, Bitwave all come up as client-referenced advisors</li>
+      </ul>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <span class="badge badge-green">Highest conversion rate</span>
+        <span class="badge badge-blue">Type A partners</span>
+        <span class="badge badge-amber">~5 leads/week from CSM</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- IDEAL PARTNER PROFILES -->
+<section class="section section-alt" id="discovery-profiles">
+  <div class="section-label gold-label">10 — Ideal partner profiles</div>
+  <h2 class="gold">The exact profile of a<br>high-value cold partner</h2>
+  <p class="section-intro gold-text">Not all potential partners are worth pursuing. These are the precise ICP definitions for each partner type — use them to qualify leads before spending time on outreach.</p>
+
+  <div class="grid-2" style="margin-bottom:32px;gap:16px;">
+
+    <div class="card" style="border-top:3px solid var(--blue);">
+      <div class="badge badge-blue" style="margin-bottom:14px;">Ideal Type A — Fractional CFO firm</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;background:var(--light);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">✓</div>
+          <div><strong style="font-size:13px;">Client base is 60%+ crypto-native</strong><p style="font-size:13px;margin-top:2px;margin-bottom:0;">DAOs, DeFi protocols, web3 gaming, crypto-native startups. If they primarily advise traditional businesses, their clients will not convert.</p></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;background:var(--light);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">✓</div>
+          <div><strong style="font-size:13px;">5–40 active clients under management</strong><p style="font-size:13px;margin-top:2px;margin-bottom:0;">Below 5 is too small to move the needle. Above 40 is often an enterprise accounting firm with a slow decision process. The sweet spot is a boutique firm.</p></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;background:var(--light);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">✓</div>
+          <div><strong style="font-size:13px;">They actively recommend tools to clients</strong><p style="font-size:13px;margin-top:2px;margin-bottom:0;">Look for firms that mention specific tools in their content (blog posts, LinkedIn, tweets). "We recommend Cryptio for accounting and Rise for payroll" is the signal you want.</p></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;background:var(--light);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">✓</div>
+          <div><strong style="font-size:13px;">Currently has no payments tool in their stack</strong><p style="font-size:13px;margin-top:2px;margin-bottom:0;">If they already recommend Coinbase or Ramp, there is a switching cost. If they have a gap in payments — especially on-chain — RF fills it cleanly.</p></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;background:var(--red-light);color:#991b1b;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">✗</div>
+          <div><strong style="font-size:13px;">Disqualify: primarily tax advisory only</strong><p style="font-size:13px;margin-top:2px;margin-bottom:0;">Tax-only firms (e.g. crypto tax preparers) have limited influence over operational tool decisions. They file returns, they don't choose payment platforms.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-top:3px solid #8b5cf6;">
+      <div class="badge badge-purple" style="margin-bottom:14px;">Ideal Type B — Ecosystem / infrastructure partner</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;background:var(--purple-light);color:#5b21b6;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">✓</div>
+          <div><strong style="font-size:13px;">Their users need payments or treasury management</strong><p style="font-size:13px;margin-top:2px;margin-bottom:0;">Wallet providers, custody platforms, DAO tooling, multi-sig tools, ERP integrators, treasury platforms. If their users manage money, RF is a natural next step.</p></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;background:var(--purple-light);color:#5b21b6;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">✓</div>
+          <div><strong style="font-size:13px;">They have a developer or business ecosystem</strong><p style="font-size:13px;margin-top:2px;margin-bottom:0;">Chains with grant programs, wallets with business accounts, infrastructure tools with enterprise clients. The ecosystem is the distribution channel.</p></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;background:var(--purple-light);color:#5b21b6;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">✓</div>
+          <div><strong style="font-size:13px;">Complement, not compete</strong><p style="font-size:13px;margin-top:2px;margin-bottom:0;">They solve a different part of the problem than RF. Safe, Fireblocks, Gnosis provide custody. Cryptoworth provides accounting. Deel provides EOR payroll. RF provides the payments layer.</p></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;background:var(--red-light);color:#991b1b;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">✗</div>
+          <div><strong style="font-size:13px;">Disqualify: direct competitors or overlap with C2F</strong><p style="font-size:13px;margin-top:2px;margin-bottom:0;">Companies like TripleA, Slash, or Reap are partially competitive. A formal partner program with a competitor creates channel conflict. Keep these as integration opportunities, not referral partners.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-top:3px solid var(--amber);">
+      <div class="badge badge-amber" style="margin-bottom:14px;">Ideal Type C — Advisory / warm recommender</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;background:var(--amber-light);color:#92400e;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">✓</div>
+          <div><strong style="font-size:13px;">They advise companies that have crypto operations</strong><p style="font-size:13px;margin-top:2px;margin-bottom:0;">Law firms with a blockchain practice, VC funds with web3 portfolios, M&A advisors who work on crypto deals, accelerators with DeFi cohorts.</p></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;background:var(--amber-light);color:#92400e;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">✓</div>
+          <div><strong style="font-size:13px;">They have a publication, newsletter, or regular touchpoint with clients</strong><p style="font-size:13px;margin-top:2px;margin-bottom:0;">A law firm that sends a monthly regulatory update newsletter to 300 crypto startup clients can mention RF in one issue and generate 15 inbound trials.</p></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;background:var(--red-light);color:#991b1b;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">✗</div>
+          <div><strong style="font-size:13px;">Disqualify: pure investors with no operational influence</strong><p style="font-size:13px;margin-top:2px;margin-bottom:0;">A VC that invests in companies but doesn't advise on tool selection has no referral power. Look for VCs with active portfolio support programmes (Andreessen Horowitz's portfolio support team, for example).</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-top:3px solid var(--teal);">
+      <div class="badge badge-teal" style="margin-bottom:14px;">Bonus type D — Web3 media &amp; communities</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;background:var(--teal-light);color:#0f766e;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">✓</div>
+          <div><strong style="font-size:13px;">Newsletter or podcast with 3,000+ subscribers in the web3 finance niche</strong><p style="font-size:13px;margin-top:2px;margin-bottom:0;">Not large crypto media (The Block, Decrypt) — those are PR targets. Look for smaller, more specialised newsletters: DAO treasury management, web3 CFO communities, DeFi ops groups.</p></div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start;">
+          <div style="width:28px;height:28px;border-radius:6px;background:var(--teal-light);color:#0f766e;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">✓</div>
+          <div><strong style="font-size:13px;">Active Discord or Telegram community (500+ members) focused on crypto finance</strong><p style="font-size:13px;margin-top:2px;margin-bottom:0;">A sponsored mention in the right community Telegram reaches 1,000 finance managers in your target ICP in one message. The Web3 Finance Club is already RF's biggest inbound channel — find 5 more like it.</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- THE 100 PARTNERS LIST -->
+<section class="section section-discovery" id="discovery-100">
+  <div class="section-label gold-label">11 — The 100 partners list</div>
+  <h2 class="gold">Where to find 100 qualified<br>partner prospects this month</h2>
+  <p class="section-intro gold-text">These are specific, named places and communities where your ideal cold partners are concentrated. Work through this list systematically — each source can produce 10–50 qualified prospects.</p>
+
+  <div style="margin-bottom:36px;">
+    <div class="prospect-row-header">
+      <div>Source / Community</div>
+      <div>Partner type likely found</div>
+      <div>Est. prospects</div>
+      <div>Effort to mine</div>
+    </div>
+
+    <div class="prospect-row">
+      <div>
+        <div style="font-weight:600;font-size:13px;color:var(--ink);">CryptoTax.tools directory</div>
+        <div style="font-size:12px;color:var(--muted);">cryptotax.tools — global directory of crypto accounting firms</div>
+      </div>
+      <div><span class="badge badge-blue">Type A — CFO firms</span></div>
+      <div><span style="font-weight:600;color:var(--ink);font-family:var(--font-mono);">80–120</span></div>
+      <div><span class="badge badge-green">Low — 2 hours</span></div>
+    </div>
+
+    <div class="prospect-row">
+      <div>
+        <div style="font-weight:600;font-size:13px;color:var(--ink);">Koinly & TokenTax partner networks</div>
+        <div style="font-size:12px;color:var(--muted);">Accounting firms already partnered with crypto tax tools</div>
+      </div>
+      <div><span class="badge badge-blue">Type A — CFO firms</span></div>
+      <div><span style="font-weight:600;color:var(--ink);font-family:var(--font-mono);">40–60</span></div>
+      <div><span class="badge badge-green">Low — 1 hour</span></div>
+    </div>
+
+    <div class="prospect-row">
+      <div>
+        <div style="font-weight:600;font-size:13px;color:var(--ink);">LinkedIn "web3 CFO" + "fractional" filter</div>
+        <div style="font-size:12px;color:var(--muted);">LinkedIn Sales Navigator search — job title + keyword combination</div>
+      </div>
+      <div><span class="badge badge-blue">Type A — CFO firms</span></div>
+      <div><span style="font-weight:600;color:var(--ink);font-family:var(--font-mono);">200+</span></div>
+      <div><span class="badge badge-amber">Medium — ongoing</span></div>
+    </div>
+
+    <div class="prospect-row">
+      <div>
+        <div style="font-weight:600;font-size:13px;color:var(--ink);">ETHDenver 2026 finance track speakers</div>
+        <div style="font-size:12px;color:var(--muted);">Speaker list from treasury, legal, and finance panels</div>
+      </div>
+      <div><span class="badge badge-amber">Type C — advisors</span></div>
+      <div><span style="font-weight:600;color:var(--ink);font-family:var(--font-mono);">25–40</span></div>
+      <div><span class="badge badge-green">Low — 1 hour</span></div>
+    </div>
+
+    <div class="prospect-row">
+      <div>
+        <div style="font-weight:600;font-size:13px;color:var(--ink);">Token2049 Singapore 2026 speaker list</div>
+        <div style="font-size:12px;color:var(--muted);">CFO and treasury panels — APAC concentration</div>
+      </div>
+      <div><span class="badge badge-blue">Type A + C</span></div>
+      <div><span style="font-weight:600;color:var(--ink);font-family:var(--font-mono);">20–30</span></div>
+      <div><span class="badge badge-green">Low — 1 hour</span></div>
+    </div>
+
+    <div class="prospect-row">
+      <div>
+        <div style="font-weight:600;font-size:13px;color:var(--ink);">G2 reviewers: Cryptio, Tres Finance, Bitwave</div>
+        <div style="font-size:12px;color:var(--muted);">People who reviewed competitor accounting tools are advising crypto companies</div>
+      </div>
+      <div><span class="badge badge-blue">Type A — CFO firms</span></div>
+      <div><span style="font-weight:600;color:var(--ink);font-family:var(--font-mono);">30–50</span></div>
+      <div><span class="badge badge-green">Low — 3 hours</span></div>
+    </div>
+
+    <div class="prospect-row">
+      <div>
+        <div style="font-weight:600;font-size:13px;color:var(--ink);">G2 reviewers: Ramp, Deel, Airbase, Brex</div>
+        <div style="font-size:12px;color:var(--muted);">Finance managers at companies using spend management tools</div>
+      </div>
+      <div><span class="badge badge-blue">Type A — CFO firms</span></div>
+      <div><span style="font-weight:600;color:var(--ink);font-family:var(--font-mono);">40–60</span></div>
+      <div><span class="badge badge-amber">Medium — 4 hours</span></div>
+    </div>
+
+    <div class="prospect-row">
+      <div>
+        <div style="font-weight:600;font-size:13px;color:var(--ink);">DAO tooling ecosystems: Safe, Snapshot, Tally</div>
+        <div style="font-size:12px;color:var(--muted);">Partner pages and ecosystem directories of DAO infrastructure tools</div>
+      </div>
+      <div><span class="badge badge-purple">Type B — ecosystem</span></div>
+      <div><span style="font-weight:600;color:var(--ink);font-family:var(--font-mono);">20–35</span></div>
+      <div><span class="badge badge-green">Low — 2 hours</span></div>
+    </div>
+
+    <div class="prospect-row">
+      <div>
+        <div style="font-weight:600;font-size:13px;color:var(--ink);">Substack "web3 finance" and "crypto treasury" newsletters</div>
+        <div style="font-size:12px;color:var(--muted);">Finance-focused newsletter authors writing for crypto audiences</div>
+      </div>
+      <div><span class="badge badge-amber">Type C + D — media</span></div>
+      <div><span style="font-weight:600;color:var(--ink);font-family:var(--font-mono);">15–25</span></div>
+      <div><span class="badge badge-green">Low — 2 hours</span></div>
+    </div>
+
+    <div class="prospect-row">
+      <div>
+        <div style="font-weight:600;font-size:13px;color:var(--ink);">Coinbase Institutional's partner ecosystem</div>
+        <div style="font-size:12px;color:var(--muted);">Accounting and advisory firms listed as Coinbase Institutional service partners</div>
+      </div>
+      <div><span class="badge badge-blue">Type A — CFO firms</span></div>
+      <div><span style="font-weight:600;color:var(--ink);font-family:var(--font-mono);">20–30</span></div>
+      <div><span class="badge badge-green">Low — 1 hour</span></div>
+    </div>
+
+    <div class="prospect-row">
+      <div>
+        <div style="font-weight:600;font-size:13px;color:var(--ink);">AICPA blockchain task force members</div>
+        <div style="font-size:12px;color:var(--muted);">US accounting firms with declared blockchain/crypto specialisation</div>
+      </div>
+      <div><span class="badge badge-blue">Type A — CFO firms</span></div>
+      <div><span style="font-weight:600;color:var(--ink);font-family:var(--font-mono);">30–50</span></div>
+      <div><span class="badge badge-green">Low — 2 hours</span></div>
+    </div>
+
+    <div class="prospect-row">
+      <div>
+        <div style="font-weight:600;font-size:13px;color:var(--ink);">Fireblocks and Gnosis Safe partner directories</div>
+        <div style="font-size:12px;color:var(--muted);">Accounting and advisory firms listed in custody platform partner pages</div>
+      </div>
+      <div><span class="badge badge-blue">Type A + B</span></div>
+      <div><span style="font-weight:600;color:var(--ink);font-family:var(--font-mono);">25–40</span></div>
+      <div><span class="badge badge-green">Low — 2 hours</span></div>
+    </div>
+
+    <div class="prospect-row">
+      <div>
+        <div style="font-weight:600;font-size:13px;color:var(--ink);">ADAN (France) and crypto industry associations (EMEA)</div>
+        <div style="font-size:12px;color:var(--muted);">ADAN member list, Blockchain Association, Digital Euro Association</div>
+      </div>
+      <div><span class="badge badge-amber">Type C — advisors</span></div>
+      <div><span style="font-weight:600;color:var(--ink);font-family:var(--font-mono);">30–45</span></div>
+      <div><span class="badge badge-green">Low — 2 hours</span></div>
+    </div>
+
+    <div class="prospect-row">
+      <div>
+        <div style="font-weight:600;font-size:13px;color:var(--ink);">Web3 accelerators: a16z crypto, Outlier Ventures, CV VC</div>
+        <div style="font-size:12px;color:var(--muted);">Portfolio support teams and "in residence" CFO/finance advisors at accelerators</div>
+      </div>
+      <div><span class="badge badge-amber">Type C — advisors</span></div>
+      <div><span style="font-weight:600;color:var(--ink);font-family:var(--font-mono);">10–15</span></div>
+      <div><span class="badge badge-amber">Medium — relationship</span></div>
+    </div>
+
+    <div class="prospect-row">
+      <div>
+        <div style="font-weight:600;font-size:13px;color:var(--ink);">RF customers' accountants (CSM-sourced)</div>
+        <div style="font-size:12px;color:var(--muted);">Ask every customer who manages their books — then contact that firm</div>
+      </div>
+      <div><span class="badge badge-blue">Type A — CFO firms</span></div>
+      <div><span style="font-weight:600;color:var(--ink);font-family:var(--font-mono);">5–10/week</span></div>
+      <div><span class="badge badge-green">Very low — ongoing</span></div>
+    </div>
+
+  </div>
+
+  <div class="callout-gold">
+    <div class="callout-icon">🎯</div>
+    <div class="callout-text-gold"><strong>Priority order:</strong> Start with CryptoTax.tools (80+ leads in 2 hours), G2 reviewer lists for Cryptio/Tres (50 leads in 3 hours), and Koinly/TokenTax partner networks (60 leads in 1 hour). That is 190+ qualified partner prospects in a single afternoon — more than enough to fill your first month of outreach.</div>
+  </div>
+</section>
+
+<!-- COLD OUTREACH PLAYBOOK -->
+<section class="section" id="discovery-outreach">
+  <div class="section-label gold-label">12 — Cold outreach playbook</div>
+  <h2 class="gold">How to approach partners<br>who don't know you exist</h2>
+  <p class="section-intro gold-text">Cold partner outreach is different from cold sales outreach. You are not selling them a product — you are offering them a revenue stream for work they are already doing. The frame is "I want to pay you" not "I want to sell you."</p>
+
+  <div class="grid-2" style="margin-bottom:32px;gap:16px;">
+
+    <div class="outreach-card">
+      <div class="outreach-card-title">
+        <span class="badge badge-blue">Sequence 1</span>
+        For web3 accounting firms (Type A) — cold LinkedIn or email
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="background:var(--surface);border-radius:8px;padding:12px 15px;">
+          <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--muted);margin-bottom:6px;">MESSAGE 1 · DAY 1 · 50 WORDS MAX</div>
+          <div style="font-size:13px;color:var(--body);">Subject: Quick question — do your clients use any spend management tools?<br><br>Hi [Name], I lead partnerships at Request Finance — we're a spend management and crypto payment platform used by 200+ web3 companies.<br><br>We just launched a partner program for accounting firms: you refer clients, we pay 20% of their first-year subscription. Worth 15 minutes?</div>
+        </div>
+        <div style="background:var(--surface);border-radius:8px;padding:12px 15px;">
+          <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--muted);margin-bottom:6px;">MESSAGE 2 · DAY 5 · IF NO REPLY</div>
+          <div style="font-size:13px;color:var(--body);">Hi [Name], just bumping this. We work with companies like [relevant client from their niche — e.g. "DeFi protocols in the Ethereum ecosystem"]. Happy to send the one-pager if useful — no call needed to get started.</div>
+        </div>
+        <div style="background:var(--surface);border-radius:8px;padding:12px 15px;">
+          <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--muted);margin-bottom:6px;">MESSAGE 3 · DAY 12 · FINAL</div>
+          <div style="font-size:13px;color:var(--body);">Last note — if this isn't a fit right now I completely understand. I'll leave the link here in case it's useful later: [partner page]. We've already signed several web3 accounting firms this quarter and the program is live.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="outreach-card">
+      <div class="outreach-card-title">
+        <span class="badge badge-purple">Sequence 2</span>
+        For infrastructure / ecosystem partners (Type B) — LinkedIn
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="background:var(--surface);border-radius:8px;padding:12px 15px;">
+          <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--muted);margin-bottom:6px;">MESSAGE 1 · DAY 1</div>
+          <div style="font-size:13px;color:var(--body);">Hi [Name], I noticed [Company]'s users overlap heavily with ours — both serving web3 teams managing treasury and payments. We're building co-marketing partnerships with infrastructure tools this quarter. The pitch: you mention RF to your users, we mention [product] to ours, and we split revenue on joint customers. Worth a call?</div>
+        </div>
+        <div style="background:var(--surface);border-radius:8px;padding:12px 15px;">
+          <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--muted);margin-bottom:6px;">MESSAGE 2 · DAY 6</div>
+          <div style="font-size:13px;color:var(--body);">Following up — specifically on [a client they'd recognise, e.g. "we work with several Safe multisig teams who would benefit from tighter [Company] integration"]. A 20-minute call to explore the overlap might be worth it.</div>
+        </div>
+        <div style="background:var(--surface);border-radius:8px;padding:12px 15px;">
+          <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--muted);margin-bottom:6px;">MESSAGE 3 · DAY 14</div>
+          <div style="font-size:13px;color:var(--body);">Last touch. Here's a 2-minute overview of what the partnership looks like in practice: [link to partnership page]. If the timing is off, I'll reconnect in Q3.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="outreach-card">
+      <div class="outreach-card-title">
+        <span class="badge badge-amber">Sequence 3</span>
+        For law firms and advisory firms (Type C) — email
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="background:var(--surface);border-radius:8px;padding:12px 15px;">
+          <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--muted);margin-bottom:6px;">MESSAGE 1 · DAY 1</div>
+          <div style="font-size:13px;color:var(--body);">Subject: Useful tool for your web3 clients<br><br>Hi [Name], I lead partnerships at Request Finance. We're the payments and spend management platform used by 200+ crypto-native companies globally.<br><br>We've found that law firms and advisors working in the web3 space often get asked "what should we use for crypto payments?" by clients. We've put together a simple kit — a one-pager and a referral link — so you have a good answer ready and earn a commission if a client signs up. No agreement needed to get started. Interested in the kit?</div>
+        </div>
+        <div style="background:var(--surface);border-radius:8px;padding:12px 15px;">
+          <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--muted);margin-bottom:6px;">MESSAGE 2 · DAY 7</div>
+          <div style="font-size:13px;color:var(--body);">Just circling back. Happy to send the one-pager without any commitment — takes 10 minutes to review and you'll at least have a good answer for the next client who asks about crypto payments.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="outreach-card">
+      <div class="outreach-card-title">
+        <span class="badge badge-teal">Sequence 4</span>
+        For newsletter authors and community managers (Type D)
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="background:var(--surface);border-radius:8px;padding:12px 15px;">
+          <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--muted);margin-bottom:6px;">MESSAGE 1 · DAY 1</div>
+          <div style="font-size:13px;color:var(--body);">Subject: Partnership for [newsletter name] readers<br><br>Hi [Name], I read [newsletter name] regularly — especially your piece on [specific topic]. Your readers are exactly who Request Finance is built for: finance managers at web3 companies managing cross-border payments and crypto treasury.<br><br>We'd love to explore a partnership — an affiliate arrangement where you earn 15% on any subscriber who becomes a paying RF customer, plus we'd offer your readers an exclusive discount. Would this work for your audience?</div>
+        </div>
+        <div style="background:var(--surface);border-radius:8px;padding:12px 15px;">
+          <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--muted);margin-bottom:6px;">MESSAGE 2 · DAY 8</div>
+          <div style="font-size:13px;color:var(--body);">Also happy to just do a sponsored mention to test fit before committing to anything formal. We pay for newsletter sponsorships too — whatever works best for your format.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <h3>Cold outreach rules that matter</h3>
+  <div class="grid-3">
+    <div class="card-surface">
+      <h4>Personalisation is not optional</h4>
+      <p style="font-size:13px;">Every message in sequence 1 and 2 must include one specific reference to the partner's work, clients, or content. A generic blast will get 2% response rate. A personalised one gets 15–20%. The difference is research — spend 3 minutes on their LinkedIn before hitting send.</p>
+    </div>
+    <div class="card-surface">
+      <h4>3 touches maximum, then move on</h4>
+      <p style="font-size:13px;">If a partner doesn't respond after 3 messages over 12 days, they are not interested right now. Archive them and re-approach in 90 days when you have something new to say (a new feature, a case study, a client they know). Never send a 4th follow-up in the same sequence.</p>
+    </div>
+    <div class="card-surface">
+      <h4>Volume is the game</h4>
+      <p style="font-size:13px;">At a 15% response rate and 30% close rate from responses: 40 outreach/week → 6 responses → 2 signed partners/week → 24 partners in 12 weeks. The funnel only works if you maintain volume. Build a Notion or Airtable tracker so nothing falls through the cracks.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFY AND SCORE -->
+<section class="section section-alt" id="discovery-qualify">
+  <div class="section-label gold-label">13 — Qualify &amp; score partners</div>
+  <h2 class="gold">Not every partner is worth<br>the same amount of time</h2>
+  <p class="section-intro gold-text">Use this scoring framework to prioritise which cold prospects get personal outreach from the CMO or a senior rep, and which ones get a standard sequence.</p>
+
+  <div class="grid-2" style="margin-bottom:32px;">
+    <div>
+      <h3 style="margin-bottom:20px;">Partner quality score (0–100)</h3>
+      <div class="card">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+              <span style="font-size:13px;font-weight:600;">Client portfolio size &amp; relevance</span>
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--blue);">0–30 points</span>
+            </div>
+            <p style="font-size:12px;color:var(--muted);margin-bottom:6px;">30 pts: 20+ web3 clients actively managed · 15 pts: 5–20 clients · 5 pts: &lt;5 clients or mixed portfolio</p>
+            <div style="height:4px;background:var(--surface-2);border-radius:2px;"><div style="height:4px;background:var(--blue);border-radius:2px;width:100%;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+              <span style="font-size:13px;font-weight:600;">Tool recommendation behaviour</span>
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--blue);">0–25 points</span>
+            </div>
+            <p style="font-size:12px;color:var(--muted);margin-bottom:6px;">25 pts: actively mentions specific tools to clients · 12 pts: occasionally recommends · 0 pts: no evidence</p>
+            <div style="height:4px;background:var(--surface-2);border-radius:2px;"><div style="height:4px;background:var(--blue);border-radius:2px;width:83%;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+              <span style="font-size:13px;font-weight:600;">Gap in current payment tool</span>
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--blue);">0–20 points</span>
+            </div>
+            <p style="font-size:12px;color:var(--muted);margin-bottom:6px;">20 pts: no crypto payments tool in their stack · 10 pts: uses competitor · 0 pts: already recommends RF or direct competitor</p>
+            <div style="height:4px;background:var(--surface-2);border-radius:2px;"><div style="height:4px;background:var(--blue);border-radius:2px;width:67%;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+              <span style="font-size:13px;font-weight:600;">Distribution / reach</span>
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--blue);">0–15 points</span>
+            </div>
+            <p style="font-size:12px;color:var(--muted);margin-bottom:6px;">15 pts: newsletter, podcast, or community &gt;1,000 followers · 7 pts: active content creator · 0 pts: no distribution</p>
+            <div style="height:4px;background:var(--surface-2);border-radius:2px;"><div style="height:4px;background:var(--blue);border-radius:2px;width:50%;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+              <span style="font-size:13px;font-weight:600;">Geographic overlap with RF pipeline</span>
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--blue);">0–10 points</span>
+            </div>
+            <p style="font-size:12px;color:var(--muted);margin-bottom:6px;">10 pts: operates in US, UK, Singapore, UAE, France · 5 pts: EMEA/APAC generally · 0 pts: regions with no RF presence</p>
+            <div style="height:4px;background:var(--surface-2);border-radius:2px;"><div style="height:4px;background:var(--blue);border-radius:2px;width:33%;"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="margin-bottom:20px;">Score → action mapping</h3>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="card" style="border-left:3px solid var(--green);border-radius:0 14px 14px 0;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+            <div class="score-badge" style="background:var(--green-light);color:#065f46;">75+</div>
+            <div style="font-weight:600;font-size:15px;">Priority — personal outreach from CMO or senior rep</div>
+          </div>
+          <p style="font-size:13px;">This is a potential anchor partner. Propeller Industries, Aarna.ai, and Regen Financial all score 75+. Personal email from you (not a BDR). Offer Tier 2 immediately. Move fast — these partners get approached by competitors too.</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--amber);border-radius:0 14px 14px 0;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+            <div class="score-badge" style="background:var(--amber-light);color:#92400e;">50–74</div>
+            <div style="font-weight:600;font-size:15px;">Good fit — standard outreach sequence (BDR)</div>
+          </div>
+          <p style="font-size:13px;">Solid partner potential. Use sequence 1 or 2 depending on type. Offer Tier 1 first, upgrade to Tier 2 if they bring volume. These will form the majority of your signed partners.</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--muted-2);border-radius:0 14px 14px 0;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+            <div class="score-badge" style="background:var(--surface-2);color:var(--muted);">25–49</div>
+            <div style="font-weight:600;font-size:15px;">Low priority — kit only, no active follow-up</div>
+          </div>
+          <p style="font-size:13px;">Small portfolio or limited distribution. Send the partner kit via one email. Add to the monthly partner newsletter list. Do not allocate rep time. If they convert, great — but don't chase.</p>
+        </div>
+        <div class="card" style="border-left:3px solid var(--red);border-radius:0 14px 14px 0;">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+            <div class="score-badge" style="background:var(--red-light);color:#991b1b;">&lt;25</div>
+            <div style="font-weight:600;font-size:15px;">Disqualify — do not pursue</div>
+          </div>
+          <p style="font-size:13px;">Not worth outreach time. Archive and move on. Typical disqualifiers: traditional businesses with no crypto clients, pure tax-prep firms, competitors, or firms with no tool recommendation behaviour.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Weekly partner prospecting cadence</h3>
+  <div class="week-grid">
+    <div class="week-card">
+      <div class="week-num">Monday</div>
+      <div class="week-title">Build the list (1 hour)</div>
+      <div class="week-items">Mine one new source (e.g. G2 reviewers for Cryptio). Score all prospects. Add 40+ to the week's outreach list in your tracker.</div>
+    </div>
+    <div class="week-card">
+      <div class="week-num">Tuesday–Thursday</div>
+      <div class="week-title">Send outreach (2 hours/day)</div>
+      <div class="week-items">15 personalised messages per day. Mix cold emails and LinkedIn DMs. Log all sends in tracker. Note the source and score for each.</div>
+    </div>
+    <div class="week-card">
+      <div class="week-num">Friday</div>
+      <div class="week-title">Follow up + review (1 hour)</div>
+      <div class="week-items">Send day-5 follow-ups. Review response rate. If below 10%, adjust the subject line or opening. Move day-12 final touches. Book calls from any replies.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑭ ROADMAP -->
+<section class="section section-alt" id="roadmap">
+  <div class="section-label">14 — 12-week roadmap</div>
+  <h2>From zero to running<br>in 90 days</h2>
+  <p class="section-intro">Sequenced to run warm pipeline activation and cold partner prospecting in parallel. Both tracks start week 1.</p>
+
+  <div class="roadmap">
+    <div class="roadmap-item">
+      <div class="roadmap-dot" style="background:var(--red);color:white;">W1</div>
+      <div class="roadmap-card">
+        <div class="roadmap-header">
+          <div><h3 style="margin-bottom:4px;font-size:18px;">Foundation: close Aarna.ai + launch cold prospecting simultaneously</h3>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:0;">Two parallel tracks from day one. Warm pipeline and cold discovery are not sequential — they run in parallel from week 1.</p></div>
+          <div class="roadmap-period">Week 1</div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <h4>Warm track</h4>
+            <ul style="font-size:13px;">
+              <li>Send Aarna.ai DocuSign — close this week</li>
+              <li>Finalise standard T1 agreement template</li>
+              <li>Create partners@requestfinance.com inbox</li>
+              <li>Set up referral link tracking (UTM or tool)</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Cold track (starts immediately)</h4>
+            <ul style="font-size:13px;">
+              <li>Mine CryptoTax.tools directory — 80+ prospects in 2 hours</li>
+              <li>Mine Koinly/TokenTax partner networks — 60 prospects in 1 hour</li>
+              <li>Score all prospects using framework above</li>
+              <li>Send first 40 personalised outreach messages by Friday</li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-metric"><strong>Week 1 targets:</strong> Aarna.ai signed. 140+ cold prospects identified and scored. 40 outreach messages sent. First cold replies expected.</div>
+      </div>
+    </div>
+
+    <div class="roadmap-item">
+      <div class="roadmap-dot" style="background:#f59e0b;color:white;">W2</div>
+      <div class="roadmap-card">
+        <div class="roadmap-header">
+          <div><h3 style="margin-bottom:4px;font-size:18px;">Re-engage warm pipeline + day-5 cold follow-ups</h3></div>
+          <div class="roadmap-period">Week 2</div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <h4>Warm track</h4>
+            <ul style="font-size:13px;">
+              <li>Send Tier 2 agreement to Regen Financial — ask for Bankless intro</li>
+              <li>Send Tier 2 agreement to Propeller Industries</li>
+              <li>Send kit + referral link to Sonder, Penrose, Withum</li>
+              <li>Mine G2 reviewer lists for Cryptio and Tres Finance</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Cold track</h4>
+            <ul style="font-size:13px;">
+              <li>Send day-5 follow-ups to week 1 outreach</li>
+              <li>Send 40 new outreach messages (G2 reviewer prospects)</li>
+              <li>Book any calls from week 1 replies</li>
+              <li>Mine ETHDenver 2026 speaker list — finance track</li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-metric"><strong>Week 2 targets:</strong> 3+ warm agreements sent. 80+ new cold outreach messages sent. 6–8 cold replies expected. First cold call booked.</div>
+      </div>
+    </div>
+
+    <div class="roadmap-item">
+      <div class="roadmap-dot" style="background:var(--blue);color:white;">W3</div>
+      <div class="roadmap-card">
+        <div class="roadmap-header">
+          <div><h3 style="margin-bottom:4px;font-size:18px;">Build the enablement kit + close first cold partners</h3></div>
+          <div class="roadmap-period">Week 3</div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <h4>Kit build sprint</h4>
+            <ul style="font-size:13px;">
+              <li>Partner one-pager PDF — design and copy</li>
+              <li>3 email templates (intro, follow-up, ask)</li>
+              <li>5-slide CFO deck</li>
+              <li>3-email welcome sequence in CRM</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Cold track</h4>
+            <ul style="font-size:13px;">
+              <li>Run calls with week 1–2 cold respondents</li>
+              <li>Close first cold partner by end of week 3</li>
+              <li>Send 40 new outreach (LinkedIn Sales Navigator search)</li>
+              <li>Day-12 final touch to all week 1 non-responders</li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-metric"><strong>Week 3 targets:</strong> Full kit complete. 1st cold partner signed. 5+ warm agreements in progress.</div>
+      </div>
+    </div>
+
+    <div class="roadmap-item">
+      <div class="roadmap-dot" style="background:var(--blue);color:white;">W4</div>
+      <div class="roadmap-card">
+        <div class="roadmap-header">
+          <div><h3 style="margin-bottom:4px;font-size:18px;">Launch partner page + announce publicly</h3></div>
+          <div class="roadmap-period">Week 4</div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <h4>Public launch</h4>
+            <ul style="font-size:13px;">
+              <li>Partner page live on requestfinance.com</li>
+              <li>Announce in Web3 Finance Club</li>
+              <li>CMO LinkedIn announcement — tag first signed partners</li>
+              <li>Partner page becomes the destination for all cold outreach CTAs</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Cold track continues</h4>
+            <ul style="font-size:13px;">
+              <li>40 new outreach — conference speaker lists</li>
+              <li>Mine Fireblocks and Gnosis Safe partner directories</li>
+              <li>First inbound applications from partner page expected</li>
+              <li>Review week 1–3 outreach conversion rates — adjust messaging if needed</li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-metric"><strong>Week 4 targets:</strong> Partner page live. 5+ agreements signed (warm + cold combined). First inbound partner applications.</div>
+      </div>
+    </div>
+
+    <div class="roadmap-item">
+      <div class="roadmap-dot" style="background:#10b981;color:white;">W5–8</div>
+      <div class="roadmap-card">
+        <div class="roadmap-header">
+          <div><h3 style="margin-bottom:4px;font-size:18px;">Ecosystem partners (Tier 3) + scale cold outreach volume</h3></div>
+          <div class="roadmap-period">Weeks 5–8</div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <h4>Tier 3 ecosystem outreach</h4>
+            <ul style="font-size:13px;">
+              <li>Anchor Labs: co-branded landing page proposal</li>
+              <li>Avalanche: Korean ecosystem intros + joint webinar</li>
+              <li>Ledger: Singapore partnership meeting</li>
+              <li>Cryptoworth: cross-referral + combo package</li>
+              <li>ADAN members — European accounting ecosystem</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Cold outreach at scale</h4>
+            <ul style="font-size:13px;">
+              <li>40 outreach messages per week maintained</li>
+              <li>Substack/newsletter author sequence active</li>
+              <li>Web3 accelerator portfolio support teams</li>
+              <li>ASK EVERY CUSTOMER: "Who does your accounting?" — CSMs add this to QBR script</li>
+              <li>Target: 2 new cold partners signed per week from week 5 onward</li>
+            </ul>
+          </div>
+        </div>
+        <div class="roadmap-metric"><strong>Weeks 5–8 targets:</strong> 12–16 total partners signed. 2 Tier 3 proposals sent. Cold pipeline producing 2+ new partner conversations per week reliably.</div>
+      </div>
+    </div>
+
+    <div class="roadmap-item">
+      <div class="roadmap-dot" style="background:#8b5cf6;color:white;">W9–12</div>
+      <div class="roadmap-card">
+        <div class="roadmap-header">
+          <div><h3 style="margin-bottom:4px;font-size:18px;">Systemise, scale, and measure</h3></div>
+          <div class="roadmap-period">Weeks 9–12</div>
+        </div>
+        <div class="week-grid">
+          <div class="week-card">
+            <div class="week-num">Infrastructure</div>
+            <div class="week-title">Partner dashboard</div>
+            <div class="week-items">Set up PartnerStack, Rewardful, or FirstPromoter. Each partner gets their own dashboard. Eliminates manual tracking.</div>
+          </div>
+          <div class="week-card">
+            <div class="week-num">Retention</div>
+            <div class="week-title">First quarterly call</div>
+            <div class="week-items">30 mins for all Tier 2 partners. Roadmap preview. New ICP profiles. Q&A. Keeps partners warm and generating intros.</div>
+          </div>
+          <div class="week-card">
+            <div class="week-num">Growth</div>
+            <div class="week-title">Partner newsletter + cold at scale</div>
+            <div class="week-items">Monthly newsletter live. Cold outreach hits 40+ messages/week consistently. Target 25+ total signed partners by week 12.</div>
+          </div>
+        </div>
+        <div class="roadmap-metric"><strong>Week 12 targets:</strong> 20–25 signed partners across all tiers. Partner dashboard live. First commissions paid. Cold pipeline self-sustaining at 2+ new partner sign-ups per week.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑮ PRIORITY LIST -->
+<section class="section" id="priority">
+  <div class="section-label">15 — Priority partner list</div>
+  <h2>The 25 partners to pursue<br>in the next 90 days</h2>
+  <p class="section-intro">The first 15 are warm pipeline. The next 10 are the highest-scoring cold prospects based on the discovery framework above. Ranked by potential customer volume and ease of close.</p>
+
+  <div style="overflow-x:auto;margin-bottom:20px;">
+    <table class="tier-table" style="min-width:750px;">
+      <thead>
+        <tr><th>#</th><th>Partner</th><th>Status</th><th>Tier</th><th>Est. reach</th><th>Score</th><th>Action</th></tr>
+      </thead>
+      <tbody>
+        <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:12px;">01</td><td class="td-name">Aarna.ai</td><td><span class="badge badge-purple">DocuSign pending</span></td><td><span class="badge badge-blue">T2</span></td><td style="font-size:13px;">30–50 companies</td><td><div style="font-family:var(--font-mono);font-weight:700;color:var(--green);">92</div></td><td style="font-size:12px;">Send DocuSign TODAY</td></tr>
+        <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:12px;">02</td><td class="td-name">Regen Financial</td><td><span class="badge badge-green">Already referring</span></td><td><span class="badge badge-blue">T2</span></td><td style="font-size:13px;">20–30 companies</td><td><div style="font-family:var(--font-mono);font-weight:700;color:var(--green);">90</div></td><td style="font-size:12px;">T2 agreement + Bankless intro this week</td></tr>
+        <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:12px;">03</td><td class="td-name">Propeller Industries</td><td><span class="badge badge-amber">Agreement discussed</span></td><td><span class="badge badge-blue">T2</span></td><td style="font-size:13px;">40 clients (Solana, a16z)</td><td><div style="font-family:var(--font-mono);font-weight:700;color:var(--green);">88</div></td><td style="font-size:12px;">Re-engage with formal T2 agreement</td></tr>
+        <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:12px;">04</td><td class="td-name">Sonder Solutions</td><td><span class="badge badge-blue">Template sent</span></td><td><span class="badge badge-green">T1</span></td><td style="font-size:13px;">10–15 companies</td><td><div style="font-family:var(--font-mono);font-weight:700;color:#f59e0b;">72</div></td><td style="font-size:12px;">Follow up with signed agreement</td></tr>
+        <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:12px;">05</td><td class="td-name">Penrose Partners</td><td><span class="badge badge-amber">Explicitly asked</span></td><td><span class="badge badge-green">T1</span></td><td style="font-size:13px;">US/Bermuda/UK/CA network</td><td><div style="font-family:var(--font-mono);font-weight:700;color:#f59e0b;">70</div></td><td style="font-size:12px;">Send kit + referral link immediately</td></tr>
+        <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:12px;">06</td><td class="td-name">Withum</td><td><span class="badge badge-green">Ready to refer</span></td><td><span class="badge badge-green">T1</span></td><td style="font-size:13px;">Investment + web3 firms</td><td><div style="font-family:var(--font-mono);font-weight:700;color:#f59e0b;">68</div></td><td style="font-size:12px;">Kit + Cayman event invite</td></tr>
+        <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:12px;">07</td><td class="td-name">Anchor Labs (Porto)</td><td><span class="badge badge-amber">Asked for agreement</span></td><td><span class="badge badge-purple">T3</span></td><td style="font-size:13px;">Porto wallet user base</td><td><div style="font-family:var(--font-mono);font-weight:700;color:var(--green);">85</div></td><td style="font-size:12px;">T3 proposal + co-marketing plan</td></tr>
+        <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:12px;">08</td><td class="td-name">Cryptoworth</td><td><span class="badge badge-green">Existing integration</span></td><td><span class="badge badge-purple">T3</span></td><td style="font-size:13px;">Shared customer base</td><td><div style="font-family:var(--font-mono);font-weight:700;color:var(--green);">83</div></td><td style="font-size:12px;">Cross-referral + combo package</td></tr>
+        <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:12px;">09</td><td class="td-name">Avalanche (Asia)</td><td><span class="badge badge-blue">Deck sent</span></td><td><span class="badge badge-purple">T3</span></td><td style="font-size:13px;">Korean import/export ecosystem</td><td><div style="font-family:var(--font-mono);font-weight:700;color:var(--green);">80</div></td><td style="font-size:12px;">Ludo follow-up + Korean business intros</td></tr>
+        <tr><td style="color:var(--muted);font-family:var(--font-mono);font-size:12px;">10</td><td class="td-name">Ledger Enterprise</td><td><span class="badge badge-blue">Meeting requested</span></td><td><span class="badge badge-purple">T3</span></td><td style="font-size:13px;">On-chain business clients</td><td><div style="font-family:var(--font-mono);font-weight:700;color:var(--green);">78</div></td><td style="font-size:12px;">Singapore partnership meeting</td></tr>
+        <tr style="background:#fffbeb;"><td style="color:var(--muted);font-family:var(--font-mono);font-size:12px;">11</td><td class="td-name">Top cold prospect: web3 accounting firm (CryptoTax.tools)</td><td><span class="badge badge-gold">Cold prospect</span></td><td><span class="badge badge-blue">T2</span></td><td style="font-size:13px;">15–25 DeFi/DAO clients</td><td><div style="font-family:var(--font-mono);font-weight:700;color:var(--green);">80</div></td><td style="font-size:12px;">Sequence 1 — personal outreach week 1</td></tr>
+        <tr style="background:#fffbeb;"><td style="color:var(--muted);font-family:var(--font-mono);font-size:12px;">12</td><td class="td-name">G2 reviewer (Cryptio) — crypto accounting firm</td><td><span class="badge badge-gold">Cold prospect</span></td><td><span class="badge badge-blue">T2</span></td><td style="font-size:13px;">10–20 crypto company clients</td><td><div style="font-family:var(--font-mono);font-weight:700;color:#f59e0b;">75</div></td><td style="font-size:12px;">Sequence 1 — week 1 outreach</td></tr>
+        <tr style="background:#fffbeb;"><td style="color:var(--muted);font-family:var(--font-mono);font-size:12px;">13</td><td class="td-name">Koinly partner firm — APAC-based</td><td><span class="badge badge-gold">Cold prospect</span></td><td><span class="badge badge-blue">T2</span></td><td style="font-size:13px;">10–30 companies (APAC)</td><td><div style="font-family:var(--font-mono);font-weight:700;color:#f59e0b;">73</div></td><td style="font-size:12px;">Sequence 1 — week 2 outreach</td></tr>
+        <tr style="background:#fffbeb;"><td style="color:var(--muted);font-family:var(--font-mono);font-size:12px;">14</td><td class="td-name">ETHDenver finance track speaker</td><td><span class="badge badge-gold">Cold prospect</span></td><td><span class="badge badge-green">T1</span></td><td style="font-size:13px;">Conference + client network</td><td><div style="font-family:var(--font-mono);font-weight:700;color:#f59e0b;">70</div></td><td style="font-size:12px;">Post-event LinkedIn outreach</td></tr>
+        <tr style="background:#fffbeb;"><td style="color:var(--muted);font-family:var(--font-mono);font-size:12px;">15</td><td class="td-name">DAO tooling ecosystem partner (Safe/Tally)</td><td><span class="badge badge-gold">Cold prospect</span></td><td><span class="badge badge-purple">T3</span></td><td style="font-size:13px;">DAO treasury manager audience</td><td><div style="font-family:var(--font-mono);font-weight:700;color:#f59e0b;">68</div></td><td style="font-size:12px;">Sequence 2 — ecosystem angle</td></tr>
+        <tr style="background:#fffbeb;"><td style="color:var(--muted);font-family:var(--font-mono);font-size:12px;">16–25</td><td class="td-name" colspan="5">Ongoing cold pipeline from: LinkedIn Sales Nav, AICPA blockchain task force, Coinbase Institutional partner list, web3 Substack newsletters, accelerator portfolio support teams, RF customer accountant sourcing via CSM</td><td style="font-size:12px;">Sequence 1/2/3 by type</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:12px;color:var(--muted);">Rows highlighted in yellow are cold-prospected partners. Score based on the 0–100 framework in section 13.</p>
+</section>
+
+<!-- ⑯ PATH TO 400 -->
+<section class="section section-alt" id="pipeline">
+  <div class="section-label">16 — Path to 400 customers</div>
+  <h2>The maths with cold<br>discovery included</h2>
+  <p class="section-intro">The model now includes both warm pipeline partners and cold-prospected partners. The cold track alone could deliver an additional 40–60 new customers on top of the warm pipeline results.</p>
+  <div class="grid-2" style="margin-bottom:36px;">
+    <div>
+      <h3 style="margin-bottom:20px;">Target model — combined warm + cold (12 months)</h3>
+      <div class="card">
+        <div style="font-size:11px;font-weight:600;color:var(--blue);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;">Warm pipeline partners</div>
+        <div class="math-row"><div class="math-label">T1 warm partners signed (8)</div><div class="math-val">31 customers</div></div>
+        <div class="math-row"><div class="math-label">T2 warm partners signed (8)</div><div class="math-val">48 customers</div></div>
+        <div class="math-row"><div class="math-label">T3 ecosystem partners signed (5)</div><div class="math-val">60 customers</div></div>
+        <div class="math-total" style="margin-bottom:20px;"><div class="math-label" style="color:rgba(255,255,255,.8);">Subtotal — warm partners</div><div class="math-val" style="color:white;">139</div></div>
+        <div style="font-size:11px;font-weight:600;color:#f59e0b;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;margin-top:4px;">Cold-prospected partners (new)</div>
+        <div class="math-row"><div class="math-label">Cold T1/T2 signed (12 partners)</div><div class="math-val">~36 customers</div></div>
+        <div class="math-row"><div class="math-label">Cold T3 ecosystem (3 partners)</div><div class="math-val">~22 customers</div></div>
+        <div class="math-total" style="margin-bottom:20px;background:#d97706;"><div class="math-label" style="color:rgba(255,255,255,.8);">Subtotal — cold partners</div><div class="math-val" style="color:white;">58</div></div>
+        <div style="font-size:11px;font-weight:600;color:var(--muted);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;margin-top:4px;">Existing channels</div>
+        <div class="math-row"><div class="math-label">SEO + outbound + club (existing)</div><div class="math-val">~70 customers</div></div>
+        <div class="math-total" style="background:var(--ink);"><div class="math-label" style="color:var(--sky);font-size:16px;font-weight:600;">Total projected end of year</div><div class="math-val" style="font-size:28px;color:var(--sky);">467</div></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="margin-bottom:20px;">What cold discovery adds to the model</h3>
+      <div class="card-blue" style="margin-bottom:16px;">
+        <h4>Without cold discovery</h4>
+        <p style="font-size:13px;">Warm partners only + existing channels = 200 + 139 + 70 = <strong>409 customers</strong>. You hit 400, but only in the optimistic scenario. No buffer for slow activations, low conversion periods, or churn.</p>
+      </div>
+      <div class="card-amber" style="margin-bottom:16px;">
+        <h4>With cold discovery</h4>
+        <p style="font-size:13px;">Warm + cold partners + existing channels = 200 + 197 + 70 = <strong>467 customers</strong>. You have a 67-customer buffer above target. Even in a disappointing quarter you still hit 400.</p>
+      </div>
+      <div class="card" style="border-left:3px solid var(--green);border-radius:0 14px 14px 0;">
+        <h4>The cold partner ROI</h4>
+        <p style="font-size:13px;margin-bottom:8px;">Assuming 58 new customers from cold partners:</p>
+        <ul style="font-size:13px;">
+          <li>At $7,500 avg ACV = $435K new ARR</li>
+          <li>At 20% commission = $87K in commissions paid</li>
+          <li>Net ARR from cold partner channel = <strong>$348K</strong></li>
+          <li>Cost to run cold outreach (4hrs/week × 12 weeks × salary) = ~$15K</li>
+          <li><strong>ROI: 23× on time invested</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑰ KPIs -->
+<section class="section" id="kpis">
+  <div class="section-label">17 — KPIs &amp; measurement</div>
+  <h2>How to know if it's working</h2>
+  <p class="section-intro">Separate KPIs for warm activation and cold discovery. Review weekly for the first 12 weeks.</p>
+  <div class="kpi-grid">
+    <div class="kpi-card"><div class="kpi-val">8</div><div class="kpi-lbl">Partners signed by week 4</div></div>
+    <div class="kpi-card"><div class="kpi-val">25</div><div class="kpi-lbl">Partners signed by week 12</div></div>
+    <div class="kpi-card"><div class="kpi-val">15%</div><div class="kpi-lbl">Cold outreach response rate target</div></div>
+    <div class="kpi-card"><div class="kpi-val">30%</div><div class="kpi-lbl">Intro → paid conversion rate</div></div>
+  </div>
+  <div class="grid-3">
+    <div class="card">
+      <h4>Warm pipeline KPIs</h4>
+      <ul class="checklist">
+        <li><span class="check-icon" style="background:var(--light);color:#1d4ed8;">◆</span><div>Warm agreements signed (target: 8 by week 4)</div></li>
+        <li><span class="check-icon" style="background:var(--light);color:#1d4ed8;">◆</span><div>Active warm partners (sent ≥1 intro in 30 days)</div></li>
+        <li><span class="check-icon" style="background:var(--light);color:#1d4ed8;">◆</span><div>Intros from warm partners per month</div></li>
+        <li><span class="check-icon" style="background:var(--light);color:#1d4ed8;">◆</span><div>Warm intro → paid conversion rate</div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Cold discovery KPIs</h4>
+      <ul class="checklist">
+        <li><span class="check-icon" style="background:var(--amber-light);color:#92400e;">◆</span><div>Cold prospects identified per week (target: 40+)</div></li>
+        <li><span class="check-icon" style="background:var(--amber-light);color:#92400e;">◆</span><div>Cold outreach messages sent per week (target: 40)</div></li>
+        <li><span class="check-icon" style="background:var(--amber-light);color:#92400e;">◆</span><div>Cold response rate (target: ≥15%)</div></li>
+        <li><span class="check-icon" style="background:var(--amber-light);color:#92400e;">◆</span><div>Cold partner sign-up rate (target: 2/week from week 5)</div></li>
+        <li><span class="check-icon" style="background:var(--amber-light);color:#92400e;">◆</span><div>Cold partner → active partner rate (sent ≥1 intro)</div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Business impact KPIs</h4>
+      <ul class="checklist">
+        <li><span class="check-icon" style="background:var(--light);color:#1d4ed8;">◆</span><div>New paid customers from referral channel / month</div></li>
+        <li><span class="check-icon" style="background:var(--light);color:#1d4ed8;">◆</span><div>Referral % of total new customers (target: 35% by month 6)</div></li>
+        <li><span class="check-icon" style="background:var(--light);color:#1d4ed8;">◆</span><div>ACV of referral customers vs. other channels</div></li>
+        <li><span class="check-icon" style="background:var(--light);color:#1d4ed8;">◆</span><div>Commission payout as % of referral ARR (target: &lt;18%)</div></li>
+        <li><span class="check-icon" style="background:var(--light);color:#1d4ed8;">◆</span><div>Total paid customers (target: 400 by month 12)</div></li>
+      </ul>
+    </div>
+  </div>
+  <hr class="divider" style="margin:40px 0;">
+  <div class="highlight">"The warm pipeline gets you to 400. The cold discovery gets you to 467 and gives you a safety buffer. Both tracks must run in parallel from week 1 — they are not sequential. The single most important action this week is still sending the Aarna.ai DocuSign. The second most important is spending 2 hours on CryptoTax.tools and walking away with 80 qualified cold partner prospects."</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>
+    <strong>Request Finance — Referral Growth Masterplan v2</strong><br>
+    Confidential · CMO Master File · March 2026 · Includes cold partner discovery
+  </div>
+  <div style="text-align:right;">
+    requestfinance.com<br>
+    Based on 85 sales meeting notes · Nov 2025 – Mar 2026
+  </div>
+</footer>
+</main>
+
+<script>
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector('.nav-link[href="#' + entry.target.id + '"]');
+      if (active) active.classList.add('active');
+    }
+  });
+}, { threshold: 0.2, rootMargin: '-60px 0px -60% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

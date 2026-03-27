@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMO Intelligence Report — Request Finance Q4 2025 – Q1 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rf-blue: #2b6ff4;
+  --rf-sky: #60d5ff;
+  --rf-light: #dbeafe;
+  --rf-cream: #fff1be;
+  --ink: #0d1117;
+  --ink-2: #1e2733;
+  --ink-3: #2e3a47;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --border-2: #cbd5e1;
+  --surface: #f8faff;
+  --surface-2: #f1f5f9;
+  --white: #ffffff;
+  --accent-glow: rgba(43, 111, 244, 0.12);
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --red: #ef4444;
+  --green: #22c55e;
+  --amber: #f59e0b;
+  --purple: #8b5cf6;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed; left: 0; top: 0; bottom: 0;
+  width: 232px; background: var(--ink);
+  padding: 32px 0; display: flex; flex-direction: column;
+  z-index: 100; overflow-y: auto;
+}
+.sidebar-logo { padding: 0 24px 28px; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 20px; }
+.sidebar-logo-name { font-family: var(--font-head); font-size: 13px; font-weight: 700; color: var(--white); letter-spacing: .04em; text-transform: uppercase; }
+.sidebar-logo-sub { font-size: 11px; color: rgba(255,255,255,.4); margin-top: 3px; font-family: var(--font-mono); }
+.nav-section { padding: 0 16px 4px; font-size: 9px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.25); margin-bottom: 4px; margin-top: 16px; }
+.nav-link { display: flex; align-items: center; gap: 8px; padding: 7px 16px; text-decoration: none; font-size: 12.5px; color: rgba(255,255,255,.5); transition: all .15s; border-left: 2px solid transparent; }
+.nav-link:hover { color: var(--white); background: rgba(255,255,255,.05); }
+
+/* MAIN */
+.main { margin-left: 232px; min-height: 100vh; }
+
+/* HERO */
+.hero { background: var(--ink); padding: 72px 64px 56px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -120px; right: -80px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(43,111,244,.25) 0%, transparent 70%); pointer-events: none; }
+.hero-label { display: inline-flex; align-items: center; gap: 8px; background: rgba(43,111,244,.2); border: 1px solid rgba(43,111,244,.4); color: var(--rf-sky); font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; margin-bottom: 24px; font-family: var(--font-mono); }
+.hero h1 { font-family: var(--font-head); font-size: 46px; font-weight: 800; color: var(--white); line-height: 1.1; letter-spacing: -.02em; max-width: 700px; margin-bottom: 18px; }
+.hero h1 span { color: var(--rf-sky); }
+.hero-sub { font-size: 15.5px; color: rgba(255,255,255,.5); max-width: 600px; line-height: 1.65; margin-bottom: 40px; }
+.hero-stats { display: flex; gap: 40px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 28px; flex-wrap: wrap; }
+.hero-stat-val { font-family: var(--font-head); font-size: 28px; font-weight: 700; color: var(--white); }
+.hero-stat-lbl { font-size: 11.5px; color: rgba(255,255,255,.38); margin-top: 2px; }
+
+/* SECTIONS */
+.section { padding: 56px 64px; border-bottom: 1px solid var(--border); }
+.section:last-child { border-bottom: none; }
+.section-alt { background: var(--surface); }
+.section-label { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 500; color: var(--rf-blue); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 10px; }
+.section-label::before { content: ''; display: inline-block; width: 16px; height: 2px; background: var(--rf-blue); border-radius: 2px; }
+h2 { font-family: var(--font-head); font-size: 32px; font-weight: 700; letter-spacing: -.02em; color: var(--ink); margin-bottom: 8px; line-height: 1.15; }
+.section-intro { font-size: 14.5px; color: var(--muted); max-width: 640px; margin-bottom: 36px; line-height: 1.7; }
+h3 { font-family: var(--font-head); font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 12px; letter-spacing: -.01em; }
+h4 { font-family: var(--font-head); font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+p { margin-bottom: 13px; color: var(--ink-3); line-height: 1.75; }
+p:last-child { margin-bottom: 0; }
+ul, ol { padding-left: 20px; margin-bottom: 13px; }
+li { color: var(--ink-3); line-height: 1.75; margin-bottom: 4px; font-size: 14px; }
+strong { font-weight: 600; color: var(--ink); }
+
+/* GRID */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+/* CARDS */
+.card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+.card-surface { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+.card-accent { background: var(--accent-glow); border: 1px solid rgba(43,111,244,.2); border-radius: 12px; padding: 24px; }
+.card-dark { background: var(--ink-2); border-radius: 12px; padding: 24px; }
+.card-dark h4 { color: var(--white); }
+.card-dark p, .card-dark li { color: rgba(255,255,255,.6); }
+
+/* CHIPS & BADGES */
+.chip { display: inline-flex; align-items: center; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; margin: 2px; font-family: var(--font-mono); }
+.chip-blue { background: var(--rf-light); color: #1d4ed8; }
+.chip-sky { background: rgba(96,213,255,.15); color: #0891b2; }
+.chip-green { background: #dcfce7; color: #15803d; }
+.chip-amber { background: #fef9c3; color: #92400e; }
+.chip-red { background: #fee2e2; color: #991b1b; }
+.chip-purple { background: #ede9fe; color: #6d28d9; }
+.chip-gray { background: var(--surface-2); color: var(--muted); }
+
+.badge { display: inline-flex; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .04em; }
+.badge-blue { background: var(--rf-light); color: #1d4ed8; }
+.badge-green { background: #dcfce7; color: #15803d; }
+.badge-amber { background: #fff7ed; color: #c2410c; }
+.badge-red { background: #fee2e2; color: #991b1b; }
+.badge-sky { background: rgba(96,213,255,.15); color: #0369a1; }
+
+/* TABLES */
+table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 20px; }
+thead th { text-align: left; padding: 10px 14px; background: var(--ink); color: rgba(255,255,255,.7); font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; }
+thead th:first-child { border-radius: 8px 0 0 0; }
+thead th:last-child { border-radius: 0 8px 0 0; }
+tbody tr { border-bottom: 1px solid var(--border); }
+tbody tr:hover { background: var(--surface); }
+tbody td { padding: 10px 14px; color: var(--ink-3); vertical-align: top; }
+.td-kw { font-weight: 500; color: var(--ink); }
+
+/* HIGHLIGHT */
+.highlight-box { background: linear-gradient(135deg, rgba(43,111,244,.06), rgba(96,213,255,.06)); border-left: 3px solid var(--rf-blue); border-radius: 0 10px 10px 0; padding: 18px 20px; margin: 20px 0; font-size: 14px; color: var(--ink-2); line-height: 1.7; }
+.callout { display: flex; gap: 14px; align-items: flex-start; background: var(--rf-light); border-radius: 10px; padding: 16px 18px; margin: 16px 0; }
+.callout-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.callout-text { font-size: 13px; color: #1d4ed8; line-height: 1.6; }
+.callout-text strong { color: #1e3a8a; }
+
+/* STAT BLOCKS */
+.stat-row { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.stat-block { flex: 1; min-width: 140px; background: var(--surface); border-radius: 10px; padding: 16px 18px; border-left: 3px solid var(--rf-blue); }
+.stat-block.red { border-left-color: var(--red); }
+.stat-block.green { border-left-color: var(--green); }
+.stat-block.amber { border-left-color: var(--amber); }
+.stat-block.purple { border-left-color: var(--purple); }
+.stat-val { font-family: var(--font-head); font-size: 24px; font-weight: 700; color: var(--ink); line-height: 1; }
+.stat-lbl { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+/* BAR CHART */
+.bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.bar-label { width: 140px; flex-shrink: 0; font-size: 13px; font-weight: 500; color: var(--ink); text-align: right; }
+.bar-track { flex: 1; height: 24px; background: var(--surface-2); border-radius: 6px; overflow: hidden; position: relative; }
+.bar-fill { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: 10px; font-size: 11px; font-weight: 600; color: white; font-family: var(--font-mono); transition: width .6s ease; }
+.bar-fill.blue { background: var(--rf-blue); }
+.bar-fill.sky { background: #0891b2; }
+.bar-fill.amber { background: var(--amber); }
+.bar-fill.green { background: var(--green); }
+.bar-fill.purple { background: var(--purple); }
+.bar-fill.red { background: var(--red); }
+
+/* DIVIDER */
+.divider { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+
+/* MOAT CARD */
+.moat-card { background: var(--ink); border-radius: 14px; padding: 28px; position: relative; overflow: hidden; }
+.moat-card::after { content: ''; position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(96,213,255,.15) 0%, transparent 70%); }
+.moat-card h3, .moat-card h4 { color: var(--white); }
+.moat-card p, .moat-card li { color: rgba(255,255,255,.6); }
+
+/* ACTION ITEM */
+.action-item { display: flex; gap: 12px; padding: 14px 16px; border-radius: 10px; margin-bottom: 8px; border: 1px solid var(--border); background: var(--white); }
+.action-num { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; font-family: var(--font-mono); flex-shrink: 0; color: white; }
+.action-content { flex: 1; }
+.action-title { font-weight: 600; font-size: 14px; color: var(--ink); margin-bottom: 3px; }
+.action-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* PRIORITY MATRIX */
+.priority-card { border-radius: 12px; padding: 20px; position: relative; }
+.priority-card .priority-tag { position: absolute; top: 12px; right: 12px; font-family: var(--font-mono); font-size: 9px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; }
+
+/* PRINT */
+@media print {
+  .sidebar { display: none; }
+  .main { margin-left: 0; }
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 10px; }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="sidebar-logo">
+    <div class="sidebar-logo-name">Request Finance</div>
+    <div class="sidebar-logo-sub">CMO Intelligence Report</div>
+  </div>
+  <div class="nav-section">Overview</div>
+  <a href="#exec" class="nav-link">Executive summary</a>
+  <a href="#volume" class="nav-link">Pipeline snapshot</a>
+  <div class="nav-section">Market Intelligence</div>
+  <a href="#segments" class="nav-link">Buyer segments</a>
+  <a href="#geo" class="nav-link">Geographic signals</a>
+  <a href="#demand" class="nav-link">Feature demand map</a>
+  <a href="#competitors" class="nav-link">Competitive threats</a>
+  <div class="nav-section">Marketing Strategy</div>
+  <a href="#channels" class="nav-link">Channel performance</a>
+  <a href="#messaging" class="nav-link">Messaging gaps</a>
+  <a href="#content" class="nav-link">Content opportunities</a>
+  <a href="#website" class="nav-link">Website & conversion</a>
+  <a href="#seo-link" class="nav-link">SEO implications</a>
+  <div class="nav-section">Action Plan</div>
+  <a href="#priorities" class="nav-link">Top 20 actions</a>
+  <a href="#quick" class="nav-link">Quick wins</a>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Confidential · March 2026</div>
+  <h1>Sales Intelligence<br>Report for the <span>CMO</span></h1>
+  <p class="hero-sub">A deep analysis of 80+ sales meetings from November 2025 to March 2026. Patterns, signals, and 20 concrete marketing actions extracted from the frontline.</p>
+  <div class="hero-stats">
+    <div><div class="hero-stat-val">80+</div><div class="hero-stat-lbl">Meetings analyzed</div></div>
+    <div><div class="hero-stat-val">23</div><div class="hero-stat-lbl">Industries represented</div></div>
+    <div><div class="hero-stat-val">30+</div><div class="hero-stat-lbl">Countries touched</div></div>
+    <div><div class="hero-stat-val">$50M+</div><div class="hero-stat-lbl">Monthly volume in pipeline</div></div>
+  </div>
+</div>
+
+<!-- ① EXECUTIVE SUMMARY -->
+<section class="section" id="exec">
+  <div class="section-label">01 — Executive summary</div>
+  <h2>What the sales floor is telling us</h2>
+  <p class="section-intro">Four months of meeting data reveals five macro-level signals that should reshape marketing priorities immediately.</p>
+
+  <div class="grid-2" style="margin-bottom: 28px;">
+    <div class="card">
+      <h4>The biggest shift</h4>
+      <p style="font-size:13px;">Non-web3 companies are now entering the pipeline organically. A Brazilian music platform (Sua Música), a US real estate group, a UK logistics holding, a Virginia Airbnb operator, and a global affiliate network all appeared in the last 4 months. The addressable market is expanding beyond crypto-native companies, and our marketing doesn't reflect this yet.</p>
+    </div>
+    <div class="card">
+      <h4>The biggest threat</h4>
+      <p style="font-size:13px;">Dakota is being mentioned by leads as a free alternative. Slash is undercutting on offramp fees. Reap is expanding. Multiple leads cite "pricing too expensive" as the primary blocker. The market is commoditizing C2F and basic AP features. We need to shift positioning toward the full-stack value (AP + AR + Cards + GUSD + Approvals) before competitors close the gap.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 28px;">Five macro signals</h3>
+  <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 16px;">
+    <div class="card-accent" style="padding:18px;">
+      <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--rf-blue);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Signal 1</div>
+      <h4 style="font-size:13px;">Global USD Account is the magnet</h4>
+      <p style="font-size:12px;color:var(--muted);">40%+ of new meetings mention GUSD interest. It's the #1 inbound driver and the feature competitors don't have.</p>
+    </div>
+    <div class="card-accent" style="padding:18px;">
+      <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--rf-blue);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Signal 2</div>
+      <h4 style="font-size:13px;">Cards are table stakes</h4>
+      <p style="font-size:12px;color:var(--muted);">35+ leads explicitly asked for crypto cards. Leads are actively using Reap, Cypher, RedotPay, and Ether.fi. Delay = churn risk.</p>
+    </div>
+    <div class="card-accent" style="padding:18px;">
+      <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--rf-blue);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Signal 3</div>
+      <h4 style="font-size:13px;">Web2 is coming</h4>
+      <p style="font-size:12px;color:var(--muted);">12+ meetings with non-crypto businesses. Cross-border pain + stablecoin curiosity = new TAM. Current site repels them.</p>
+    </div>
+    <div class="card-accent" style="padding:18px;">
+      <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--rf-blue);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Signal 4</div>
+      <h4 style="font-size:13px;">Pricing is the #1 objection</h4>
+      <p style="font-size:12px;color:var(--muted);">C2F fees "too high" mentioned in 20+ meetings. Dakota, Slash, OTC desks all cited as cheaper. Value-based pricing narrative needed.</p>
+    </div>
+    <div class="card-accent" style="padding:18px;">
+      <div style="font-family:var(--font-mono);font-size:10px;font-weight:600;color:var(--rf-blue);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Signal 5</div>
+      <h4 style="font-size:13px;">Accounting integrations unlock deals</h4>
+      <p style="font-size:12px;color:var(--muted);">QuickBooks, Xero, and NetSuite mentioned in 25+ meetings. Missing integrations = lost deals (Kiln, Flowdesk, P2P).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ② PIPELINE SNAPSHOT -->
+<section class="section section-alt" id="volume">
+  <div class="section-label">02 — Pipeline snapshot</div>
+  <h2>By the numbers</h2>
+  <p class="section-intro">Aggregated data from all meetings to understand the volume and composition of the pipeline.</p>
+
+  <div class="stat-row">
+    <div class="stat-block"><div class="stat-val">~$18M</div><div class="stat-lbl">Est. monthly C2C volume in pipeline</div></div>
+    <div class="stat-block green"><div class="stat-val">~$5M</div><div class="stat-lbl">Est. monthly C2F volume in pipeline</div></div>
+    <div class="stat-block amber"><div class="stat-val">~$3M</div><div class="stat-lbl">Est. monthly on-ramp volume in pipeline</div></div>
+    <div class="stat-block purple"><div class="stat-val">35+</div><div class="stat-lbl">Leads requesting crypto cards</div></div>
+  </div>
+
+  <h3>Deal size distribution (monthly payment volume)</h3>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Most leads cluster in the $50K–$300K range, with a few outliers above $1M.</p>
+  <div style="max-width:700px;">
+    <div class="bar-row"><div class="bar-label">&lt; $50K</div><div class="bar-track"><div class="bar-fill blue" style="width:65%;">~28 leads</div></div></div>
+    <div class="bar-row"><div class="bar-label">$50K – $200K</div><div class="bar-track"><div class="bar-fill sky" style="width:50%;">~22 leads</div></div></div>
+    <div class="bar-row"><div class="bar-label">$200K – $500K</div><div class="bar-track"><div class="bar-fill green" style="width:30%;">~13 leads</div></div></div>
+    <div class="bar-row"><div class="bar-label">$500K – $1M</div><div class="bar-track"><div class="bar-fill amber" style="width:18%;">~8 leads</div></div></div>
+    <div class="bar-row"><div class="bar-label">&gt; $1M</div><div class="bar-track"><div class="bar-fill purple" style="width:12%;">~5 leads</div></div></div>
+  </div>
+
+  <h3 style="margin-top:28px;">Subscription plan fit</h3>
+  <div style="max-width:700px;">
+    <div class="bar-row"><div class="bar-label">Basic ($300–$500)</div><div class="bar-track"><div class="bar-fill blue" style="width:48%;">~40%</div></div></div>
+    <div class="bar-row"><div class="bar-label">Pro ($800–$2.5K)</div><div class="bar-track"><div class="bar-fill sky" style="width:42%;">~35%</div></div></div>
+    <div class="bar-row"><div class="bar-label">Custom / Enterprise</div><div class="bar-track"><div class="bar-fill green" style="width:30%;">~25%</div></div></div>
+  </div>
+</section>
+
+<!-- ③ BUYER SEGMENTS -->
+<section class="section" id="segments">
+  <div class="section-label">03 — Buyer segments</div>
+  <h2>Who is actually buying</h2>
+  <p class="section-intro">The meetings reveal seven distinct buyer personas — not all of them are on our website or in our marketing.</p>
+
+  <table>
+    <thead>
+      <tr><th>Segment</th><th>% of Pipeline</th><th>Typical volume</th><th>Primary need</th><th>Marketing coverage</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-kw">Crypto-native protocols / DAOs</td>
+        <td>~30%</td>
+        <td>$100K–$1M/mo</td>
+        <td>AP management + approvals + C2F</td>
+        <td><span class="badge badge-green">Strong</span></td>
+      </tr>
+      <tr>
+        <td class="td-kw">Web3 dev shops & agencies</td>
+        <td>~20%</td>
+        <td>$30K–$200K/mo</td>
+        <td>Contractor payroll + invoicing</td>
+        <td><span class="badge badge-green">Strong</span></td>
+      </tr>
+      <tr>
+        <td class="td-kw">Web3 security / audit firms</td>
+        <td>~8%</td>
+        <td>$50K–$300K/mo</td>
+        <td>AR automation + reconciliation</td>
+        <td><span class="badge badge-amber">Weak</span></td>
+      </tr>
+      <tr>
+        <td class="td-kw">Marketing / content agencies</td>
+        <td>~10%</td>
+        <td>$20K–$500K/mo</td>
+        <td>Mass payouts to creators/freelancers</td>
+        <td><span class="badge badge-red">None</span></td>
+      </tr>
+      <tr>
+        <td class="td-kw">Traditional businesses going crypto</td>
+        <td>~12%</td>
+        <td>$50K–$1M+/mo</td>
+        <td>Cross-border payments + on/off-ramp</td>
+        <td><span class="badge badge-red">None</span></td>
+      </tr>
+      <tr>
+        <td class="td-kw">Investment / advisory firms</td>
+        <td>~10%</td>
+        <td>$100K–$2M+/mo</td>
+        <td>Treasury + off-ramp + AR</td>
+        <td><span class="badge badge-amber">Weak</span></td>
+      </tr>
+      <tr>
+        <td class="td-kw">Gaming / iGaming companies</td>
+        <td>~10%</td>
+        <td>$35K–$1M/mo</td>
+        <td>Mass payroll + C2F + cards</td>
+        <td><span class="badge badge-red">None</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-icon">🔴</div>
+    <div class="callout-text"><strong>Critical gap:</strong> Three segments representing ~32% of pipeline — marketing agencies, traditional businesses, and gaming companies — have zero marketing coverage on the website, in content, or in ads. These segments are finding Request through word-of-mouth, ChatGPT, and the Web3 Finance Club despite our marketing, not because of it.</div>
+  </div>
+
+  <h3 style="margin-top:24px;">Emerging segment: "Web2 companies discovering stablecoins"</h3>
+  <div class="grid-3" style="margin-top:12px;">
+    <div class="card" style="border-left: 3px solid var(--amber);">
+      <h4>Sua Música (Brazil)</h4>
+      <p style="font-size:12px;">Music platform. $90K/mo international payments. Currently paying 9% via PayPal. Zero crypto knowledge. Needs Portuguese UI.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--amber);">
+      <h4>US Media (Latam)</h4>
+      <p style="font-size:12px;">Clearing house. Hundreds of monthly cross-border payments. Brazil taxes up to 40%. Interested in GUSD account for cost savings.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--amber);">
+      <h4>RSA Global (UAE/India)</h4>
+      <p style="font-size:12px;">Logistics holding. Paying $13.33/txn for international wires. Exploring stablecoins for vendor payments to China/HK.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--amber);">
+      <h4>Freelance LATAM (US)</h4>
+      <p style="font-size:12px;">Pays 80-100 Venezuelan freelancers. Currently using Binance P2P at up to 8% fees. Perfect GUSD + C2C use case.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--amber);">
+      <h4>Ficofi Club (Singapore)</h4>
+      <p style="font-size:12px;">Luxury wine club. Member in Vietnam can't wire $500K membership fee. Exploring stablecoin invoicing + off-ramp.</p>
+    </div>
+    <div class="card" style="border-left: 3px solid var(--amber);">
+      <h4>Gauld.com (Singapore)</h4>
+      <p style="font-size:12px;">Gold investment platform. $1.5M/mo new deposits. Triple-A too expensive at 1%. Wants stablecoin on-ramp to bank.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ④ GEOGRAPHIC SIGNALS -->
+<section class="section section-alt" id="geo">
+  <div class="section-label">04 — Geographic signals</div>
+  <h2>Where the demand is</h2>
+  <p class="section-intro">Meeting origins reveal geographic concentrations that should inform paid ads targeting, content localization, and event strategy.</p>
+
+  <div style="max-width:700px; margin-bottom:28px;">
+    <div class="bar-row"><div class="bar-label">Europe (EMEA)</div><div class="bar-track"><div class="bar-fill blue" style="width:35%;">~30 leads</div></div></div>
+    <div class="bar-row"><div class="bar-label">US + Canada</div><div class="bar-track"><div class="bar-fill sky" style="width:25%;">~20 leads</div></div></div>
+    <div class="bar-row"><div class="bar-label">UAE / Dubai</div><div class="bar-track"><div class="bar-fill green" style="width:18%;">~14 leads</div></div></div>
+    <div class="bar-row"><div class="bar-label">Singapore / SEA</div><div class="bar-track"><div class="bar-fill amber" style="width:15%;">~12 leads</div></div></div>
+    <div class="bar-row"><div class="bar-label">LATAM</div><div class="bar-track"><div class="bar-fill purple" style="width:10%;">~8 leads</div></div></div>
+    <div class="bar-row"><div class="bar-label">Other (Africa, KR, IN)</div><div class="bar-track"><div class="bar-fill red" style="width:8%;">~6 leads</div></div></div>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <h4>🇧🇷 LATAM is the breakout region</h4>
+      <p style="font-size:13px;">Brazil, Venezuela, Colombia, and Chile keep appearing. Pain: cross-border costs (9%–40% in Brazil), banking restrictions. Sua Música, US Media, Freelance LATAM, Kontigo, and Morphosis Blocks are all LATAM-heavy. <strong>Action: Portuguese content, BRL on-ramp marketing, LATAM landing page.</strong></p>
+    </div>
+    <div class="card">
+      <h4>🇦🇪 Dubai is a power hub</h4>
+      <p style="font-size:13px;">14+ leads either based in or transacting through Dubai. It's becoming the operational hub for crypto-adjacent companies. Etehaad Afyal, Hype Partners, Portl Club, Input Global, 1212 Capital, and several others. <strong>Action: Dubai-specific case studies and events.</strong></p>
+    </div>
+    <div class="card">
+      <h4>🇺🇸 US cards demand is real</h4>
+      <p style="font-size:13px;">US-based leads consistently ask for cards and ACH rails. Several use Ramp for the US entity but need a crypto-native alternative for international ops. <strong>Action: US cards launch messaging, ACH on-ramp content.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ FEATURE DEMAND MAP -->
+<section class="section" id="demand">
+  <div class="section-label">05 — Feature demand map</div>
+  <h2>What leads are asking for</h2>
+  <p class="section-intro">Ranked by the number of meetings where each feature was explicitly requested or discussed as a key buying criterion.</p>
+
+  <div style="max-width:750px; margin-bottom:28px;">
+    <div class="bar-row"><div class="bar-label">Global USD Account</div><div class="bar-track"><div class="bar-fill blue" style="width:85%;">34+ mentions</div></div></div>
+    <div class="bar-row"><div class="bar-label">Corporate Cards</div><div class="bar-track"><div class="bar-fill blue" style="width:80%;">35+ mentions</div></div></div>
+    <div class="bar-row"><div class="bar-label">C2F Off-ramp</div><div class="bar-track"><div class="bar-fill sky" style="width:70%;">30+ mentions</div></div></div>
+    <div class="bar-row"><div class="bar-label">Approval workflows</div><div class="bar-track"><div class="bar-fill sky" style="width:55%;">22+ mentions</div></div></div>
+    <div class="bar-row"><div class="bar-label">QB / Xero / NS integration</div><div class="bar-track"><div class="bar-fill amber" style="width:55%;">25+ mentions</div></div></div>
+    <div class="bar-row"><div class="bar-label">Batch / mass payouts</div><div class="bar-track"><div class="bar-fill amber" style="width:45%;">18+ mentions</div></div></div>
+    <div class="bar-row"><div class="bar-label">Privacy / private payments</div><div class="bar-track"><div class="bar-fill purple" style="width:35%;">14+ mentions</div></div></div>
+    <div class="bar-row"><div class="bar-label">API integration</div><div class="bar-track"><div class="bar-fill purple" style="width:32%;">13+ mentions</div></div></div>
+    <div class="bar-row"><div class="bar-label">AR / Receivables</div><div class="bar-track"><div class="bar-fill green" style="width:30%;">12+ mentions</div></div></div>
+    <div class="bar-row"><div class="bar-label">Multi-entity management</div><div class="bar-track"><div class="bar-fill green" style="width:25%;">10+ mentions</div></div></div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>Marketing implications:</strong> The website homepage currently leads with AP/spend management messaging. But the top-2 features leads actually ask about are Global USD Account and Corporate Cards — neither of which has a dedicated, prominent landing page yet. Fix this immediately.
+  </div>
+</section>
+
+<!-- ⑥ COMPETITIVE THREATS -->
+<section class="section section-alt" id="competitors">
+  <div class="section-label">06 — Competitive threats</div>
+  <h2>Competitor mentions in sales calls</h2>
+  <p class="section-intro">Every tool or service a lead mentioned using or evaluating, ranked by frequency. This is your real competitive landscape — not what SEO tools show.</p>
+
+  <table>
+    <thead>
+      <tr><th>Competitor</th><th>Mentions</th><th>Context</th><th>Threat level</th><th>Marketing response needed</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-kw">Ramp</td><td>8+</td>
+        <td style="font-size:12px;">Used by US entities for cards/expenses. Multiple leads use Ramp for US + Request for crypto.</td>
+        <td><span class="badge badge-amber">Medium</span></td>
+        <td style="font-size:12px;">Comparison page. Position RF as the global/crypto-native alternative where Ramp falls short.</td>
+      </tr>
+      <tr>
+        <td class="td-kw">Reap</td><td>7+</td>
+        <td style="font-size:12px;">Cards + C2F provider. Multiple leads use Reap cards. Also our own partner.</td>
+        <td><span class="badge badge-amber">Medium</span></td>
+        <td style="font-size:12px;">When cards launch, create clear "Reap vs Request" differentiation content.</td>
+      </tr>
+      <tr>
+        <td class="td-kw">Dakota</td><td>3</td>
+        <td style="font-size:12px;">Free pricing model. Contango Digital directly compared. "Virtually free" cited.</td>
+        <td><span class="badge badge-red">High</span></td>
+        <td style="font-size:12px;">Create value-differentiation content. Full-stack vs point solution. Security + approvals as moat.</td>
+      </tr>
+      <tr>
+        <td class="td-kw">Deel</td><td>5+</td>
+        <td style="font-size:12px;">Used for EOR/payroll. Leads won't switch for payroll but use Request for crypto payments.</td>
+        <td><span class="badge badge-blue">Low</span></td>
+        <td style="font-size:12px;">Position as complementary. "Use Deel for EOR, Request for crypto ops."</td>
+      </tr>
+      <tr>
+        <td class="td-kw">Slash</td><td>2</td>
+        <td style="font-size:12px;">Initia considering Slash for 0.2% offramp. Aggressive on pricing.</td>
+        <td><span class="badge badge-red">High</span></td>
+        <td style="font-size:12px;">Monitor. If they add AP features, respond with comparison content.</td>
+      </tr>
+      <tr>
+        <td class="td-kw">Tres Finance / Cryptio / Bitwave</td><td>12+</td>
+        <td style="font-size:12px;">Sub-ledgers used by almost every mid-size+ lead. Frequent complaints about accuracy.</td>
+        <td><span class="badge badge-blue">Opportunity</span></td>
+        <td style="font-size:12px;">Partner content. "Works with your sub-ledger." Integration pages.</td>
+      </tr>
+      <tr>
+        <td class="td-kw">Bill.com</td><td>3</td>
+        <td style="font-size:12px;">Used for fiat AP by leads who need crypto AP alternative.</td>
+        <td><span class="badge badge-blue">Low</span></td>
+        <td style="font-size:12px;">Comparison blog: "Bill.com for fiat, Request for crypto — or replace both."</td>
+      </tr>
+      <tr>
+        <td class="td-kw">Bitwage</td><td>2</td>
+        <td style="font-size:12px;">Evaluated for crypto payroll alongside Request.</td>
+        <td><span class="badge badge-amber">Medium</span></td>
+        <td style="font-size:12px;">"Request vs Bitwage" comparison page.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-text"><strong>Dakota is the emerging threat to take seriously.</strong> Their "free" model directly attacks our subscription-based pricing. At least 3 leads in the last 4 months cited Dakota. This will grow. We need proactive content that positions Request's full-stack capabilities, security, and approval workflows as the reason to pay — before they launch C2F and close the feature gap.</div>
+  </div>
+</section>
+
+<!-- ⑦ CHANNEL PERFORMANCE -->
+<section class="section" id="channels">
+  <div class="section-label">07 — Lead source analysis</div>
+  <h2>How leads are finding us</h2>
+  <p class="section-intro">Extracted from meeting notes where lead source was mentioned. Reveals which channels are working and which are underinvested.</p>
+
+  <table>
+    <thead>
+      <tr><th>Channel</th><th>Est. leads</th><th>Quality signal</th><th>Investment level</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="td-kw">Web3 Finance Club</td><td>12–15</td><td><span class="badge badge-green">High intent</span></td><td><span class="badge badge-green">Active</span></td></tr>
+      <tr><td class="td-kw">Outbound (Lemlist / cold)</td><td>10–12</td><td><span class="badge badge-amber">Mixed</span></td><td><span class="badge badge-green">Active</span></td></tr>
+      <tr><td class="td-kw">Existing user referrals</td><td>8–10</td><td><span class="badge badge-green">Very high</span></td><td><span class="badge badge-red">No program</span></td></tr>
+      <tr><td class="td-kw">Conferences / events</td><td>8–10</td><td><span class="badge badge-green">High</span></td><td><span class="badge badge-amber">Moderate</span></td></tr>
+      <tr><td class="td-kw">Inbound from website / app</td><td>8–10</td><td><span class="badge badge-amber">Medium</span></td><td><span class="badge badge-amber">Moderate</span></td></tr>
+      <tr><td class="td-kw">Partner intros (ecosystems)</td><td>6–8</td><td><span class="badge badge-green">High</span></td><td><span class="badge badge-amber">Moderate</span></td></tr>
+      <tr><td class="td-kw">ChatGPT / AI search</td><td>2–3</td><td><span class="badge badge-green">High intent</span></td><td><span class="badge badge-red">Zero</span></td></tr>
+      <tr><td class="td-kw">New website demo booking</td><td>2–3</td><td><span class="badge badge-green">Very high</span></td><td><span class="badge badge-green">New</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid-2" style="margin-top:20px;">
+    <div class="moat-card">
+      <h4>ChatGPT is now a lead source</h4>
+      <p>Addmost Media explicitly found Request through ChatGPT. Cuhvet Agency found us via ChatGPT alongside Toku. This is a new, unoptimized channel. AI-generated answers now influence B2B purchase decisions. <strong>Action: Invest in LLM/AI search optimization — structured data, authoritative content, brand mentions in key comparison contexts.</strong></p>
+    </div>
+    <div class="moat-card">
+      <h4>Referral program is non-existent</h4>
+      <p>Regen Financial, Penrose Partners, Anchor Labs, Sonder Solutions, Withum, and multiple others explicitly asked about referral agreements. Some already refer clients informally. But there's no structured referral program, no landing page, no tracking. <strong>Action: Launch a formal referral/partner program with a dedicated landing page within 30 days.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ⑧ MESSAGING GAPS -->
+<section class="section section-alt" id="messaging">
+  <div class="section-label">08 — Messaging gaps</div>
+  <h2>What leads want to hear vs. what we say</h2>
+  <p class="section-intro">The biggest gap between what the sales team needs to communicate and what current marketing materials provide.</p>
+
+  <div class="grid-2" style="margin-bottom:24px;">
+    <div class="card" style="border-top: 3px solid var(--red);">
+      <h4>❌ What's missing from our marketing</h4>
+      <ul style="font-size:13px;">
+        <li><strong>Global USD Account landing page</strong> — the #1 requested feature has no dedicated page</li>
+        <li><strong>Cards pre-launch page</strong> — no waitlist, no feature preview, no positioning</li>
+        <li><strong>"Non-crypto" framing</strong> — traditional businesses can't find themselves on our site</li>
+        <li><strong>Pricing transparency</strong> — leads arrive confused about C2F costs, subscription tiers</li>
+        <li><strong>Use-case pages by industry</strong> — gaming, agencies, security firms, consulting, RWA</li>
+        <li><strong>Integration ecosystem page</strong> — QB, Xero, NetSuite, Cryptio, Tres, Fireblocks, Safe</li>
+        <li><strong>Referral/partner program page</strong> — repeatedly requested, doesn't exist</li>
+        <li><strong>"Why pay for Request"</strong> — counter-narrative to free competitors like Dakota</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top: 3px solid var(--green);">
+      <h4>✅ What resonates in sales calls</h4>
+      <ul style="font-size:13px;">
+        <li><strong>Approval policies</strong> — mentioned as a "game changer" by multiple leads (SG Forge, Lido, P2P)</li>
+        <li><strong>All-in-one platform</strong> — leads consistently say they want to consolidate tools (Symbiotic, Initia)</li>
+        <li><strong>InvoiceMe link</strong> — repeatedly demo'd and loved for contractor onboarding</li>
+        <li><strong>C2F for stablecoin payouts</strong> — the primary conversion driver</li>
+        <li><strong>Batch payment + CSV upload</strong> — operational teams get excited about this</li>
+        <li><strong>Security / audit trail</strong> — finance managers cite this as a key differentiator</li>
+        <li><strong>Privacy</strong> — strong emotional resonance with leads handling payroll</li>
+        <li><strong>Multi-entity support</strong> — complex orgs see this as a must-have</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Pain points mentioned in 5+ meetings</h3>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">These are the actual words leads use. Mirror this language in landing pages and ads.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;">
+    <span class="chip chip-red">"everything is manual"</span>
+    <span class="chip chip-red">"using spreadsheets"</span>
+    <span class="chip chip-red">"reconciliation nightmare"</span>
+    <span class="chip chip-amber">"fees too high"</span>
+    <span class="chip chip-amber">"banks are slow"</span>
+    <span class="chip chip-amber">"can't track who paid what"</span>
+    <span class="chip chip-blue">"no approval workflow"</span>
+    <span class="chip chip-blue">"need one platform"</span>
+    <span class="chip chip-blue">"copy-pasting wallet addresses"</span>
+    <span class="chip chip-purple">"privacy for payroll"</span>
+    <span class="chip chip-purple">"contractor invoices are chaos"</span>
+    <span class="chip chip-green">"want crypto cards"</span>
+  </div>
+</section>
+
+<!-- ⑨ CONTENT OPPORTUNITIES -->
+<section class="section" id="content">
+  <div class="section-label">09 — Content opportunities</div>
+  <h2>Content the sales team needs yesterday</h2>
+  <p class="section-intro">Every piece of content below maps to a repeated need from real sales conversations.</p>
+
+  <div class="grid-2" style="margin-bottom:20px;">
+    <div>
+      <h3>High-priority landing pages</h3>
+      <table>
+        <thead><tr><th>Page</th><th>Urgency</th><th>Justification</th></tr></thead>
+        <tbody>
+          <tr><td class="td-kw">/global-usd-account</td><td><span class="badge badge-red">Now</span></td><td style="font-size:12px;">34+ leads asked about it. Zero marketing page.</td></tr>
+          <tr><td class="td-kw">/corporate-cards</td><td><span class="badge badge-red">Now</span></td><td style="font-size:12px;">35+ leads. Waitlist page with features preview.</td></tr>
+          <tr><td class="td-kw">/partners</td><td><span class="badge badge-red">Now</span></td><td style="font-size:12px;">6+ leads asked for referral program. No page.</td></tr>
+          <tr><td class="td-kw">/integrations</td><td><span class="badge badge-amber">Q1</span></td><td style="font-size:12px;">QB, Xero, NetSuite, Safe, Fireblocks logos + status.</td></tr>
+          <tr><td class="td-kw">/use-case/gaming</td><td><span class="badge badge-amber">Q1</span></td><td style="font-size:12px;">TrustDice, Yeet, Moist.gg, Menace Corp — all gaming.</td></tr>
+          <tr><td class="td-kw">/use-case/agencies</td><td><span class="badge badge-amber">Q1</span></td><td style="font-size:12px;">Hype Partners, Green Quill, Addmost, Vora, Cuhvet.</td></tr>
+          <tr><td class="td-kw">/cross-border-payments</td><td><span class="badge badge-amber">Q1</span></td><td style="font-size:12px;">Web2 companies finding us for cross-border, not crypto.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3>High-priority blog content</h3>
+      <table>
+        <thead><tr><th>Article</th><th>Target keyword</th><th>Urgency</th></tr></thead>
+        <tbody>
+          <tr><td class="td-kw">How to pay contractors in crypto (legally)</td><td style="font-size:12px;">crypto payroll compliance</td><td><span class="badge badge-red">Now</span></td></tr>
+          <tr><td class="td-kw">Dakota vs Request Finance</td><td style="font-size:12px;">dakota alternative</td><td><span class="badge badge-red">Now</span></td></tr>
+          <tr><td class="td-kw">Request Finance vs Bitwage</td><td style="font-size:12px;">bitwage alternative</td><td><span class="badge badge-amber">Q1</span></td></tr>
+          <tr><td class="td-kw">Why stablecoins beat SWIFT for B2B</td><td style="font-size:12px;">stablecoin b2b payments</td><td><span class="badge badge-amber">Q1</span></td></tr>
+          <tr><td class="td-kw">How gaming companies manage crypto payroll</td><td style="font-size:12px;">gaming crypto payroll</td><td><span class="badge badge-amber">Q1</span></td></tr>
+          <tr><td class="td-kw">LATAM cross-border payments guide</td><td style="font-size:12px;">latam cross border payments</td><td><span class="badge badge-amber">Q2</span></td></tr>
+          <tr><td class="td-kw">Guide: stablecoins for traditional businesses</td><td style="font-size:12px;">stablecoin business payments</td><td><span class="badge badge-amber">Q2</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-icon">💡</div>
+    <div class="callout-text"><strong>Content localization signal:</strong> Sua Música spoke almost no English — Tristan translated the entire call. They explicitly asked for Portuguese UI. If we want LATAM, we need at minimum a Portuguese landing page and a French one for West Africa and Francophone Europe (SG Forge, Forvis Mazars, InNuméris — all French speakers).</div>
+  </div>
+</section>
+
+<!-- ⑩ WEBSITE & CONVERSION -->
+<section class="section section-alt" id="website">
+  <div class="section-label">10 — Website & conversion insights</div>
+  <h2>What the site needs to change</h2>
+  <p class="section-intro">Specific website issues flagged directly or implied by sales conversations.</p>
+
+  <div class="grid-2" style="margin-bottom:24px;">
+    <div class="card" style="border-top:3px solid var(--red);">
+      <h4>Conversion blockers found in calls</h4>
+      <ul style="font-size:13px;">
+        <li><strong>Accounting branding too prominent:</strong> Ubyx came expecting an accounting demo because the UI still promotes it heavily despite the sunset plan. This is misleading new leads.</li>
+        <li><strong>No "book a demo" for GUSD:</strong> Multiple leads (Accountable, Piertwo, Arbitrum) expressed interest in GUSD but had to be told about it in a call — no discoverable page.</li>
+        <li><strong>Pricing page scares people:</strong> C2F rates prominently shown cause sticker shock. Leads cite 0.9% as "too expensive" before understanding the full platform value.</li>
+        <li><strong>No industry/use-case pages:</strong> Gaming leads, agencies, and security firms can't find themselves in the product positioning at all.</li>
+        <li><strong>Kiln's CFO never had a proper demo:</strong> He uses Request for free (AR) but never understood the full offering — suggesting we don't have a nurture flow for free users.</li>
+        <li><strong>Input Global lead dropped off after hearing "the app wasn't safe":</strong> This reputation concern in the Dubai market suggests we need visible security credentials on the site.</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:3px solid var(--green);">
+      <h4>What should go on the homepage</h4>
+      <ul style="font-size:13px;">
+        <li><strong>Global USD Account</strong> — front and center. This is the new magnet product.</li>
+        <li><strong>Corporate Cards</strong> — "Coming soon" with waitlist. Creates urgency and captures leads.</li>
+        <li><strong>"One platform for all business payments"</strong> — leads consistently want to consolidate 3-5 tools into Request.</li>
+        <li><strong>Integration logos</strong> — QuickBooks, Xero, Safe, Fireblocks, Metamask, Coinbase Prime (even if some are pending).</li>
+        <li><strong>Trust signals</strong> — SOC-2, security certifications, client logos, review badges (G2, Capterra).</li>
+        <li><strong>"Works for crypto-native AND traditional businesses"</strong> — explicitly broadening the audience.</li>
+        <li><strong>Quick demo video</strong> — Kiln, Flowdesk, and others needed a demo to understand the product. A 2-minute product walkthrough video on the homepage would convert.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ⑪ SEO IMPLICATIONS -->
+<section class="section" id="seo-link">
+  <div class="section-label">11 — SEO strategy implications</div>
+  <h2>Connecting sales data to the SEO strategy</h2>
+  <p class="section-intro">The sales meeting data validates and reshapes several priorities in the SEO strategy document.</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h4>✅ Validated by sales data</h4>
+      <ul style="font-size:13px;">
+        <li><strong>Web3 moat is real:</strong> Zero leads mention any competitor in the Web3 finance space. SG Forge, Kiln, Ledger, ADAN CFO Board — all confirm the uncontested position.</li>
+        <li><strong>Comparison pages are critical:</strong> "Ramp alternative" and "Brex alternative" keywords match the Ramp mentions in sales calls (8+ leads use Ramp for US, need a crypto alternative).</li>
+        <li><strong>Long-tail keywords work:</strong> Leads searching for specific pain points ("crypto payroll compliance", "stablecoin B2B payments") match exactly the low-difficulty keywords in the SEO plan.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>🔄 Needs adjustment based on sales data</h4>
+      <ul style="font-size:13px;">
+        <li><strong>Add "Dakota alternative" and "Bitwage alternative"</strong> to the comparison pages list — these are real competitive encounters, not theoretical.</li>
+        <li><strong>Add iGaming/gaming vertical</strong> to industry use-case pages — 5+ leads from this sector.</li>
+        <li><strong>Prioritize LATAM/Portuguese content</strong> over French/German in the Q4 localization plan — sales data shows LATAM is the hotter market.</li>
+        <li><strong>Add "Global USD Account" keyword cluster</strong> — terms like "virtual USD account for crypto companies", "business stablecoin account" should be a new content pillar.</li>
+        <li><strong>Deprioritize pure "spend management" head terms</strong> for now — leads are not finding us through these generic terms; they come for specific crypto/stablecoin payment needs.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ⑫ TOP 20 ACTIONS -->
+<section class="section section-alt" id="priorities">
+  <div class="section-label">12 — Action plan</div>
+  <h2>Top 20 marketing actions</h2>
+  <p class="section-intro">Prioritized by revenue impact and speed of execution. Each action maps to data from the sales meetings.</p>
+
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--red);">1</div>
+      <div class="action-content">
+        <div class="action-title">Launch Global USD Account landing page</div>
+        <div class="action-desc">34+ leads asked for it. It's the #1 magnet product. Needs dedicated page with explainer video, supported currencies, flow diagram, and CTA. <span class="badge badge-red" style="margin-left:4px;">This week</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--red);">2</div>
+      <div class="action-content">
+        <div class="action-title">Launch Corporate Cards waitlist page</div>
+        <div class="action-desc">35+ leads want cards. Create a pre-launch page with feature preview, supported regions, and email capture. <span class="badge badge-red" style="margin-left:4px;">This week</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--red);">3</div>
+      <div class="action-content">
+        <div class="action-title">Reduce accounting branding in product UI</div>
+        <div class="action-desc">Ubyx came expecting an accounting product. Post-sunset, lingering branding creates confusion and misaligned expectations. <span class="badge badge-red" style="margin-left:4px;">This week</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--red);">4</div>
+      <div class="action-content">
+        <div class="action-title">Revise pricing page & C2F fee presentation</div>
+        <div class="action-desc">20+ leads cite "too expensive." Lead with value (approval policies, reconciliation, compliance), show fees as tiered by volume, not flat rate sticker shock. <span class="badge badge-red" style="margin-left:4px;">Week 2</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--amber);">5</div>
+      <div class="action-content">
+        <div class="action-title">Create referral/partner program page</div>
+        <div class="action-desc">Regen Financial, Penrose, Anchor Labs, Sonder, Withum, Aarna.ai — 6+ leads asked for this. Simple page with benefits and sign-up form. <span class="badge badge-amber" style="margin-left:4px;">Week 2</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--amber);">6</div>
+      <div class="action-content">
+        <div class="action-title">Publish "Dakota vs Request Finance" comparison</div>
+        <div class="action-desc">Dakota's free model is being cited in renewal negotiations. Get ahead of this with an honest feature comparison that highlights approval policies, multi-entity, and security. <span class="badge badge-amber" style="margin-left:4px;">Week 3</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--amber);">7</div>
+      <div class="action-content">
+        <div class="action-title">Build an integrations ecosystem page</div>
+        <div class="action-desc">25+ leads ask about QB, Xero, NetSuite, Cryptio, Tres, Fireblocks, Safe. One page showing all integrations with status (live / coming soon) reduces sales friction. <span class="badge badge-amber" style="margin-left:4px;">Week 3</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--amber);">8</div>
+      <div class="action-content">
+        <div class="action-title">Record a 2-minute product walkthrough video</div>
+        <div class="action-desc">Kiln's CFO never had a demo. Flowdesk needs help visualizing the flow. Embed on homepage and product pages. Sales team can share directly. <span class="badge badge-amber" style="margin-left:4px;">Week 3</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--rf-blue);">9</div>
+      <div class="action-content">
+        <div class="action-title">Create 3 industry use-case pages</div>
+        <div class="action-desc">Gaming/iGaming, Marketing Agencies, and Security/Audit firms. Each with tailored messaging, relevant pain points, and a CTA. 5+ leads per segment. <span class="badge badge-blue" style="margin-left:4px;">Month 2</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--rf-blue);">10</div>
+      <div class="action-content">
+        <div class="action-title">Launch a "Cross-border payments" landing page</div>
+        <div class="action-desc">Web2 companies (Sua Música, US Media, RSA Global, Freelance LATAM) are arriving for cross-border payments, not "crypto." Create entry point that doesn't require crypto fluency. <span class="badge badge-blue" style="margin-left:4px;">Month 2</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--rf-blue);">11</div>
+      <div class="action-content">
+        <div class="action-title">Invest in AI/LLM search optimization</div>
+        <div class="action-desc">Leads found us via ChatGPT. Ensure Request Finance appears in AI search responses for "crypto payroll software," "stablecoin payment platform," etc. Structured data + authoritative content. <span class="badge badge-blue" style="margin-left:4px;">Month 2</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--rf-blue);">12</div>
+      <div class="action-content">
+        <div class="action-title">Launch email nurture for free users</div>
+        <div class="action-desc">Kiln, Houdini Swap, and others use Request for free (AR/invoicing) without understanding the full platform. Automated drip showing GUSD, C2F, approvals, cards. <span class="badge badge-blue" style="margin-left:4px;">Month 2</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--rf-blue);">13</div>
+      <div class="action-content">
+        <div class="action-title">Create a Portuguese landing page</div>
+        <div class="action-desc">Sua Música can't read English. LATAM is a breakout region with 8+ leads. A Portuguese page targeting Brazilian businesses + BRL on-ramp messaging would convert. <span class="badge badge-blue" style="margin-left:4px;">Month 2</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--rf-blue);">14</div>
+      <div class="action-content">
+        <div class="action-title">Produce SG Forge case study</div>
+        <div class="action-desc">Société Générale subsidiary. Incredible brand credibility. Jonathan loved the demo and sent a follow-up email immediately. If they convert, this is the #1 case study for institutional trust. <span class="badge badge-blue" style="margin-left:4px;">Month 2</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--purple);">15</div>
+      <div class="action-content">
+        <div class="action-title">Publish "Why stablecoins beat PayPal for cross-border"</div>
+        <div class="action-desc">Sua Música pays 9% on PayPal. Atlas Digital loses contracts due to slow bank wires. This is a content piece that speaks to Web2 companies discovering stablecoins. <span class="badge badge-sky" style="margin-left:4px;">Month 3</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--purple);">16</div>
+      <div class="action-content">
+        <div class="action-title">Run a Dubai-focused campaign</div>
+        <div class="action-desc">14+ leads from Dubai/UAE. Run paid LinkedIn ads targeting finance roles at Dubai-based companies. Pair with local event presence and Dubai case studies. <span class="badge badge-sky" style="margin-left:4px;">Month 3</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--purple);">17</div>
+      <div class="action-content">
+        <div class="action-title">Create a security & compliance page</div>
+        <div class="action-desc">Input Global dropped off because someone said "the app wasn't safe." Kast Cards wants a security team call. Visible certifications and security posture on the website is urgent. <span class="badge badge-sky" style="margin-left:4px;">Month 3</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--purple);">18</div>
+      <div class="action-content">
+        <div class="action-title">Develop "full-stack vs. point solution" narrative</div>
+        <div class="action-desc">Leads use 4–6 tools (Ramp + Tres + Bill.com + Coinbase + spreadsheets). Position Request as the consolidation play. "One platform" is the most resonant value prop in sales calls. <span class="badge badge-sky" style="margin-left:4px;">Month 3</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--purple);">19</div>
+      <div class="action-content">
+        <div class="action-title">Co-marketing with ecosystem partners</div>
+        <div class="action-desc">Anchor Labs, Cryptoworth, Ledger Multisig, Avalanche, and Borderless all want co-marketing. Build a simple co-marketing template and execute 2–3 campaigns per quarter. <span class="badge badge-sky" style="margin-left:4px;">Month 3</span></div>
+      </div>
+    </div>
+
+    <div class="action-item">
+      <div class="action-num" style="background:var(--purple);">20</div>
+      <div class="action-content">
+        <div class="action-title">Publish a "State of Crypto Payments" report</div>
+        <div class="action-desc">Anonymized data from the platform: average payment sizes, most used currencies, top corridors, stablecoin adoption trends. Earns press, backlinks, and authority. Aligns with SEO strategy. <span class="badge badge-sky" style="margin-left:4px;">Q2 2026</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ⑬ QUICK WINS -->
+<section class="section" id="quick">
+  <div class="section-label">13 — Quick wins</div>
+  <h2>Things you can do this week</h2>
+  <p class="section-intro">No-code, no-design, no-dev required. Just decisions and execution.</p>
+
+  <div class="grid-3">
+    <div class="card" style="background:#dcfce7;border-color:#86efac;">
+      <h4 style="color:#15803d;">Add GUSD to the homepage hero</h4>
+      <p style="font-size:13px;color:#166534;">Just update the headline or add a banner. "Now with Global USD Account" with a link to a simple landing page (even a one-pager).</p>
+    </div>
+    <div class="card" style="background:#dcfce7;border-color:#86efac;">
+      <h4 style="color:#15803d;">Create a Typeform for cards waitlist</h4>
+      <p style="font-size:13px;color:#166534;">Embed it on site. Share the link with all 35+ leads who asked. Capture email + company + expected monthly volume.</p>
+    </div>
+    <div class="card" style="background:#dcfce7;border-color:#86efac;">
+      <h4 style="color:#15803d;">Email all referral-interested leads</h4>
+      <p style="font-size:13px;color:#166534;">Regen Financial, Penrose Partners, Anchor Labs, Withum, Sonder Solutions, Aarna.ai. Send a simple email: "We're launching a referral program. Here's the deal."</p>
+    </div>
+    <div class="card" style="background:#dcfce7;border-color:#86efac;">
+      <h4 style="color:#15803d;">Remove/reduce RA branding in UI</h4>
+      <p style="font-size:13px;color:#166534;">Post-sunset, the accounting branding is confusing new leads (Ubyx). Quick fix: update navigation labels and landing page copy.</p>
+    </div>
+    <div class="card" style="background:#dcfce7;border-color:#86efac;">
+      <h4 style="color:#15803d;">Share Michael's GUSD video on social</h4>
+      <p style="font-size:13px;color:#166534;">The Sua Música demo used Michael's video of the Global USD Account and they "liked the solution a lot." This video exists — post it.</p>
+    </div>
+    <div class="card" style="background:#dcfce7;border-color:#86efac;">
+      <h4 style="color:#15803d;">Ask SG Forge for a testimonial</h4>
+      <p style="font-size:13px;color:#166534;">Jonathan called C2F a "game changer" and sent a demo request the same day. Even a one-line quote from a Société Générale subsidiary is gold.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="highlight-box">
+    <strong>The single most important takeaway from 80+ sales meetings:</strong> The market is shifting. Request Finance is no longer just a crypto invoicing tool — it's becoming the financial operations platform for companies that use stablecoins. The marketing needs to catch up with what the sales team is already selling. Global USD Account, Corporate Cards, and the "one platform" narrative should be the new homepage story. Every week we delay, we lose leads to Dakota, Slash, and Ramp.
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--ink);padding:40px 64px;color:rgba(255,255,255,.4);font-size:12px;font-family:var(--font-mono);">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <div>
+      <div style="color:var(--white);font-weight:600;margin-bottom:4px;">Request Finance — CMO Intelligence Report</div>
+      <div>Confidential. Prepared March 2026. Based on sales meeting data Nov 2025 – Mar 2026.</div>
+    </div>
+    <div style="text-align:right;">
+      <div>requestfinance.com</div>
+      <div style="margin-top:3px;">80+ meetings · 23 industries · 30+ countries</div>
+    </div>
+  </div>
+</footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMO Documents — Request Finance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rf-blue: #2b6ff4;
+  --rf-sky: #60d5ff;
+  --rf-light: #dbeafe;
+  --club: #0f766e;
+  --club-light: #14b8a6;
+  --ink: #0d1117;
+  --ink-2: #1e2733;
+  --ink-3: #2e3a47;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --surface: #f8faff;
+  --white: #ffffff;
+  --accent-glow: rgba(43, 111, 244, 0.12);
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --sidebar: 240px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--ink-3);
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--sidebar);
+  background: var(--ink);
+  padding: 28px 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  overflow-y: auto;
+}
+.sidebar-logo {
+  padding: 0 22px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 16px;
+}
+.sidebar-logo-name {
+  font-family: var(--font-head);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.sidebar-logo-sub {
+  font-size: 10.5px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 3px;
+  font-family: var(--font-mono);
+}
+.nav-section {
+  padding: 0 16px 4px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.22);
+  margin-bottom: 4px;
+  margin-top: 8px;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  text-decoration: none;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  transition: all 0.15s;
+  border-left: 2px solid transparent;
+}
+.nav-link:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.05);
+}
+.nav-link.active {
+  color: var(--rf-sky);
+  border-left-color: var(--rf-sky);
+  background: rgba(96, 213, 255, 0.06);
+}
+.nav-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.dot-blue { background: var(--rf-blue); }
+.dot-teal { background: var(--club-light); }
+.dot-amber { background: #f59e0b; }
+.dot-purple { background: #8b5cf6; }
+
+.main {
+  margin-left: var(--sidebar);
+  min-height: 100vh;
+}
+
+.hero {
+  background: var(--ink);
+  padding: 64px 60px 52px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -60px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(43, 111, 244, 0.22) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(43, 111, 244, 0.18);
+  border: 1px solid rgba(43, 111, 244, 0.35);
+  color: var(--rf-sky);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 22px;
+  font-family: var(--font-mono);
+  position: relative;
+}
+.hero h1 {
+  font-family: var(--font-head);
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 680px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.hero h1 span { color: var(--rf-sky); }
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.48);
+  max-width: 560px;
+  line-height: 1.65;
+  position: relative;
+}
+.hero-sub code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.section {
+  padding: 52px 60px 72px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--rf-blue);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 2px;
+  background: var(--rf-blue);
+  border-radius: 2px;
+}
+h2 {
+  font-family: var(--font-head);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+.section-intro {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 620px;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 900px;
+}
+.card-link {
+  display: block;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.card-link:hover {
+  border-color: rgba(43, 111, 244, 0.35);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+.card-link:focus-visible {
+  outline: 2px solid var(--rf-blue);
+  outline-offset: 2px;
+}
+.card-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+.badge-blue { background: var(--rf-light); color: #1d4ed8; }
+.badge-teal { background: #ccfbf1; color: #0f766e; }
+.badge-amber { background: #fef9c3; color: #92400e; }
+.badge-purple { background: #ede9fe; color: #6d28d9; }
+
+.card-link h3 {
+  font-family: var(--font-head);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.card-link p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+.card-path {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-3);
+  opacity: 0.85;
+}
+.card-cta {
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rf-blue);
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    padding: 20px 0 16px;
+  }
+  .sidebar-logo { margin-bottom: 12px; padding-bottom: 16px; }
+  .main { margin-left: 0; }
+  .hero { padding: 40px 24px 36px; }
+  .hero h1 { font-size: 32px; }
+  .section { padding: 36px 24px 48px; }
+  .grid-cards { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="sidebar-logo-name">Request Finance</div>
+    <div class="sidebar-logo-sub">CMO · Local docs</div>
+  </div>
+  <div class="nav-section">Index</div>
+  <a class="nav-link active" href="index.html"><span class="nav-dot dot-blue"></span> All documents</a>
+  <div class="nav-section">Jump to</div>
+  <a class="nav-link" href="strategy/cmo-intelligence-report-request-finance.html"><span class="nav-dot dot-blue"></span> Strategy</a>
+  <a class="nav-link" href="roadmap/cmo-3-month-roadmap-request-finance.html"><span class="nav-dot dot-amber"></span> Roadmap</a>
+  <a class="nav-link" href="referral/rf-referral-growth-masterplan-v2.html"><span class="nav-dot dot-purple"></span> Referral</a>
+  <a class="nav-link" href="club/rf-club-growth-masterplan.html"><span class="nav-dot dot-teal"></span> Club</a>
+</aside>
+
+<main class="main">
+  <header class="hero">
+    <div class="hero-label">Hub</div>
+    <h1>CMO documents <span>· Request Finance</span></h1>
+    <p class="hero-sub">Open any of the HTML reports below. Files live alongside this index in <code>club/</code>, <code>referral/</code>, <code>roadmap/</code>, and <code>strategy/</code>.</p>
+  </header>
+
+  <section class="section">
+    <div class="section-label">Documents</div>
+    <h2>Choose a page</h2>
+    <p class="section-intro">Same styling patterns as the standalone docs: Syne headings, IBM Plex body, dark hero, bordered cards.</p>
+
+    <div class="grid-cards">
+      <a class="card-link" href="strategy/cmo-intelligence-report-request-finance.html">
+        <span class="card-badge badge-blue">Strategy</span>
+        <h3>CMO Intelligence Report</h3>
+        <p>Q4 2025 – Q1 2026 intelligence report for Request Finance.</p>
+        <span class="card-path">strategy/cmo-intelligence-report-request-finance.html</span>
+        <div class="card-cta">Open document →</div>
+      </a>
+      <a class="card-link" href="roadmap/cmo-3-month-roadmap-request-finance.html">
+        <span class="card-badge badge-amber">Roadmap</span>
+        <h3>3-Month CMO Roadmap</h3>
+        <p>Quarterly roadmap and priorities.</p>
+        <span class="card-path">roadmap/cmo-3-month-roadmap-request-finance.html</span>
+        <div class="card-cta">Open document →</div>
+      </a>
+      <a class="card-link" href="referral/rf-referral-growth-masterplan-v2.html">
+        <span class="card-badge badge-purple">Referral</span>
+        <h3>Referral Growth Masterplan v2</h3>
+        <p>Referral program growth plan.</p>
+        <span class="card-path">referral/rf-referral-growth-masterplan-v2.html</span>
+        <div class="card-cta">Open document →</div>
+      </a>
+      <a class="card-link" href="club/rf-club-growth-masterplan.html">
+        <span class="card-badge badge-teal">Club</span>
+        <h3>Web3 Finance Club — Growth Masterplan</h3>
+        <p>Club growth strategy and execution.</p>
+        <span class="card-path">club/rf-club-growth-masterplan.html</span>
+        <div class="card-cta">Open document →</div>
+      </a>
+    </div>
+  </section>
+</main>
+</body>
+</html>
